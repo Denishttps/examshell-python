@@ -1,0 +1,27 @@
+Escribe una funciГіn que ordene una lista de cadenas con prioridad en tres niveles:
+1. Primario: por longitud (ascendente)
+2. Secundario: lexicogrГЎfico (alfabГ©tico, sin distinguir mayГєsculas, ascendente)
+3. Terciario: por nГєmero de vocales (ascendente si la longitud y el orden lГ©xico coinciden)
+
+La funciГіn debe manejar:
+- Cadenas vacГ­as y listas vacГ­as
+- MayГєsculas y minГєsculas mezcladas (tratar como minГєsculas al ordenar)
+- Caracteres especiales (ignorarlos al contar vocales)
+
+def cryptic_sorter(strings: list[str]) -> list[str]:
+
+cryptic_sorter(["apple","cat","banana","dog","elephant"])
+["cat","dog","apple","banana","elephant"]
+
+cryptic_sorter(["aaa","bbb","AAA","BBB"])
+["AAA", "aaa", "BBB", "bbb"]
+
+cryptic_sorter(["hello","world","hi","test"])
+["hi","test","hello","world"]
+
+cryptic_sorter([])
+[]
+
+cryptic_sorter([""])
+[""]
+

@@ -1,0 +1,24 @@
+Write a function that sorts a list of strings according to multiple criteria:
+1. Primary sort: By string length (shortest first)
+2. Secondary sort: ASCII order, except letters are compared case-insensitively
+   (for strings of same length)
+3. Tertiary sort: By number of vowels (ascending, for same length and lexically equal)
+4. Equal strings will appear in the same order as in the input list.
+
+def cryptic_sorter(strings: list[str]) -> list[str]:
+
+cryptic_sorter(["apple","cat","banana","dog","elephant"])
+["cat","dog","apple","banana","elephant"]
+
+cryptic_sorter(["aaa","bbb","AAA","BBB"])
+["AAA", "aaa", "BBB", "bbb"]
+
+cryptic_sorter(["hello","world","hi","test"])
+["hi","test","hello","world"]
+
+cryptic_sorter([])
+[]
+
+cryptic_sorter([""])
+[""]
+

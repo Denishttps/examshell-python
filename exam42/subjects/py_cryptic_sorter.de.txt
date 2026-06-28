@@ -1,0 +1,27 @@
+Schreibe eine Funktion, die eine Liste von Strings mit dreistufiger PrioritГ¤t sortiert:
+1. PrimГ¤r: nach LГ¤nge (aufsteigend)
+2. SekundГ¤r: lexikographisch (alphabetisch, ohne GroГџ-/Kleinschreibung, aufsteigend)
+3. TertiГ¤r: nach Anzahl der Vokale (aufsteigend bei gleicher LГ¤nge und lexikalischer Gleichheit)
+
+Die Funktion muss:
+- Leere Strings und leere Listen verarbeiten
+- Gemischte GroГџ-/Kleinschreibung (fГјr Sortierung wie Kleinbuchstaben behandeln)
+- Sonderzeichen (fГјr VokalzГ¤hlung ignorieren)
+
+def cryptic_sorter(strings: list[str]) -> list[str]:
+
+cryptic_sorter(["apple","cat","banana","dog","elephant"])
+["cat","dog","apple","banana","elephant"]
+
+cryptic_sorter(["aaa","bbb","AAA","BBB"])
+["AAA", "aaa", "BBB", "bbb"]
+
+cryptic_sorter(["hello","world","hi","test"])
+["hi","test","hello","world"]
+
+cryptic_sorter([])
+[]
+
+cryptic_sorter([""])
+[""]
+
