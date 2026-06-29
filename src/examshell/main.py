@@ -1,12 +1,15 @@
-from models import Task
-from task_generator import TaskManager
+from .models import Task
+from .task_generator import TaskManager
 
 from rich.console import Console
 from rich.panel import Panel
+
 from rich.prompt import Prompt
 from rich.table import Table
+
 from rich.progress import Progress, BarColumn, TextColumn
 from rich.align import Align
+
 from rich import box
 
 console = Console()
@@ -311,7 +314,7 @@ def practice_mode() -> None:
                 console.print(f"[red]Unknown command:[/red] {user_input!r}")
 
 
-def main() -> None:
+def cli() -> None:
     real = choose_mode()
     if real:
         real_mode()
@@ -320,4 +323,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    cli()

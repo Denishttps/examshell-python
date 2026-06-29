@@ -2,16 +2,16 @@ import ast
 import json
 
 import random
-from models import Task
+from .models import Task
 
 from pydantic import TypeAdapter
 
 from pathlib import Path
-
 import importlib.util
 
 from rich.console import Console
 from rich.panel import Panel
+
 from rich.table import Table
 
 console = Console()
