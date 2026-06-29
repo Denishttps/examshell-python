@@ -1,0 +1,125 @@
+# examshell-python
+
+Interactive terminal shell for practising 42-style Python exam tasks. Simulates the real exam environment — timed pressure, blind grading, sequential levels — or lets you work through exercises freely in practice mode.
+
+## Features
+
+- **Two modes** — Real (exam simulation) and Practice (free training)
+- **Automatic grading** — `grademe` runs your solution against test cases and shows a results table
+- **Multi-language task descriptions** — each task is described in EN, DE, FR, ES, IT
+- **14 tasks across 6 levels** — from easy warm-ups to hard algorithmic challenges
+- **Clean terminal UI** — built with [Rich](https://github.com/Textualize/rich)
+
+## Installation
+
+Requires Python 3.10+.
+
+```bash
+pip install examshell-python
+```
+
+Or install from source:
+
+```bash
+git clone <repo-url>
+cd examshell-python
+pip install .
+```
+
+## Usage
+
+```bash
+examshell42
+```
+
+On launch you choose a mode:
+
+```
+╭─ Choose your Exam mode ─╮
+│ Real mode       (1)     │
+│ Practice mode   (2)     │
+╰─────────────────────────╯
+```
+
+### Real mode
+
+Simulates the actual exam. Tasks are drawn randomly per level. Each correct solution earns **+16 points**; reach 100 to pass.
+
+| Command    | Description                  |
+|------------|------------------------------|
+| `grademe`  | Check your solution          |
+| `status`   | Show current task info again |
+| `finish`   | End the exam                 |
+
+### Practice mode
+
+Work through all tasks in any order, retry freely, no score pressure.
+
+| Command    | Description                      |
+|------------|----------------------------------|
+| `grademe`  | Check your solution              |
+| `list`     | Show all available tasks         |
+| `choose`   | Pick a task by number            |
+| `skip`     | Move to the next task            |
+| `status`   | Show current task info again     |
+| `finish`   | End the practice session         |
+
+## How it works
+
+When a session starts, examshell creates a working directory (`exam42/`) with two sub-folders:
+
+```
+exam42/
+├── subjects/
+│   └── <task_name>/
+│       ├── <task_name>.en.txt   ← task description + signature + examples
+│       ├── <task_name>.de.txt
+│       └── ...
+└── rendu/
+    └── <task_name>/
+        └── <task_name>.py       ← put your solution here
+```
+
+Write your solution in `rendu/<task_name>/<task_name>.py`, then run `grademe`. The shell imports your file, executes each example against it, and prints a pass/fail table.
+
+## Tasks
+
+| Level | Difficulty | Task |
+|-------|------------|------|
+| 1 | Easy | `py_bracket_validator` — validate bracket pairs `()[]{}` |
+| 1 | Easy | `py_cryptic_sorter` — custom sort logic |
+| 2 | Easy | `py_echo_validator` — string validation |
+| 2 | Easy | `py_mirror_matrix` — matrix mirroring |
+| 3 | Medium | `py_hidenp` — hidden number problem |
+| 3 | Medium | `py_inter` — intersection of sequences |
+| 3 | Medium | `py_number_base_converter` — base conversion |
+| 3 | Medium | `py_pattern_tracker` — pattern detection |
+| 4 | Medium | `py_anagram` — anagram check |
+| 4 | Medium | `py_shadow_merge` — merge operations |
+| 4 | Medium | `py_string_permutation_checker` — permutation check |
+| 5 | Hard | `py_string_sculptor` — string transformation |
+| 5 | Hard | `py_twist_sequence` — sequence manipulation |
+| 6 | Hard | `py_whisper_cipher` — cipher encoding |
+
+## Dependencies
+
+- [`pydantic`](https://docs.pydantic.dev/) ≥ 2.0 — task data models
+- [`rich`](https://github.com/Textualize/rich) ≥ 13.0 — terminal UI
+
+## Project structure
+
+```
+src/examshell/
+├── __init__.py
+├── __main__.py
+├── main.py           # CLI entry point, mode logic, UI screens
+├── models.py         # Pydantic models (Task, Description, Example)
+├── task_generator.py # TaskManager: file creation, grading, task selection
+├── config.py
+└── data/
+    └── data.json     # All task definitions
+```
+
+## License
+
+MIT
