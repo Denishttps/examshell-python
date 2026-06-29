@@ -32,11 +32,13 @@ class TaskManager:
         self.current_task: int | None = None
         self.path = self._create_folder()
 
-    def _create_folder(self, path_str: str = "exam42") -> Path:
+    def _create_folder(
+        self, path_str: str = "exam42", fallback: int = 1
+    ) -> Path:
         path = Path(f"./{path_str}")
         if path.exists():
             return self._create_folder(
-                path_str + "-" + str(random.randint(100000, 10000000))
+                "exam42" + "-" + str(fallback), fallback=fallback + 1
             )
         path.mkdir(parents=True)
         (path / "subjects").mkdir(parents=True)
@@ -60,6 +62,9 @@ class TaskManager:
         for t in self.data:
             if t.id == id:
                 return t
+
+    def set_current_task(self, task: Task) -> None:
+        self.current_task = task.id
 
     def _get_task_by_real_mode(self) -> Task | None:
         data = self.get_data_by_level(self.current_level)
