@@ -1,66 +1,151 @@
-
-
 from models import Task
 from task_generator import TaskManager
 
+from rich.console import Console
+from rich.panel import Panel
+from rich.prompt import Prompt
+from rich.table import Table
+from rich.progress import Progress, BarColumn, TextColumn
+from rich.align import Align
+from rich import box
 
-def choose_mode(attemp: int = 10) -> bool:
-    if attemp <= 0:
-        raise ValueError(
-            "Bro, you're stupid!\nPlease WRITE 1 or 2"
+console = Console()
+
+
+def choose_mode() -> bool:
+    console.print(
+        Panel.fit(
+            "[bold cyan]Real mode[/bold cyan] [dim](1)[/dim]\n"
+            "[bold yellow]Practice mode[/bold yellow] [dim](2)[/dim]",
+            title="[bold]Choose your Exam mode[/bold]",
+            border_style="cyan",
         )
-
-    mode = input(
-        "Choose a Exam mode:\nReal mode: 1\nPractice mode: 2\nYour answer: "
     )
+    mode = Prompt.ask(
+        "Your answer", choices=["1", "2"], show_choices=False
+    )
+    return mode == "1"
 
-    if mode == "1" or mode == "2":
-        return bool(int(mode) - 1)
-    else:
-        return choose_mode(attemp=attemp - 1)
+
+def points_bar(points: int, total: int = 100) -> Progress:
+    progress = Progress(
+        TextColumn("[bold]Progress[/bold]"),
+        BarColumn(bar_width=40),
+        TextColumn(f"[bold green]{points}[/bold green]/{total}"),
+    )
+    progress.add_task("points", total=total, completed=points)
+    return progress
 
 
-def help_real_mode(manager: TaskManager, task: Task):
+def help_real_mode(manager: TaskManager, task: Task) -> None:
     upld_path = manager.path / "rendu" / task.name / task.file
-    print(
-            f"\n\nYour points: {manager.points}",
-            f"Next task is: {task.name}",
-            f"Upload the answer to the folder: {upld_path}",
-            "Commands: ",
-            "grademe - check the answer",
-            "finish - finish the exam",
-            "status - give this message",
-            sep="\n"
-        )
+
+    console.rule(f"[bold cyan]{task.name}[/bold cyan]", style="cyan")
+
+    console.print(points_bar(manager.points))
+
+    info = Table.grid(padding=(0, 1))
+    info.add_column(style="bold")
+    info.add_column()
+    info.add_row("Level:", str(manager.current_level))
+    info.add_row("Upload to:", f"[italic]{upld_path}[/italic]")
+    console.print(info)
+
+    commands = Table(
+        title="Commands",
+        box=box.SIMPLE,
+        show_header=False,
+        title_style="bold magenta",
+    )
+    commands.add_column(style="bold green")
+    commands.add_column(style="dim")
+    commands.add_row("grademe", "check the answer")
+    commands.add_row("status", "show this message again")
+    commands.add_row("finish", "finish the exam")
+    console.print(commands)
 
 
-def grademe(manager: TaskManager, task: Task) -> None:
+def grademe(manager: TaskManager, task: Task) -> Task:
     check = manager.check_task()
+
     if check:
         manager.points += 16
         manager.current_level += 1
+
         if manager.points >= 100:
-            print(
-                "You passed the exam, congratulations.",
-                manager.points + "/100"
+            console.print(
+                Panel.fit(
+                    Align.center(
+                        f"[bold green]You passed the exam, congratulations![/bold green]\n"
+                        f"[bold]{manager.points}/100[/bold]"
+                    ),
+                    border_style="green",
+                    box=box.DOUBLE,
+                )
             )
-            exit()
-        print(f"Task passed +16 points: {manager.points}/100")
-        return manager.get_next_task()
+            raise SystemExit(0)
+
+        console.print(
+            Panel(
+                f"[bold green]Task passed +16 points[/bold green] "
+                f"({manager.points}/100)",
+                border_style="green",
+            )
+        )
+
+        next_task = manager.get_next_task()
+        if next_task is None:
+            console.print(
+                Panel.fit(
+                    Align.center(
+                        "[bold yellow]No more tasks left.[/bold yellow]\n"
+                        f"[bold]Final score: {manager.points}/100[/bold]"
+                    ),
+                    border_style="yellow",
+                    box=box.DOUBLE,
+                )
+            )
+            raise SystemExit(0)
+
+        return next_task
     else:
-        print("Failed. You can retry")
+        console.print(
+            Panel(
+                "[bold red]Failed.[/bold red] You can retry",
+                border_style="red",
+            )
+        )
         return task
-        
 
 
-def real_mode():
-    print("Welcome to exam: ")
+def real_mode() -> None:
+    console.print(
+        Panel.fit(
+            "[bold]Welcome to the exam[/bold]",
+            border_style="cyan",
+            box=box.HEAVY,
+        )
+    )
+
     manager = TaskManager()
     task = manager.get_next_task()
-    manager.create_task_files()
+
+    if task is None:
+        console.print(
+            Panel(
+                "[bold red]No tasks available to start the exam.[/bold red]",
+                border_style="red",
+            )
+        )
+        raise SystemExit(1)
+
     while True:
+        manager.create_task_files()
         help_real_mode(manager=manager, task=task)
-        user_input = input(": ")
+
+        user_input = Prompt.ask(
+            "[bold cyan]exam42[/bold cyan]",
+        ).strip()
 
         match user_input:
             case "status":
@@ -68,20 +153,25 @@ def real_mode():
             case "grademe":
                 task = grademe(manager, task)
             case "finish":
-                exit()
+                console.print("[yellow]Exam finished by user.[/yellow]")
+                raise SystemExit(0)
+            case _:
+                console.print(
+                    f"[red]Unknown command:[/red] {user_input!r}"
+                )
 
 
-def practice_mode():
-    pass
+def practice_mode() -> None:
+    console.print("[yellow]Practice mode is not implemented yet.[/yellow]")
 
 
-def main():
-    mode = choose_mode()
-    print(mode)
-    if mode:
-        print(123)
+def main() -> None:
+    real = choose_mode()
+    if real:
         real_mode()
     else:
         practice_mode()
-        
-main()
+
+
+if __name__ == "__main__":
+    main()

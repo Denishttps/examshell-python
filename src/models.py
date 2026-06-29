@@ -1,5 +1,3 @@
-from typing import Any
-
 from pydantic import BaseModel
 
 
@@ -13,7 +11,7 @@ class Description(BaseModel):
 
 class Example(BaseModel):
     input: str
-    output: Any
+    output: str
 
 
 class Task(BaseModel):

@@ -1,23 +1,17 @@
-import os
 
 
-data = None
+def bracket_validator(s: str) -> bool:
+    stack = []
+    pairs = {')': '(', ']': '[', '}': '{'}
 
+    for c in s:
+        if c not in "[]{}()":
+            continue
 
-with open("data.json", "r", encoding="utf-8") as f:
-    import json
-    data = json.load(f)
+        if c in '([{':
+            stack.append(c)
+        elif not stack or stack.pop() != pairs[c]:
+            return False
 
+    return not stack
 
-code = """
-
-data = {}
-
-
-"""
-
-
-for d in data:
-    with open("src/tasks/" + d["file"], "w") as f:
-
-        f.write(code.format(d))

@@ -10,6 +10,12 @@ from pathlib import Path
 
 import importlib.util
 
+from rich.console import Console
+from rich.panel import Panel
+from rich.table import Table
+
+console = Console()
+
 
 def get_tasks() -> list[Task]:
     adapter = TypeAdapter(list[Task])
@@ -57,6 +63,8 @@ class TaskManager:
 
     def _get_task_by_real_mode(self) -> Task | None:
         data = self.get_data_by_level(self.current_level)
+        if not data:
+            return None
         task = random.choice(data)
         self.current_task = task.id
         return task
@@ -79,7 +87,15 @@ class TaskManager:
     def create_task_files(self):
         task = self.get_task_by_id(self.current_task)
         if not task:
-            return
+            raise FileExistsError()
+
+        path_subject = self.path / "subjects" / task.name
+        if not path_subject.exists():
+            path_subject.mkdir(parents=True)
+
+        path_rendu = self.path / "rendu" / task.name
+        if not path_rendu.exists():
+            path_rendu.mkdir(parents=True)
 
         text_examples = "\n\n"
         for e in task.examples:
@@ -88,7 +104,7 @@ class TaskManager:
 
         for lang, text in task.description.model_dump().items():
             file_name = f"{task.name}.{lang}.txt"
-            file_path = self.path / "subjects" / file_name
+            file_path = path_subject / file_name
 
             with open(file_path, "w", encoding="utf-8") as f:
                 f.write(
@@ -100,7 +116,16 @@ class TaskManager:
 
         file_path = self.path / "rendu" / task.name / task.file
 
+        console.rule(f"[bold cyan]Checking: {task.name}[/bold cyan]")
+
         if not file_path.is_file():
+            console.print(
+                Panel(
+                    f"[red]File not found:[/red] {file_path}",
+                    title="[bold red]Error[/bold red]",
+                    border_style="red",
+                )
+            )
             return False
 
         module_name = task.file[:-3]
@@ -111,17 +136,73 @@ class TaskManager:
             )
             module = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(module)
-        except Exception:
+        except Exception as exc:
+            console.print(
+                Panel(
+                    f"[red]Failed to import module:[/red]\n{exc}",
+                    title="[bold red]Import error[/bold red]",
+                    border_style="red",
+                )
+            )
             return False
 
-        try:
-            for i in task.examples:
-                result = eval(i.input, vars(module))
-                expected_result = ast.literal_eval(i.output)
+        table = Table(show_header=True, header_style="bold magenta")
+        table.add_column("Test", justify="right")
+        table.add_column("Input", overflow="fold")
+        table.add_column("Expected", overflow="fold")
+        table.add_column("Got", overflow="fold")
+        table.add_column("Status", justify="center")
+
+        all_passed = True
+
+        for idx, example in enumerate(task.examples, start=1):
+            try:
+                result = eval(example.input, vars(module))
+                expected_result = ast.literal_eval(example.output)
 
                 if result != expected_result:
-                    return False
-        except Exception:
-            return False
+                    all_passed = False
+                    table.add_row(
+                        str(idx),
+                        example.input,
+                        repr(expected_result),
+                        f"[red]{result!r}[/red]",
+                        "[bold red]FAIL[/bold red]",
+                    )
+                else:
+                    table.add_row(
+                        str(idx),
+                        example.input,
+                        repr(expected_result),
+                        f"[green]{result!r}[/green]",
+                        "[bold green]OK[/bold green]",
+                    )
+            except Exception as exc:
+                all_passed = False
+                table.add_row(
+                    str(idx),
+                    example.input,
+                    example.output,
+                    f"[red]Exception: {exc}[/red]",
+                    "[bold red]ERROR[/bold red]",
+                )
 
-        return True
+        console.print(table)
+
+        if all_passed:
+            console.print(
+                Panel(
+                    f"[bold green]All tests passed![/bold green] "
+                    f"({len(task.examples)}/{len(task.examples)})",
+                    border_style="green",
+                )
+            )
+        else:
+            console.print(
+                Panel(
+                    "[bold red]Some tests failed.[/bold red]",
+                    border_style="red",
+                )
+            )
+
+        return all_passed
