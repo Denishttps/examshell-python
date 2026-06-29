@@ -18,7 +18,7 @@ dependencies = [
 ]
 
 [project.scripts]
-examshell = "examshell.main:cli"
+examshell42 = "examshell.main:cli"
 
 [tool.setuptools.packages.find]
 where = ["src"]
