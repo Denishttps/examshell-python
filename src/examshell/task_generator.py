@@ -13,13 +13,16 @@ from rich.console import Console
 from rich.panel import Panel
 
 from rich.table import Table
+from importlib import resources
+
 
 console = Console()
 
 
 def get_tasks() -> list[Task]:
     adapter = TypeAdapter(list[Task])
-    with open("data.json", "r", encoding="utf-8") as f:
+    data_file = resources.files("examshell.data").joinpath("data.json")
+    with data_file.open("r", encoding="utf-8") as f:
         return adapter.validate_python(json.load(f))
 
 
