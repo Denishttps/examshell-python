@@ -21,7 +21,7 @@ console = Console()
 
 def get_tasks() -> list[Task]:
     adapter = TypeAdapter(list[Task])
-    data_file = resources.files("examshell.data").joinpath("data.json")
+    data_file = resources.files("examshell.data").joinpath("rank3.json")
     with data_file.open("r", encoding="utf-8") as f:
         return adapter.validate_python(json.load(f))
 
