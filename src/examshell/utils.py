@@ -1,3 +1,4 @@
+import ast
 import json
 from pathlib import Path
 
@@ -54,3 +55,24 @@ def download_subjects(url: str, output_path: str) -> None:
         temporary_path.replace(path)
     finally:
         temporary_path.unlink(missing_ok=True)
+
+
+def download_solution(url: str, output_path: str) -> bool:
+    path = Path(output_path)
+    if path.is_file():
+        return True
+
+    response = requests.get(url, timeout=10)
+    if response.status_code == 404:
+        return False
+    response.raise_for_status()
+    ast.parse(response.text)
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary_path = path.with_name(path.name + ".tmp")
+    try:
+        temporary_path.write_text(response.text, encoding="utf-8")
+        temporary_path.replace(path)
+    finally:
+        temporary_path.unlink(missing_ok=True)
+    return True

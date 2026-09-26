@@ -2,7 +2,7 @@ from pathlib import Path
 
 from .models import Task
 from .task_generator import TaskManager, get_available_ranks
-from .utils import download_subjects
+from .utils import download_solution, download_subjects
 
 from rich.console import Console
 from rich.panel import Panel
@@ -21,6 +21,9 @@ RANK_URLS = {
     4: "https://rank04.42exam.net/js/data.js",
     5: "https://rank05.42exam.net/js/data.js",
 }
+SOLUTIONS_BASE_URL = (
+    "https://raw.githubusercontent.com/Denishttps/examshell-solutions/main"
+)
 
 
 def update_rank_files() -> None:
@@ -37,20 +40,24 @@ def update_rank_files() -> None:
             )
 
 
-def choose_mode() -> bool:
+def choose_mode() -> str | None:
     console.clear()
     console.print(
         Panel.fit(
             "[bold cyan]Real mode[/bold cyan] [dim](1)[/dim]\n"
-            "[bold yellow]Practice mode[/bold yellow] [dim](2)[/dim]",
+            "[bold yellow]Practice mode[/bold yellow] [dim](2)[/dim]\n"
+            "[bold green]Best solutions[/bold green] [dim](3)[/dim]\n"
+            "[dim]Back to rank selection (b)[/dim]",
             title="[bold]Choose your Exam mode[/bold]",
             border_style="cyan",
         )
     )
     mode = Prompt.ask(
-        "Your answer", choices=["1", "2"], show_choices=False
+        "Your answer", choices=["1", "2", "3", "b"], show_choices=False
     )
-    return mode == "1"
+    if mode == "b":
+        return None
+    return {"1": "real", "2": "practice", "3": "solutions"}[mode]
 
 
 def choose_rank() -> int:
@@ -224,6 +231,44 @@ def real_mode(rank: int) -> None:
                 console.print(f"[red]Unknown command:[/red] {user_input!r}")
 
 
+def solutions_mode(rank: int) -> None:
+    manager = TaskManager(real_mode=False, rank=rank)
+    solution_root = manager.path / "solutions"
+    solution_root.mkdir(parents=True, exist_ok=True)
+
+    table = Table(title=f"Best solutions for rank {rank:02d}")
+    table.add_column("Task")
+    table.add_column("Status")
+
+    found = 0
+    for task in manager.data:
+        manager.set_current_task(task)
+        manager.create_task_files()
+        solution_path = solution_root / task.name / task.file
+        url = (
+            f"{SOLUTIONS_BASE_URL}/rank{rank}/"
+            f"{task.name}/{task.file}"
+        )
+        try:
+            downloaded = download_solution(url, str(solution_path))
+        except Exception as exc:
+            table.add_row(task.name, f"[yellow]Unavailable: {exc}[/yellow]")
+        else:
+            if downloaded:
+                found += 1
+                table.add_row(task.name, "[green]Downloaded[/green]")
+            else:
+                table.add_row(task.name, "[dim]Not found in repository[/dim]")
+
+    console.clear()
+    console.print(table)
+    console.print(
+        f"[green]Downloaded {found} of {len(manager.data)} solutions.[/green]"
+    )
+    console.print(f"[dim]Solutions folder: {solution_root}[/dim]")
+    Prompt.ask("[bold green]Press Enter to return to rank selection[/bold green]", default="")
+
+
 def task_list_table(manager: TaskManager) -> Table:
     table = Table(title="Available tasks", header_style="bold magenta")
     table.add_column("#", justify="right")
@@ -285,7 +330,7 @@ def choose_task(manager: TaskManager) -> Task:
     return task
 
 
-def practice_mode() -> None:
+def practice_mode(rank: int = 3) -> None:
     console.clear()
     console.print(
         Panel.fit(
@@ -295,7 +340,7 @@ def practice_mode() -> None:
         )
     )
 
-    manager = TaskManager(real_mode=False)
+    manager = TaskManager(real_mode=False, rank=rank)
 
     console.print("[dim]Pick a task to start with.[/dim]")
     task = choose_task(manager)
@@ -369,12 +414,18 @@ def practice_mode() -> None:
 
 def cli() -> None:
     update_rank_files()
-    real = choose_mode()
-    if real:
+    while True:
         rank = choose_rank()
-        real_mode(rank)
-    else:
-        practice_mode()
+        mode = choose_mode()
+        if mode is None:
+            continue
+        if mode == "real":
+            real_mode(rank)
+        elif mode == "practice":
+            practice_mode(rank)
+        else:
+            solutions_mode(rank)
+        return
 
 
 if __name__ == "__main__":

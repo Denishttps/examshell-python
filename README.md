@@ -32,12 +32,15 @@ pip install .
 examshell42
 ```
 
-On launch you choose a mode. In Real mode, you then choose an available exam rank:
+On launch you choose an available exam rank, then a mode. In the mode menu,
+choose `b` to return to rank selection:
 
 ```
 ╭─ Choose your Exam mode ─╮
 │ Real mode       (1)     │
 │ Practice mode   (2)     │
+│ Best solutions  (3)     │
+│ Back to rank    (b)     │
 ╰─────────────────────────╯
 ```
 
@@ -67,6 +70,13 @@ Work through all tasks in any order, retry freely, no score pressure.
 | `skip`     | Move to the next task            |
 | `status`   | Show current task info again     |
 | `finish`   | End the practice session         |
+
+### Best solutions
+
+Downloads available reference solutions into the session's `solutions/` folder
+without running them or overwriting existing files. The public source repository
+uses `rankN/<task-name>/<task-file>` paths; missing solutions are reported in
+the results table.
 
 ## How it works
 
