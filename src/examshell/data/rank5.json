@@ -1,0 +1,220 @@
+[
+  {
+    "id": 1.0,
+    "level": 1.0,
+    "difficulty": "easy",
+    "name": "py_compress_decompress",
+    "file": "py_compress_decompress.py",
+    "description": {
+      "en": "Write two functions: `compress` and `decompress`.\n\n`compress(s: str) -> str`:\n- Takes a string and compresses consecutive repeated characters by appending the count after the character.\n- If a character appears only once consecutively, omit the number '1'.\n- If the input string is empty, return an empty string.\n\n`decompress(s: str) -> str`:\n- Takes a compressed string and expands it back to its uncompressed form.\n- Handles multi-digit counts (e.g., \"a12\" -> 12 'a's).\n- If no count follows a character, it counts as 1.",
+      "de": "Schreibe zwei Funktionen: `compress` und `decompress`.\n\n`compress(s: str) -> str`:\n- Komprimiert aufeinanderfolgende Zeichen durch AnfÃ¼gen der Anzahl.\n- Bei einzelnen Zeichen die '1' weglassen.\n- Gibt bei leerem String einen leeren String zurÃ¼ck.\n\n`decompress(s: str) -> str`:\n- Entpackt einen komprimierten String in seine Ursprungsform.\n- UnterstÃ¼tzt mehrstellige Zahlen (z. B. \"a12\" -> 12 mal 'a').",
+      "fr": "Ãcris deux fonctions : `compress` et `decompress`.\n\n`compress(s: str) -> str` :\n- Compresse les caractÃ¨res consÃ©cutifs rÃ©pÃ©tÃ©s en ajoutant leur nombre aprÃ¨s le caractÃ¨re.\n- Omets le nombre '1' pour un caractÃ¨re unique.\n- Renvoie une chaÃ®ne vide si l'entrÃ©e est vide.\n\n`decompress(s: str) -> str` :\n- DÃ©compresse une chaÃ®ne compressÃ©e vers sa forme initiale.\n- GÃ¨re les nombres Ã  plusieurs chiffres (ex. \"a12\" -> 12 'a').",
+      "es": "Escribe dos funciones: `compress` y `decompress`.\n\n`compress(s: str) -> str`:\n- Comprime caracteres consecutivos repetidos aÃ±adiendo el recuento.\n- Omite el nÃºmero '1' si el carÃ¡cter aparece una sola vez.\n- Devuelve una cadena vacÃ­a si la entrada estÃ¡ vacÃ­a.\n\n`decompress(s: str) -> str`:\n- Descomprime una cadena comprimida a su forma original.\n- Admite recuentos de varios dÃ­gitos (ej. \"a12\" -> 12 'a').",
+      "it": "Scrivi due funzioni: `compress` e `decompress`.\n\n`compress(s: str) -> str`:\n- Comprime i caratteri consecutivi ripetuti aggiungendo il conteggio.\n- Ometti il numero '1' se il carattere compare una sola volta.\n- Restituisce una stringa vuota se l'input Ã¨ vuoto.\n\n`decompress(s: str) -> str`:\n- Decomprime una stringa compressa nella sua forma originale.\n- Gestisce conteggi a piÃ¹ cifre (es. \"a12\" -> 12 'a').",
+      "ru": "ÐÐ°Ð¿Ð¸ÑÐ¸ÑÐµ Ð´Ð²Ðµ ÑÑÐ½ÐºÑÐ¸Ð¸: `compress` Ð¸ `decompress`.\n\n`compress(s: str) -> str`:\n- Ð¡Ð¶Ð¸Ð¼Ð°ÐµÑ Ð¿Ð¾ÑÐ»ÐµÐ´Ð¾Ð²Ð°ÑÐµÐ»ÑÐ½Ð¾ Ð¿Ð¾Ð²ÑÐ¾ÑÑÑÑÐ¸ÐµÑÑ ÑÐ¸Ð¼Ð²Ð¾Ð»Ñ, Ð´Ð¾Ð±Ð°Ð²Ð»ÑÑ Ð¸Ñ ÐºÐ¾Ð»Ð¸ÑÐµÑÑÐ²Ð¾ Ð¿Ð¾ÑÐ»Ðµ ÑÐ¸Ð¼Ð²Ð¾Ð»Ð°.\n- ÐÑÐ»Ð¸ ÑÐ¸Ð¼Ð²Ð¾Ð» Ð²ÑÑÑÐµÑÐ°ÐµÑÑÑ Ð¿Ð¾Ð´ÑÑÐ´ ÑÐ¾Ð»ÑÐºÐ¾ Ð¾Ð´Ð¸Ð½ ÑÐ°Ð·, ÑÐ¸ÑÑÐ° '1' Ð¾Ð¿ÑÑÐºÐ°ÐµÑÑÑ.\n- ÐÑÐ»Ð¸ Ð²ÑÐ¾Ð´Ð½Ð°Ñ ÑÑÑÐ¾ÐºÐ° Ð¿ÑÑÑÐ°, Ð²Ð¾Ð·Ð²ÑÐ°ÑÐ°ÐµÑ Ð¿ÑÑÑÑÑ ÑÑÑÐ¾ÐºÑ.\n\n`decompress(s: str) -> str`:\n- Ð Ð°ÑÐ¿Ð°ÐºÐ¾Ð²ÑÐ²Ð°ÐµÑ ÑÐ¶Ð°ÑÑÑ ÑÑÑÐ¾ÐºÑ Ð² Ð¸ÑÑÐ¾Ð´Ð½ÑÑ ÑÐ¾ÑÐ¼Ñ.\n- ÐÐ¾Ð´Ð´ÐµÑÐ¶Ð¸Ð²Ð°ÐµÑ Ð¼Ð½Ð¾Ð³Ð¾Ð·Ð½Ð°ÑÐ½ÑÐµ ÑÐ¸ÑÐ»Ð° (Ð½Ð°Ð¿ÑÐ¸Ð¼ÐµÑ, \"a12\" -> 12 Ð±ÑÐºÐ² 'a').",
+      "tr": "`compress` ve `decompress` adÄ±nda iki fonksiyon yazÄ±n.\n\n`compress(s: str) -> str`:\n- Bir dize alÄ±r ve ardÄ±ÅÄ±k tekrarlanan karakterleri yanÄ±na sayÄ± ekleyerek sÄ±kÄ±ÅtÄ±rÄ±r.\n- Tekrarlanmayan karakterler iÃ§in '1' sayÄ±sÄ±nÄ± eklemeyin.\n- GiriÅ boÅ dize ise boÅ dize dÃ¶ndÃ¼rÃ¼n.\n\n`decompress(s: str) -> str`:\n- SÄ±kÄ±ÅtÄ±rÄ±lmÄ±Å bir dizeyi aÃ§arak orijinal haline dÃ¶ndÃ¼rÃ¼r.\n- Ãok basamaklÄ± sayÄ±larÄ± destekler (Ã¶r. \"a12\" -> 12 tane 'a').",
+      "zh": "ç¼åä¸¤ä¸ªå½æ°ï¼`compress` å `decompress`ã\n\n`compress(s: str) -> str`ï¼\n- æ¥æ¶ä¸ä¸ªå­ç¬¦ä¸²ï¼éè¿å¨è¿ç»­éå¤å­ç¬¦åéå åºç°æ¬¡æ°æ¥è¿è¡åç¼©ã\n- å¦æå­ç¬¦ä»è¿ç»­åºç°ä¸æ¬¡ï¼åçç¥æ°å­ '1'ã\n- å¦æè¾å¥å­ç¬¦ä¸²ä¸ºç©ºï¼åè¿åç©ºå­ç¬¦ä¸²ã\n\n`decompress(s: str) -> str`ï¼\n- æ¥æ¶åç¼©åçå­ç¬¦ä¸²å¹¶è§£åè¿åä¸ºåå§å½¢å¼ã\n- æ¯æå¤ä½æ°è®¡æ°ï¼ä¾å¦ \"a12\" -> 12ä¸ª 'a'ï¼ã",
+      "ar": "Ø§ÙØªØ¨ Ø¯Ø§ÙØªÙÙ: `compress` Ù `decompress`.\n\n`compress(s: str) -> str`:\n- ØªØ¶ØºØ· Ø§ÙØ­Ø±ÙÙ Ø§ÙÙØªØªØ§ÙÙØ© Ø§ÙÙÙØ±Ø±Ø© Ø¹Ù Ø·Ø±ÙÙ Ø¥Ø±ÙØ§Ù Ø¹Ø¯Ø¯ ÙØ±Ø§Øª ØªÙØ±Ø§Ø±ÙØ§ Ø¨Ø¹Ø¯ Ø§ÙØ­Ø±Ù.\n- ÙÙ Ø­Ø§Ù ØªÙØ±Ø§Ø± Ø§ÙØ­Ø±Ù ÙØ±Ø© ÙØ§Ø­Ø¯Ø© ÙÙØ·Ø Ø§Ø­Ø°Ù Ø§ÙØ±ÙÙ '1'.\n- Ø¥Ø°Ø§ ÙØ§ÙØª Ø§ÙØ³ÙØ³ÙØ© Ø§ÙÙØ¯Ø®ÙØ© ÙØ§Ø±ØºØ©Ø ØªÙØ±Ø¬Ø¹ Ø³ÙØ³ÙØ© ÙØ§Ø±ØºØ©.\n\n`decompress(s: str) -> str`:\n- ØªÙÙ Ø¶ØºØ· Ø§ÙØ³ÙØ³ÙØ© Ø§ÙÙØ¶ØºÙØ·Ø© ÙØªØ¹ÙØ¯ÙØ§ Ø¥ÙÙ Ø´ÙÙÙØ§ Ø§ÙØ£ØµÙÙ.\n- ØªØ¯Ø¹Ù Ø§ÙØ£Ø¹Ø¯Ø§Ø¯ Ø§ÙÙÙÙÙØ© ÙÙ Ø¹Ø¯Ø© Ø®Ø§ÙØ§Øª (ÙØ«Ø§Ù: \"a12\" -> 12 Ø­Ø±Ù 'a')."
+    },
+    "signature": "def compress(s: str) -> str:",
+    "examples": [
+      {
+        "input": "compress(\"aabcccccaaa\")",
+        "output": "\"a2bc5a3\""
+      },
+      {
+        "input": "decompress(\"a2bc5a3\")",
+        "output": "\"aabcccccaaa\""
+      },
+      {
+        "input": "compress(\"\")",
+        "output": "\"\""
+      }
+    ]
+  },
+  {
+    "id": 2.0,
+    "level": 1.0,
+    "difficulty": "medium",
+    "name": "py_spiral_matrix",
+    "file": "py_spiral_matrix.py",
+    "description": {
+      "en": "Write a function that generates an `n x n` 2D matrix filled with numbers from 1 to `n^2` in clockwise spiral order.\n\nThe spiral starts at the top-left cell (0, 0) moving right, then down, then left, then up, continuing inwards.",
+      "de": "Schreibe eine Funktion, die eine `n x n` 2D-Matrix generiert, die im Uhrzeigersinn spiralfÃ¶rmig mit Zahlen von 1 bis `n^2` gefÃ¼llt ist.\n\nDie Spirale beginnt in der oberen linken Zelle (0, 0) und verlÃ¤uft nach rechts, unten, links und oben nach innen.",
+      "fr": "Ãcris une fonction qui gÃ©nÃ¨re une matrice 2D `n x n` remplie de nombres de 1 Ã  `n^2` dans l'ordre d'une spirale dans le sens des aiguilles d'une montre.\n\nLa spirale commence dans la case en haut Ã  gauche (0, 0) vers la droite, puis vers le bas, la gauche et le haut.",
+      "es": "Escribe una funciÃ³n que genere una matriz 2D de `n x n` rellena con nÃºmeros del 1 al `n^2` en orden espiral en el sentido de las agujas del reloj.\n\nLa espiral comienza en la casilla superior izquierda (0, 0) moviÃ©ndose a la derecha, abajo, izquierda y arriba.",
+      "it": "Scrivi una funzione che generi una matrice 2D `n x n` riempita con numeri da 1 a `n^2` in ordine a spirale oraria.\n\nLa spirale inizia dalla cella in alto a sinistra (0, 0) muovendosi verso destra, basso, sinistra e alto.",
+      "ru": "ÐÐ°Ð¿Ð¸ÑÐ¸ÑÐµ ÑÑÐ½ÐºÑÐ¸Ñ, ÐºÐ¾ÑÐ¾ÑÐ°Ñ Ð³ÐµÐ½ÐµÑÐ¸ÑÑÐµÑ Ð´Ð²ÑÐ¼ÐµÑÐ½ÑÑ Ð¼Ð°ÑÑÐ¸ÑÑ `n x n`, Ð·Ð°Ð¿Ð¾Ð»Ð½ÐµÐ½Ð½ÑÑ ÑÐ¸ÑÐ»Ð°Ð¼Ð¸ Ð¾Ñ 1 Ð´Ð¾ `n^2` Ð¿Ð¾ ÑÐ°ÑÐ¾Ð²Ð¾Ð¹ ÑÑÑÐµÐ»ÐºÐµ Ð¿Ð¾ ÑÐ¿Ð¸ÑÐ°Ð»Ð¸.\n\nÐ¡Ð¿Ð¸ÑÐ°Ð»Ñ Ð½Ð°ÑÐ¸Ð½Ð°ÐµÑÑÑ Ð² Ð»ÐµÐ²Ð¾Ð¹ Ð²ÐµÑÑÐ½ÐµÐ¹ ÑÑÐµÐ¹ÐºÐµ (0, 0) Ð¸ Ð´Ð²Ð¸Ð¶ÐµÑÑÑ Ð²Ð¿ÑÐ°Ð²Ð¾, Ð²Ð½Ð¸Ð·, Ð²Ð»ÐµÐ²Ð¾ Ð¸ Ð²Ð²ÐµÑÑ Ð²Ð¾Ð²Ð½ÑÑÑÑ.",
+      "tr": "Saat yÃ¶nÃ¼nde spiral dÃ¼zenle 1'den `n^2`'ye kadar sayÄ±larla dolu `n x n` boyutunda 2D bir matris Ã¼reten bir fonksiyon yazÄ±n.\n\nSpiral, sol Ã¼st hÃ¼creden (0, 0) baÅlayarak saÄa, aÅaÄÄ±ya, sola ve yukarÄ±ya doÄru iÃ§eriye kÄ±vrÄ±larak ilerler.",
+      "zh": "ç¼åä¸ä¸ªå½æ°ï¼çæä¸ä¸ª `n x n` çäºç»´ç©éµï¼æç§é¡ºæ¶éèºæé¡ºåºå¡«å¥ä» 1 å° `n^2` çæ°å­ã\n\nèºæä»å·¦ä¸è§ååæ ¼ (0, 0) å¼å§ï¼åå³ãåä¸ãåå·¦ãåä¸å»¶ä¼¸ï¼å¹¶ä¸æ­ååèºæã",
+      "ar": "Ø§ÙØªØ¨ Ø¯Ø§ÙØ© ØªÙÙØ´Ø¦ ÙØµÙÙÙØ© Ø«ÙØ§Ø¦ÙØ© Ø§ÙØ£Ø¨Ø¹Ø§Ø¯ Ø¨Ø­Ø¬Ù `n x n` ÙÙÙÙØ¡Ø© Ø¨Ø§ÙØ£Ø±ÙØ§Ù ÙÙ 1 Ø¥ÙÙ `n^2` Ø¨ØªØ±ØªÙØ¨ Ø­ÙØ²ÙÙÙ Ø¨Ø§ØªØ¬Ø§Ù Ø¹ÙØ§Ø±Ø¨ Ø§ÙØ³Ø§Ø¹Ø©.\n\nÙØ¨Ø¯Ø£ Ø§ÙØ­ÙØ²ÙÙ ÙÙ Ø§ÙØ®ÙÙØ© Ø§ÙØ¹ÙÙÙØ© Ø§ÙÙØ³Ø±Ù (0, 0) ÙÙØªØ¯Ø§Ù Ø¨Ø§ØªØ¬Ø§Ù Ø§ÙÙÙÙÙØ Ø«Ù Ø§ÙØ£Ø³ÙÙØ Ø«Ù Ø§ÙÙØ³Ø§Ø±Ø Ø«Ù Ø§ÙØ£Ø¹ÙÙ ÙØ­Ù Ø§ÙØ¯Ø§Ø®Ù."
+    },
+    "signature": "def generate_spiral(n: int) -> list[list[int]]:",
+    "examples": [
+      {
+        "input": "generate_spiral(3)",
+        "output": "[[1, 2, 3], [8, 9, 4], [7, 6, 5]]"
+      },
+      {
+        "input": "generate_spiral(1)",
+        "output": "[[1]]"
+      }
+    ]
+  },
+  {
+    "id": 3.0,
+    "level": 2.0,
+    "difficulty": "medium",
+    "name": "py_graph_cycle_detector",
+    "file": "py_graph_cycle_detector.py",
+    "description": {
+      "en": "Write a function that determines whether a directed graph contains at least one cycle.\n\nThe function takes a dictionary representing an adjacency list where keys are integer node IDs and values are lists of integer neighbor node IDs.\n\nThe function should:\n- Return True if the directed graph contains a cycle.\n- Return False if the graph is acyclic or if the input graph dictionary is empty.\n- Correctly handle graphs with multiple disconnected components.",
+      "de": "Schreibe eine Funktion, die bestimmt, ob ein gerichteter Graph mindestens einen Zyklus enthÃ¤lt.\n\nDie Funktion erhÃ¤lt ein Dictionary als Adjazenzliste.\n- Gibt True zurÃ¼ck, wenn ein Zyklus existiert.\n- Gibt False zurÃ¼ck, wenn der Graph azyklisch oder leer ist.",
+      "fr": "Ãcris une fonction qui dÃ©termine si un graphe orientÃ© contient au moins un cycle.\n\nLa fonction prend un dictionnaire reprÃ©sentant une liste d'adjacence.\n- Renvoie True si le graphe contient un cycle.\n- Renvoie False si le graphe est acyclique ou vide.",
+      "es": "Escribe una funciÃ³n que determine si un grafo dirigido contiene al menos un ciclo.\n\nLa funciÃ³n toma un diccionario que representa una lista de adyacencia.\n- Devuelve True si el grafo contiene un ciclo.\n- Devuelve False si el grafo es acÃ­clico o estÃ¡ vacÃ­o.",
+      "it": "Scrivi una funzione che determini se un grafo diretto contiene almeno un ciclo.\n\nLa funzione prende un dizionario che representa una lista di adiacenza.\n- Restituisce True se il grafo contiene un ciclo.\n- Restituisce False se il grafo Ã¨ aciclico o vuoto.",
+      "ru": "ÐÐ°Ð¿Ð¸ÑÐ¸ÑÐµ ÑÑÐ½ÐºÑÐ¸Ñ, ÐºÐ¾ÑÐ¾ÑÐ°Ñ Ð¾Ð¿ÑÐµÐ´ÐµÐ»ÑÐµÑ, ÑÐ¾Ð´ÐµÑÐ¶Ð¸Ñ Ð»Ð¸ Ð¾ÑÐ¸ÐµÐ½ÑÐ¸ÑÐ¾Ð²Ð°Ð½Ð½ÑÐ¹ Ð³ÑÐ°Ñ ÑÐ¾ÑÑ Ð±Ñ Ð¾Ð´Ð¸Ð½ ÑÐ¸ÐºÐ».\n\nÐ¤ÑÐ½ÐºÑÐ¸Ñ Ð¿ÑÐ¸Ð½Ð¸Ð¼Ð°ÐµÑ ÑÐ»Ð¾Ð²Ð°ÑÑ, Ð¿ÑÐµÐ´ÑÑÐ°Ð²Ð»ÑÑÑÐ¸Ð¹ ÑÐ¿Ð¸ÑÐ¾Ðº ÑÐ¼ÐµÐ¶Ð½Ð¾ÑÑÐ¸.\n- ÐÐ¾Ð·Ð²ÑÐ°ÑÐ°ÐµÑ True, ÐµÑÐ»Ð¸ Ð³ÑÐ°Ñ ÑÐ¾Ð´ÐµÑÐ¶Ð¸Ñ ÑÐ¸ÐºÐ».\n- ÐÐ¾Ð·Ð²ÑÐ°ÑÐ°ÐµÑ False, ÐµÑÐ»Ð¸ Ð³ÑÐ°Ñ Ð°ÑÐ¸ÐºÐ»Ð¸ÑÐµÐ½ Ð¸Ð»Ð¸ Ð¿ÑÑÑ.",
+      "tr": "YÃ¶nlÃ¼ bir grafÄ±n en az bir dÃ¶ngÃ¼ iÃ§erip iÃ§ermediÄini belirleyen bir fonksiyon yazÄ±n.\n\nFonksiyon, komÅuluk listesi sÃ¶zlÃ¼ÄÃ¼nÃ¼ alÄ±r.\n- DÃ¶ngÃ¼ varsa True dÃ¶ndÃ¼rÃ¼r.\n- Graf dÃ¶ngÃ¼sÃ¼zse veya boÅsa False dÃ¶ndÃ¼rÃ¼r.",
+      "zh": "ç¼åä¸ä¸ªå½æ°ï¼å¤æ­æåå¾ä¸­æ¯å¦åå«è³å°ä¸ä¸ªç¯ã\n\nå½æ°æ¥æ¶ä¸ä¸ªè¡¨ç¤ºé»æ¥è¡¨çå­å¸ã\n- å¦æåå«ç¯åè¿å Trueã\n- å¦ææ ç¯æä¸ºç©ºåè¿å Falseã",
+      "ar": "Ø§ÙØªØ¨ Ø¯Ø§ÙØ© ØªØ­Ø¯Ø¯ ÙØ§ Ø¥Ø°Ø§ ÙØ§Ù Ø§ÙØ±Ø³Ù Ø§ÙØ¨ÙØ§ÙÙ Ø§ÙÙÙØ¬ÙÙ ÙØ­ØªÙÙ Ø¹ÙÙ Ø¯ÙØ±Ø© ÙØ§Ø­Ø¯Ø© Ø¹ÙÙ Ø§ÙØ£ÙÙ.\n\nØªØ£Ø®Ø° Ø§ÙØ¯Ø§ÙØ© ÙØ§ÙÙØ³Ø§Ù ÙÙØ«Ù ÙØ§Ø¦ÙØ© Ø§ÙÙØ¬Ø§ÙØ±Ø©.\n- ØªÙØ±Ø¬Ø¹ True Ø¥Ø°Ø§ ÙØ§Ù Ø§ÙØ±Ø³Ù Ø§ÙØ¨ÙØ§ÙÙ ÙØ­ØªÙÙ Ø¹ÙÙ Ø¯ÙØ±Ø©.\n- ØªÙØ±Ø¬Ø¹ False Ø¥Ø°Ø§ ÙØ§Ù Ø§ÙØ±Ø³Ù Ø§ÙØ¨ÙØ§ÙÙ ÙØ§ Ø¯ÙØ±ÙØ§Ù Ø£Ù ÙØ§Ø±ØºØ§Ù."
+    },
+    "signature": "def py_graph_cycle_detector(graph: dict[int, list[int]]) -> bool:",
+    "examples": [
+      {
+        "input": "py_graph_cycle_detector({0: [1], 1: [2], 2: [0]})",
+        "output": "True"
+      },
+      {
+        "input": "py_graph_cycle_detector({0: [1], 1: [2], 2: []})",
+        "output": "False"
+      },
+      {
+        "input": "py_graph_cycle_detector({})",
+        "output": "False"
+      }
+    ],
+    "forbidden": [
+      "graphlib.TopologicalSorter"
+    ]
+  },
+  {
+    "id": 4.0,
+    "level": 2.0,
+    "difficulty": "medium",
+    "name": "py_room_scheduler",
+    "file": "py_room_scheduler.py",
+    "description": {
+      "en": "Write a function that determines the minimum number of meeting rooms required to schedule a list of meeting time intervals without overlap, and assigns meetings to rooms.\n\nEach meeting is represented as a list of two integers `[start_time, end_time]`.\n\nThe function should:\n- Sort meetings by start time and assign them to available rooms sequentially.\n- Return a dictionary containing:\n  - `\"total_rooms\"`: the integer count of rooms required.\n  - `\"schedule\"`: a list of lists containing the scheduled intervals for each room.\n- If the input list is empty, return `{\"total_rooms\": 0, \"schedule\": []}`.",
+      "de": "Schreibe eine Funktion, die die minimale Anzahl an BesprechungsrÃ¤umen ermittelt und Besprechungen ohne Ãberlappungen zuweist.\n\nJedes Meeting ist eine Liste `[start_time, end_time]`.\n\nDie Funktion soll:\n- Ein Dictionary mit `\"total_rooms\"` (Anzahl) und `\"schedule\"` (Liste der RÃ¤ume mit Meetings) zurÃ¼ckgeben.\n- Bei leerer Liste `{\"total_rooms\": 0, \"schedule\": []}` zurÃ¼ckgeben.",
+      "fr": "Ãcris une fonction qui dÃ©termine le nombre minimal de salles de rÃ©union nÃ©cessaires et attribue les crÃ©neaux sans chevauchement.\n\nChaque rÃ©union est une liste `[start_time, end_time]`.\n\nLa fonction doit :\n- Renvoyer un dictionnaire avec `\"total_rooms\"` (nombre de salles) et `\"schedule\"` (crÃ©neaux attribuÃ©s par salle).\n- Renvoyer `{\"total_rooms\": 0, \"schedule\": []}` si la liste est vide.",
+      "es": "Escribe una funciÃ³n que determine el nÃºmero mÃ­nimo de salas de reuniones necesarias y asigne las reuniones sin solapamientos.\n\nCada reuniÃ³n es una lista `[start_time, end_time]`.\n\nLa funciÃ³n debe:\n- Devolver un diccionario con `\"total_rooms\"` (nÃºmero de salas) y `\"schedule\"` (reuniones asignadas por sala).\n- Devolver `{\"total_rooms\": 0, \"schedule\": []}` si la lista estÃ¡ vacÃ­a.",
+      "it": "Scrivi una funzione che determini il numero minimo di sale riunioni necessarie e assegni i meeting senza sovrapposizioni.\n\nOgni riunione Ã¨ una lista `[start_time, end_time]`.\n\nLa funzione deve:\n- Restituire un dizionario con `\"total_rooms\"` (conteggio sale) e `\"schedule\"` (meeting assegnati per sala).\n- Restituire `{\"total_rooms\": 0, \"schedule\": []}` se la lista Ã¨ vuota.",
+      "ru": "ÐÐ°Ð¿Ð¸ÑÐ¸ÑÐµ ÑÑÐ½ÐºÑÐ¸Ñ, ÐºÐ¾ÑÐ¾ÑÐ°Ñ Ð¾Ð¿ÑÐµÐ´ÐµÐ»ÑÐµÑ Ð¼Ð¸Ð½Ð¸Ð¼Ð°Ð»ÑÐ½Ð¾Ðµ ÐºÐ¾Ð»Ð¸ÑÐµÑÑÐ²Ð¾ Ð¿ÐµÑÐµÐ³Ð¾Ð²Ð¾ÑÐ½ÑÑ ÐºÐ¾Ð¼Ð½Ð°Ñ Ð´Ð»Ñ ÑÐ°ÑÐ¿Ð¸ÑÐ°Ð½Ð¸Ñ Ð²ÑÑÑÐµÑ Ð±ÐµÐ· Ð½Ð°Ð»Ð¾Ð¶ÐµÐ½Ð¸Ð¹ Ð¸ ÑÐ°ÑÐ¿ÑÐµÐ´ÐµÐ»ÑÐµÑ Ð²ÑÑÑÐµÑÐ¸ Ð¿Ð¾ ÐºÐ¾Ð¼Ð½Ð°ÑÐ°Ð¼.\n\nÐÐ°Ð¶Ð´Ð°Ñ Ð²ÑÑÑÐµÑÐ° Ð¿ÑÐµÐ´ÑÑÐ°Ð²Ð»ÐµÐ½Ð° ÑÐ¿Ð¸ÑÐºÐ¾Ð¼ `[start_time, end_time]`.\n\nÐ¤ÑÐ½ÐºÑÐ¸Ñ Ð´Ð¾Ð»Ð¶Ð½Ð°:\n- ÐÐ¾Ð·Ð²ÑÐ°ÑÐ°ÑÑ ÑÐ»Ð¾Ð²Ð°ÑÑ Ñ `\"total_rooms\"` (ÐºÐ¾Ð»Ð¸ÑÐµÑÑÐ²Ð¾ ÐºÐ¾Ð¼Ð½Ð°Ñ) Ð¸ `\"schedule\"` (ÑÐ¿Ð¸ÑÐ¾Ðº Ð²ÑÑÑÐµÑ Ð´Ð»Ñ ÐºÐ°Ð¶Ð´Ð¾Ð¹ ÐºÐ¾Ð¼Ð½Ð°ÑÑ).\n- ÐÐ¾Ð·Ð²ÑÐ°ÑÐ°ÑÑ `{\"total_rooms\": 0, \"schedule\": []}`, ÐµÑÐ»Ð¸ ÑÐ¿Ð¸ÑÐ¾Ðº Ð¿ÑÑÑ.",
+      "tr": "ToplantÄ± zaman aralÄ±klarÄ±nÄ± Ã§akÄ±ÅmasÄ±z zamanlamak iÃ§in gereken minimum oda sayÄ±sÄ±nÄ± belirleyen ve toplantÄ±larÄ± odalara atayan bir fonksiyon yazÄ±n.\n\nHer toplantÄ± `[baÅlangÄ±Ã§, bitiÅ]` listesi olarak temsil edilir.\n\nFonksiyon ÅunlarÄ± yapmalÄ±dÄ±r:\n- `\"total_rooms\"` (gerekli oda sayÄ±sÄ±) ve `\"schedule\"` (oda bazÄ±nda toplantÄ± listesi) iÃ§eren bir sÃ¶zlÃ¼k dÃ¶ndÃ¼rmelidir.\n- Liste boÅsa `{\"total_rooms\": 0, \"schedule\": []}` dÃ¶ndÃ¼rmelidir.",
+      "zh": "ç¼åä¸ä¸ªå½æ°ï¼è®¡ç®æ éå å®æä¼è®®æ¶é´æ®µæéçæå°ä¼è®®å®¤æ°éï¼å¹¶å°ä¼è®®åéå°åä¸ªæ¿é´ã\n\næ¯ä¸ªä¼è®®ç± `[start_time, end_time]` åè¡¨è¡¨ç¤ºã\n\nè¯¥å½æ°åºè¯¥ï¼\n- è¿åä¸ä¸ªåå«ä»¥ä¸é®çå­å¸ï¼\n  - `\"total_rooms\"`ï¼æéä¼è®®å®¤çæ´æ°æ°éã\n  - `\"schedule\"`ï¼æ¯ä¸ªæ¿é´å®æçä¼è®®åè¡¨ã\n- å¦æè¾å¥åè¡¨ä¸ºç©ºï¼åè¿å `{\"total_rooms\": 0, \"schedule\": []}`ã",
+      "ar": "Ø§ÙØªØ¨ Ø¯Ø§ÙØ© ØªØ­Ø³Ø¨ Ø§ÙØ­Ø¯ Ø§ÙØ£Ø¯ÙÙ ÙØ¹Ø¯Ø¯ ÙØ§Ø¹Ø§Øª Ø§ÙØ§Ø¬ØªÙØ§Ø¹Ø§Øª Ø§ÙÙØ·ÙÙØ¨Ø© ÙØªÙØ²Ø¹ Ø§ÙÙØªØ±Ø§Øª Ø§ÙØ²ÙÙÙØ© ÙÙØ§Ø¬ØªÙØ§Ø¹Ø§Øª Ø¨Ø¯ÙÙ ØªØ¯Ø§Ø®Ù.\n\nÙÙØ«Ù ÙÙ Ø§Ø¬ØªÙØ§Ø¹ ÙÙØ§Ø¦ÙØ© `[start_time, end_time]`.\n\nÙØ¬Ø¨ Ø¹ÙÙ Ø§ÙØ¯Ø§ÙØ©:\n- Ø¥Ø±Ø¬Ø§Ø¹ ÙØ§ÙÙØ³ ÙØ­ØªÙÙ Ø¹ÙÙ:\n  - `\"total_rooms\"`: Ø¹Ø¯Ø¯ Ø§ÙÙØ§Ø¹Ø§Øª Ø§ÙÙØ·ÙÙØ¨Ø©.\n  - `\"schedule\"`: ÙØ§Ø¦ÙØ© ØªØ­ØªÙÙ Ø¹ÙÙ Ø§ÙÙØªØ±Ø§Øª Ø§ÙÙØ¬Ø¯ÙÙØ© ÙÙÙ ÙØ§Ø¹Ø©.\n- Ø¥Ø±Ø¬Ø§Ø¹ `{\"total_rooms\": 0, \"schedule\": []}` Ø¥Ø°Ø§ ÙØ§ÙØª Ø§ÙÙØ§Ø¦ÙØ© ÙØ§Ø±ØºØ©."
+    },
+    "signature": "def py_room_scheduler(meetings: list[list[int]]) -> dict[str, Any]:",
+    "examples": [
+      {
+        "input": "py_room_scheduler([[0, 30], [5, 10], [15, 20]])",
+        "output": "{\"total_rooms\": 2, \"schedule\": [[[0, 30]], [[5, 10], [15, 20]]]}"
+      },
+      {
+        "input": "py_room_scheduler([])",
+        "output": "{\"total_rooms\": 0, \"schedule\": []}"
+      }
+    ]
+  },
+  {
+    "id": 5.0,
+    "level": 2.0,
+    "difficulty": "medium",
+    "name": "py_island_matrix_counter",
+    "file": "py_island_matrix_counter.py",
+    "description": {
+      "en": "Write a function island_matrix_counter(matrix) that receives a 2D matrix containing \"1\" and \"0\" string values and returns the total number of islands.\n\nAn island is a group of connected \"1\" cells. Cells are considered connected only when they are directly adjacent horizontally (left, right) or vertically (up, down). Diagonal cells do not count as connected.\n\nRequirements:\n- \"1\" represents land.\n- \"0\" represents water.\n- Count each separate island exactly once.\n- An empty matrix (or matrix with no rows) should return 0.\n- DFS/BFS traversal or matrix mutation can be used to explore each complete island.",
+      "de": "Schreibe eine Funktion `island_matrix_counter(matrix)`, die die Gesamtzahl der Inseln in einer 2D-Matrix aus \"1\" und \"0\" Zeichenwerten zurÃ¼ckgibt.\n\n- Eine Insel besteht aus waagerecht oder senkrecht verbundenen \"1\"-Zellen (Diagonale zÃ¤hlt nicht).\n- Gibt 0 bei einer leeren Matrix zurÃ¼ck.",
+      "fr": "Ãcris une fonction `island_matrix_counter(matrix)` qui renvoie le nombre total d'Ã®les dans une matrice 2D contenant des valeurs \"1\" et \"0\".\n\n- Une Ã®le est un groupe de cases \"1\" connectÃ©es horizontalement ou verticalement (les diagonales ne comptent pas).\n- Renvoie 0 si la matrice est vide.",
+      "es": "Escribe una funciÃ³n `island_matrix_counter(matrix)` que devuelva el nÃºmero total de islas en una matriz 2D con valores \"1\" y \"0\".\n\n- Una isla es un grupo de celdas \"1\" conectadas horizontal o verticalmente (las diagonales no cuentan).\n- Devuelve 0 si la matriz estÃ¡ vacÃ­a.",
+      "it": "Scrivi una funzione `island_matrix_counter(matrix)` che restituisca il numero totale di isole in una matrice 2D contenente valori \"1\" e \"0\".\n\n- Un'isola Ã¨ un gruppo di celle \"1\" connesse orizzontalmente o verticalmente (le diagonali non contano).\n- Restituisce 0 per una matrice vuota.",
+      "ru": "ÐÐ°Ð¿Ð¸ÑÐ¸ÑÐµ ÑÑÐ½ÐºÑÐ¸Ñ `island_matrix_counter(matrix)`, ÐºÐ¾ÑÐ¾ÑÐ°Ñ Ð²Ð¾Ð·Ð²ÑÐ°ÑÐ°ÐµÑ Ð¾Ð±ÑÐµÐµ ÐºÐ¾Ð»Ð¸ÑÐµÑÑÐ²Ð¾ Ð¾ÑÑÑÐ¾Ð²Ð¾Ð² Ð² Ð´Ð²ÑÐ¼ÐµÑÐ½Ð¾Ð¹ Ð¼Ð°ÑÑÐ¸ÑÐµ ÑÐ¾ Ð·Ð½Ð°ÑÐµÐ½Ð¸ÑÐ¼Ð¸ \"1\" Ð¸ \"0\".\n\n- ÐÑÑÑÐ¾Ð² â ÑÑÐ¾ Ð³ÑÑÐ¿Ð¿Ð° ÑÑÐµÐµÐº \"1\", ÑÐ²ÑÐ·Ð°Ð½Ð½ÑÑ Ð¿Ð¾ Ð³Ð¾ÑÐ¸Ð·Ð¾Ð½ÑÐ°Ð»Ð¸ Ð¸Ð»Ð¸ Ð²ÐµÑÑÐ¸ÐºÐ°Ð»Ð¸ (Ð´Ð¸Ð°Ð³Ð¾Ð½Ð°Ð»Ð¸ Ð½Ðµ ÑÑÐ¸ÑÑÐ²Ð°ÑÑÑÑ).\n- ÐÐ¾Ð·Ð²ÑÐ°ÑÐ°ÐµÑ 0 Ð´Ð»Ñ Ð¿ÑÑÑÐ¾Ð¹ Ð¼Ð°ÑÑÐ¸ÑÑ.",
+      "tr": "`island_matrix_counter(matrix)` adÄ±nda, \"1\" ve \"0\" karakterlerinden oluÅan 2D bir matristeki toplam ada sayÄ±sÄ±nÄ± dÃ¶ndÃ¼ren bir fonksiyon yazÄ±n.\n\n- Bir ada, yatay veya dikey olarak birbirine baÄlÄ± \"1\" hÃ¼crelerinden oluÅur (Ãapraz baÄlantÄ±lar sayÄ±lmaz).\n- BoÅ matris iÃ§in 0 dÃ¶ndÃ¼rÃ¼r.",
+      "zh": "ç¼åä¸ä¸ªå½æ° `island_matrix_counter(matrix)`ï¼è¿ååå« \"1\" å \"0\" å­ç¬¦ä¸²å¼çäºç»´ç©éµä¸­çå²å±¿æ»æ°ã\n\n- å²å±¿æ¯ç±æ°´å¹³æåç´ç¸é»ç \"1\" ååæ ¼ææçåºåï¼å¯¹è§çº¿ä¸ç®è¿æ¥ï¼ã\n- å¯¹äºç©ºç©éµåºè¿å 0ã",
+      "ar": "Ø§ÙØªØ¨ Ø¯Ø§ÙØ© `island_matrix_counter(matrix)` ØªÙØ±Ø¬Ø¹ Ø¥Ø¬ÙØ§ÙÙ Ø¹Ø¯Ø¯ Ø§ÙØ¬Ø²Ø± ÙÙ ÙØµÙÙÙØ© Ø«ÙØ§Ø¦ÙØ© Ø§ÙØ£Ø¨Ø¹Ø§Ø¯ ØªØ­ØªÙÙ Ø¹ÙÙ ÙÙÙ \"1\" Ù \"0\".\n\n- ØªÙØ¹ØªØ¨Ø± Ø§ÙØ¬Ø²ÙØ±Ø© ÙØ¬ÙÙØ¹Ø© ÙÙ Ø®ÙØ§ÙØ§ \"1\" Ø§ÙÙØªØµÙØ© Ø£ÙÙÙØ§Ù Ø£Ù Ø±Ø£Ø³ÙØ§Ù (Ø§ÙØ§ØªØµØ§ÙØ§Øª Ø§ÙÙØ·Ø±ÙØ© ÙØ§ ØªÙØ­ØªØ³Ø¨).\n- ØªÙØ±Ø¬Ø¹ 0 Ø¥Ø°Ø§ ÙØ§ÙØª Ø§ÙÙØµÙÙÙØ© ÙØ§Ø±ØºØ©."
+    },
+    "signature": "def island_matrix_counter(matrix: list[list[str]]) -> int:",
+    "examples": [
+      {
+        "input": "island_matrix_counter([[\"1\", \"1\", \"1\", \"1\", \"0\"], [\"1\", \"1\", \"1\", \"0\", \"0\"], [\"1\", \"1\", \"1\", \"1\", \"0\"], [\"0\", \"0\", \"0\", \"0\", \"0\"]])",
+        "output": "1"
+      },
+      {
+        "input": "island_matrix_counter([[\"1\", \"1\", \"0\", \"0\", \"0\"], [\"1\", \"1\", \"0\", \"0\", \"0\"], [\"0\", \"0\", \"1\", \"0\", \"0\"], [\"0\", \"0\", \"0\", \"1\", \"1\"]])",
+        "output": "3"
+      },
+      {
+        "input": "island_matrix_counter([])",
+        "output": "0"
+      }
+    ]
+  },
+  {
+    "id": 6.0,
+    "level": 3.0,
+    "difficulty": "hard",
+    "name": "py_prism_detector",
+    "file": "py_prism_detector.py",
+    "description": {
+      "en": "Write a function that searches for all occurrences of a target word pattern within a 2D grid of characters in all 8 cardinal and diagonal directions.\n\nThe directions and their codes are:\n- (1, 0) -> \"H\" (Horizontal right)\n- (-1, 0) -> \"H-\" (Horizontal left)\n- (0, 1) -> \"V\" (Vertical down)\n- (0, -1) -> \"V-\" (Vertical up)\n- (1, 1) -> \"D1\" (Diagonal down-right)\n- (-1, -1) -> \"D1-\" (Diagonal up-left)\n- (-1, 1) -> \"D2\" (Diagonal up-right)\n- (1, -1) -> \"D2-\" (Diagonal down-left)\n\nThe function should:\n- Take a grid of strings `grid` and a target string `pattern`.\n- Return a list of tuples `(x, y, direction_code)` for each match, where `x` is the column index and `y` is the row index of the first character.\n- Return an empty list `[]` if either `grid` or `pattern` is empty.",
+      "de": "Schreibe eine Funktion, die nach einem Zielwort in einem 2D-Zeichenraster in allen 8 Richtungen sucht.\n\n- Gibt eine Liste von Tupeln `(x, y, richtungscode)` zurÃ¼ck.\n- Gibt `[]` zurÃ¼ck, wenn das Raster oder Wort leer ist.",
+      "fr": "Ãcris une fonction qui cherche toutes les occurrences d'un mot cible dans une grille 2D dans les 8 directions.\n\n- Renvoie une liste de tuples `(x, y, code_direction)`.\n- Renvoie `[]` si la grille ou le mot est vide.",
+      "es": "Escribe una funciÃ³n que busque todas las ocurrencias de una palabra en una cuadrÃ­cula 2D en las 8 direcciones.\n\n- Devuelve una lista de tuplas `(x, y, cÃ³digo_direcciÃ³n)`.\n- Devuelve `[]` si la cuadrÃ­cula o la palabra estÃ¡n vacÃ­as.",
+      "it": "Scrivi una funzione che cerchi tutte le occorrenze di una parola target in una griglia 2D in tutte le 8 direzioni.\n\n- Restituisce una lista di tuple `(x, y, codice_direzione)`.\n- Restituisce `[]` se la griglia o la parola sono vuote.",
+      "ru": "ÐÐ°Ð¿Ð¸ÑÐ¸ÑÐµ ÑÑÐ½ÐºÑÐ¸Ñ Ð´Ð»Ñ Ð¿Ð¾Ð¸ÑÐºÐ° Ð²ÑÐµÑ Ð²ÑÐ¾Ð¶Ð´ÐµÐ½Ð¸Ð¹ ÑÐ»Ð¾Ð²Ð° Ð² Ð´Ð²ÑÐ¼ÐµÑÐ½Ð¾Ð¹ ÑÐµÑÐºÐµ ÑÐ¸Ð¼Ð²Ð¾Ð»Ð¾Ð² Ð²Ð¾ Ð²ÑÐµÑ 8 Ð½Ð°Ð¿ÑÐ°Ð²Ð»ÐµÐ½Ð¸ÑÑ.\n\n- ÐÐ¾Ð·Ð²ÑÐ°ÑÐ°ÐµÑ ÑÐ¿Ð¸ÑÐ¾Ðº ÐºÐ¾ÑÑÐµÐ¶ÐµÐ¹ `(x, y, ÐºÐ¾Ð´_Ð½Ð°Ð¿ÑÐ°Ð²Ð»ÐµÐ½Ð¸Ñ)`.\n- ÐÐ¾Ð·Ð²ÑÐ°ÑÐ°ÐµÑ `[]`, ÐµÑÐ»Ð¸ ÑÐµÑÐºÐ° Ð¸Ð»Ð¸ ÑÐ»Ð¾Ð²Ð¾ Ð¿ÑÑÑÑÐµ.",
+      "tr": "2D karakter Ä±zgarasÄ±nda hedef kelimeyi tÃ¼m 8 yÃ¶nde arayan bir fonksiyon yazÄ±n.\n\n- `(x, y, yÃ¶n_kodu)` demetleri listesi dÃ¶ndÃ¼rÃ¼r.\n- Izgara veya kelime boÅsa `[]` dÃ¶ndÃ¼rÃ¼r.",
+      "zh": "ç¼åä¸ä¸ªå½æ°ï¼å¨äºç»´å­ç¬¦ç½æ ¼ä¸­æ²¿ 8 ä¸ªæ¹åæç´¢ç®æ åè¯çææå¹éé¡¹ã\n\n- è¿ååå« `(x, y, æ¹åä»£ç )` çåç»åè¡¨ã\n- å¦æç½æ ¼æåè¯ä¸ºç©ºåè¿å `[]`ã",
+      "ar": "Ø§ÙØªØ¨ Ø¯Ø§ÙØ© ØªØ¨Ø­Ø« Ø¹Ù Ø¬ÙÙØ¹ ÙÙØ§Ø¶Ø¹ Ø¸ÙÙØ± Ø§ÙÙÙÙØ© Ø§ÙÙØ³ØªÙØ¯ÙØ© ÙÙ Ø´Ø¨ÙØ© Ø£Ø­Ø±Ù Ø«ÙØ§Ø¦ÙØ© Ø§ÙØ£Ø¨Ø¹Ø§Ø¯ ÙÙ Ø¬ÙÙØ¹ Ø§ÙØ§ØªØ¬Ø§ÙØ§Øª Ø§ÙØ«ÙØ§ÙÙØ©.\n\n- ØªÙØ±Ø¬Ø¹ ÙØ§Ø¦ÙØ© ÙÙ Ø§ÙØ£Ø²ÙØ§Ø¬ `(x, y, Ø±ÙØ²_Ø§ÙØ§ØªØ¬Ø§Ù)`.\n- ØªÙØ±Ø¬Ø¹ `[]` Ø¥Ø°Ø§ ÙØ§ÙØª Ø§ÙØ´Ø¨ÙØ© Ø£Ù Ø§ÙÙÙÙØ© ÙØ§Ø±ØºØ©."
+    },
+    "signature": "def prism_detector(grid: list[str], pattern: str):",
+    "examples": [
+      {
+        "input": "prism_detector([\"CAT\", \"A..\", \"T..\"], \"CAT\")",
+        "output": "[(0, 0, \"H\"), (0, 0, \"V\")]"
+      },
+      {
+        "input": "prism_detector([], \"CAT\")",
+        "output": "[]"
+      }
+    ]
+  },
+  {
+    "id": 7.0,
+    "level": 3.0,
+    "difficulty": "hard",
+    "name": "py_word_ladder",
+    "file": "py_word_ladder.py",
+    "description": {
+      "en": "Write a function that computes the length of the shortest transformation sequence from a `start` word to an `end` word using a dictionary list of allowed words `sentence`.\n\nEach transformation step must change exactly one single character. All intermediate words must exist in `sentence`.\n\nThe function should:\n- Return the total number of words in the shortest ladder (including `start` and `end`).\n- Return 0 if no transformation sequence is possible.",
+      "de": "Schreibe eine Funktion, die die LÃ¤nge der kÃ¼rzesten Transformationssequenz von einem Startwort zu einem Zielwort berechnet.\n\n- Gibt die Anzahl der WÃ¶rter im kÃ¼rzesten Pfad zurÃ¼ck.\n- Gibt 0 zurÃ¼ck, wenn keine Transformation mÃ¶glich ist.",
+      "fr": "Ãcris une fonction qui calcule la longueur de la sÃ©quence de transformation la plus courte d'un mot de dÃ©part Ã  un mot de fin.\n\n- Renvoie le nombre de mots dans l'Ã©chelle la plus courte.\n- Renvoie 0 si aucune transformation n'est possible.",
+      "es": "Escribe una funciÃ³n que calcule la longitud de la secuencia de transformaciÃ³n mÃ¡s corta de una palabra inicial a una final.\n\n- Devuelve el nÃºmero de palabras de la escala mÃ¡s corta.\n- Devuelve 0 si no es posible ninguna transformaciÃ³n.",
+      "it": "Scrivi una funzione che calcoli la lunghezza della sequenza di trasformazione piÃ¹ breve da una parola iniziale a una finale.\n\n- Restituisce il numero di parole nella scala piÃ¹ breve.\n- Restituisce 0 se non Ã¨ possibile alcuna trasformazione.",
+      "ru": "ÐÐ°Ð¿Ð¸ÑÐ¸ÑÐµ ÑÑÐ½ÐºÑÐ¸Ñ, ÐºÐ¾ÑÐ¾ÑÐ°Ñ Ð²ÑÑÐ¸ÑÐ»ÑÐµÑ Ð´Ð»Ð¸Ð½Ñ ÐºÑÐ°ÑÑÐ°Ð¹ÑÐµÐ¹ Ð¿Ð¾ÑÐ»ÐµÐ´Ð¾Ð²Ð°ÑÐµÐ»ÑÐ½Ð¾ÑÑÐ¸ ÑÑÐ°Ð½ÑÑÐ¾ÑÐ¼Ð°ÑÐ¸Ð¸ Ð¾Ñ Ð½Ð°ÑÐ°Ð»ÑÐ½Ð¾Ð³Ð¾ ÑÐ»Ð¾Ð²Ð° Ðº ÐºÐ¾Ð½ÐµÑÐ½Ð¾Ð¼Ñ.\n\n- ÐÐ¾Ð·Ð²ÑÐ°ÑÐ°ÐµÑ ÐºÐ¾Ð»Ð¸ÑÐµÑÑÐ²Ð¾ ÑÐ»Ð¾Ð² Ð² ÐºÑÐ°ÑÑÐ°Ð¹ÑÐµÐ¹ ÑÐµÐ¿Ð¾ÑÐºÐµ.\n- ÐÐ¾Ð·Ð²ÑÐ°ÑÐ°ÐµÑ 0, ÐµÑÐ»Ð¸ ÑÑÐ°Ð½ÑÑÐ¾ÑÐ¼Ð°ÑÐ¸Ñ Ð½ÐµÐ²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð°.",
+      "tr": "BaÅlangÄ±Ã§ kelimesinden hedef kelimeye en kÄ±sa dÃ¶nÃ¼ÅtÃ¼rme dizisinin uzunluÄunu hesaplayan fonksiyon yazÄ±n.\n\n- En kÄ±sa merdivendeki kelime sayÄ±sÄ±nÄ± dÃ¶ndÃ¼rÃ¼r.\n- DÃ¶nÃ¼ÅtÃ¼rme mÃ¼mkÃ¼n deÄilse 0 dÃ¶ndÃ¼rÃ¼r.",
+      "zh": "ç¼åä¸ä¸ªå½æ°ï¼è®¡ç®ä»èµ·å§åè¯å°ç®æ åè¯çæç­è½¬æ¢åºåé¿åº¦ã\n\n- è¿åæç­åè¯æ¥é¾ä¸­çåè¯æ»æ°ã\n- å¦ææ æ³è½¬æ¢åè¿å 0ã",
+      "ar": "Ø§ÙØªØ¨ Ø¯Ø§ÙØ© ØªØ­Ø³Ø¨ Ø·ÙÙ Ø£ÙØµØ± ØªØ³ÙØ³Ù ØªØ­ÙÙÙ ÙÙ ÙÙÙØ© Ø§ÙØ¨Ø¯Ø§ÙØ© Ø¥ÙÙ ÙÙÙØ© Ø§ÙÙÙØ§ÙØ©.\n\n- ØªÙØ±Ø¬Ø¹ Ø¹Ø¯Ø¯ Ø§ÙÙÙÙØ§Øª ÙÙ Ø£ÙØµØ± ÙØ³Ø§Ø± ØªØ­ÙÙÙ.\n- ØªÙØ±Ø¬Ø¹ 0 Ø¥Ø°Ø§ ÙÙ ÙÙÙ ÙÙØ§Ù ØªØ­ÙÙÙ ÙÙÙÙ."
+    },
+    "signature": "def word_ladder(start: str, end: str, sentence: list[str]) -> int:",
+    "examples": [
+      {
+        "input": "word_ladder(\"hit\", \"cog\", [\"hot\", \"dot\", \"dog\", \"lot\", \"log\", \"cog\"])",
+        "output": "5"
+      },
+      {
+        "input": "word_ladder(\"hit\", \"cog\", [\"hot\", \"dot\", \"dog\", \"lot\", \"log\"])",
+        "output": "0"
+      }
+    ]
+  }
+]

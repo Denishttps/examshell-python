@@ -1,5 +1,8 @@
+from pathlib import Path
+
 from .models import Task
-from .task_generator import TaskManager
+from .task_generator import TaskManager, get_available_ranks
+from .utils import download_subjects
 
 from rich.console import Console
 from rich.panel import Panel
@@ -13,6 +16,25 @@ from rich.align import Align
 from rich import box
 
 console = Console()
+RANK_URLS = {
+    3: "https://rank03.42exam.net/js/data.js",
+    4: "https://rank04.42exam.net/js/data.js",
+    5: "https://rank05.42exam.net/js/data.js",
+}
+
+
+def update_rank_files() -> None:
+    data_dir = Path(__file__).parent / "data"
+    console.print("[dim]Checking for exam rank updates...[/dim]")
+    for rank, url in RANK_URLS.items():
+        try:
+            download_subjects(url, str(data_dir / f"rank{rank}.json"))
+            console.print(f"[green]Rank {rank:02d} updated.[/green]")
+        except Exception:
+            console.print(
+                f"[yellow]Could not update rank {rank:02d}; "
+                "using local data if available.[/yellow]"
+            )
 
 
 def choose_mode() -> bool:
@@ -29,6 +51,37 @@ def choose_mode() -> bool:
         "Your answer", choices=["1", "2"], show_choices=False
     )
     return mode == "1"
+
+
+def choose_rank() -> int:
+    ranks = get_available_ranks()
+    if not ranks:
+        console.print(
+            Panel(
+                "[bold red]No exam ranks are available.[/bold red]",
+                border_style="red",
+            )
+        )
+        raise SystemExit(1)
+
+    if len(ranks) == 1:
+        return ranks[0]
+
+    console.clear()
+    choices = [str(rank) for rank in ranks]
+    console.print(
+        Panel.fit(
+            "\n".join(
+                f"[bold cyan]Rank {rank:02d}[/bold cyan] [dim]({rank})[/dim]"
+                for rank in ranks
+            ),
+            title="[bold]Choose your Exam rank[/bold]",
+            border_style="cyan",
+        )
+    )
+    return int(
+        Prompt.ask("Your answer", choices=choices, show_choices=False)
+    )
 
 
 def points_bar(points: int, total: int = 100) -> Progress:
@@ -129,8 +182,8 @@ def grademe(manager: TaskManager, task: Task) -> Task:
         return task
 
 
-def real_mode() -> None:
-    manager = TaskManager()
+def real_mode(rank: int) -> None:
+    manager = TaskManager(rank=rank)
     task = manager.get_next_task()
 
     if task is None:
@@ -315,9 +368,11 @@ def practice_mode() -> None:
 
 
 def cli() -> None:
+    update_rank_files()
     real = choose_mode()
     if real:
-        real_mode()
+        rank = choose_rank()
+        real_mode(rank)
     else:
         practice_mode()
 

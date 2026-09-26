@@ -1,0 +1,324 @@
+[
+  {
+    "id": 1.0,
+    "level": 1.0,
+    "difficulty": "easy",
+    "name": "py_array_rotation_detector",
+    "file": "py_array_rotation_detector.py",
+    "description": {
+      "en": "Write a Python function that takes two lists (arrays) as parameters and determines if the second list is a rotation of the first list (left or right).\n\nA rotation means that the elements are shifted circularly. For example, shifting [1, 2, 3] to the right by one position results in [3, 1, 2].\n\nThe function must return True if arr2 is a rotation of arr1, and False otherwise.\nIf the arrays have different lengths, they cannot be rotations of each other.\nTwo empty arrays are considered rotations of each other.",
+      "de": "Schreibe eine Python-Funktion, die zwei Listen (Arrays) als Parameter erhÃ¤lt und ermittelt, ob die zweite Liste eine Rotation der ersten Liste ist (nach links oder rechts).\n\nEine Rotation bedeutet, dass die Elemente kreisfÃ¶rmig verschoben werden. Beispielsweise fÃ¼hrt das Verschieben von [1, 2, 3] um eine Position nach rechts zu [3, 1, 2].\n\nDie Funktion muss True zurÃ¼ckgeben, wenn arr2 eine Rotation von arr1 ist, andernfalls False.\nWenn die Arrays unterschiedliche LÃ¤ngen haben, kÃ¶nnen sie keine Rotationen voneinander sein.\nZwei leere Arrays werden als Rotationen voneinander betrachtet.",
+      "fr": "Ãcris une fonction Python qui prend deux listes (tableaux) en paramÃ¨tres et dÃ©termine si la deuxiÃ¨me liste est une rotation de la premiÃ¨re (Ã  gauche ou Ã  droite).\n\nUne rotation signifie que les Ã©lÃ©ments sont dÃ©calÃ©s de maniÃ¨re circulaire. Par exemple, dÃ©caler [1, 2, 3] vers la droite d'une position donne [3, 1, 2].\n\nLa fonction doit renvoyer True si arr2 est une rotation de arr1, et False sinon.\nSi les tableaux ont des longueurs diffÃ©rentes, ils ne peuvent pas Ãªtre des rotations l'un de l'autre.\nDeux tableaux vides sont considÃ©rÃ©s comme des rotations l'un de l'autre.",
+      "es": "Escribe una funciÃ³n en Python que tome dos listas (matrices) como parÃ¡metros y determine si la segunda lista es una rotaciÃ³n de la primera (hacia la izquierda o hacia la derecha).\n\nUna rotaciÃ³n significa que los elementos se desplazan de forma circular. Por ejemplo, desplazar [1, 2, 3] a la derecha una posiciÃ³n da como resultado [3, 1, 2].\n\nLa funciÃ³n debe devolver True si arr2 es una rotaciÃ³n de arr1, y False en caso contrario.\nSi las matrices tienen longitudes diferentes, no pueden ser rotaciones entre sÃ­.\nDos matrices vacÃ­as se consideran rotaciones entre sÃ­.",
+      "it": "Scrivi una funzione Python che prenda due liste (array) come parametri e determini se la seconda lista Ã¨ una rotazione della prima lista (a sinistra o a destra).\n\nUna rotazione significa que gli elementi vengono spostati in modo circolare. Ad esempio, spostare [1, 2, 3] a destra di una posizione produce [3, 1, 2].\n\nLa funzione deve restituire True se arr2 Ã¨ una rotazione di arr1, e False altrimenti.\nSe gli array hanno lunghezze diverse, non possono essere rotazioni l'uno dell'altro.\nDue array vuoti sono considerati rotazioni l'uno dell'altro.",
+      "ru": "ÐÐ°Ð¿Ð¸ÑÐ¸ÑÐµ ÑÑÐ½ÐºÑÐ¸Ñ Ð½Ð° Python, ÐºÐ¾ÑÐ¾ÑÐ°Ñ Ð¿ÑÐ¸Ð½Ð¸Ð¼Ð°ÐµÑ Ð´Ð²Ð° ÑÐ¿Ð¸ÑÐºÐ° (Ð¼Ð°ÑÑÐ¸Ð²Ð°) Ð¸ Ð¾Ð¿ÑÐµÐ´ÐµÐ»ÑÐµÑ, ÑÐ²Ð»ÑÐµÑÑÑ Ð»Ð¸ Ð²ÑÐ¾ÑÐ¾Ð¹ ÑÐ¿Ð¸ÑÐ¾Ðº ÑÐ¸ÐºÐ»Ð¸ÑÐµÑÐºÐ¾Ð¹ ÑÐ¾ÑÐ°ÑÐ¸ÐµÐ¹ Ð¿ÐµÑÐ²Ð¾Ð³Ð¾ (Ð²Ð»ÐµÐ²Ð¾ Ð¸Ð»Ð¸ Ð²Ð¿ÑÐ°Ð²Ð¾).\n\nÐ¦Ð¸ÐºÐ»Ð¸ÑÐµÑÐºÐ°Ñ ÑÐ¾ÑÐ°ÑÐ¸Ñ Ð¾Ð·Ð½Ð°ÑÐ°ÐµÑ, ÑÑÐ¾ ÑÐ»ÐµÐ¼ÐµÐ½ÑÑ ÑÐ´Ð²Ð¸Ð³Ð°ÑÑÑÑ Ð¿Ð¾ ÐºÑÑÐ³Ñ. ÐÐ°Ð¿ÑÐ¸Ð¼ÐµÑ, ÑÐ´Ð²Ð¸Ð³ [1, 2, 3] Ð²Ð¿ÑÐ°Ð²Ð¾ Ð½Ð° Ð¾Ð´Ð½Ñ Ð¿Ð¾Ð·Ð¸ÑÐ¸Ñ Ð´Ð°ÐµÑ [3, 1, 2].\n\nÐ¤ÑÐ½ÐºÑÐ¸Ñ Ð´Ð¾Ð»Ð¶Ð½Ð° Ð²Ð¾Ð·Ð²ÑÐ°ÑÐ°ÑÑ True, ÐµÑÐ»Ð¸ Ð²ÑÐ¾ÑÐ¾Ð¹ ÑÐ¿Ð¸ÑÐ¾Ðº ÑÐ²Ð»ÑÐµÑÑÑ ÑÐ¾ÑÐ°ÑÐ¸ÐµÐ¹ Ð¿ÐµÑÐ²Ð¾Ð³Ð¾, Ð¸ False Ð² Ð¿ÑÐ¾ÑÐ¸Ð²Ð½Ð¾Ð¼ ÑÐ»ÑÑÐ°Ðµ.\nÐÑÐ»Ð¸ ÑÐ¿Ð¸ÑÐºÐ¸ Ð¸Ð¼ÐµÑÑ ÑÐ°Ð·Ð½ÑÑ Ð´Ð»Ð¸Ð½Ñ, Ð¾Ð½Ð¸ Ð½Ðµ Ð¼Ð¾Ð³ÑÑ Ð±ÑÑÑ ÑÐ¾ÑÐ°ÑÐ¸ÑÐ¼Ð¸ Ð´ÑÑÐ³ Ð´ÑÑÐ³Ð°.\nÐÐ²Ð° Ð¿ÑÑÑÑÑ ÑÐ¿Ð¸ÑÐºÐ° ÑÑÐ¸ÑÐ°ÑÑÑÑ ÑÐ¾ÑÐ°ÑÐ¸ÑÐ¼Ð¸ Ð´ÑÑÐ³ Ð´ÑÑÐ³Ð°.",
+      "tr": "array2'nin array1'in bir dÃ¶ndÃ¼rmesi (rotasyonu) olup olmadÄ±ÄÄ±nÄ± belirleyin. Bir dÃ¶ndÃ¼rme, gÃ¶receli sÄ±rayÄ± koruyarak elemanlarÄ± dÃ¶ngÃ¼sel olarak kaydÄ±rÄ±r.\n\n- array2 array1'in geÃ§erli bir dÃ¶ndÃ¼rmesiyse True dÃ¶ndÃ¼rÃ¼n\n- Aksi halde veya dizi uzunluklarÄ± farklÄ±ysa False dÃ¶ndÃ¼rÃ¼n\n- BoÅ dizileri iÅleyin (iki boÅ dizi geÃ§erli bir dÃ¶ndÃ¼rme sayÄ±lÄ±r)",
+      "zh": "å¤æ­ array2 æ¯å¦ä¸º array1 çå¾ªç¯æè½¬ãæè½¬æ¯æå¨ä¿æåç´ ç¸å¯¹é¡ºåºçåæ¶å¾ªç¯ç§»ä½åç´ ã\n\n- å¦æ array2 æ¯ array1 çæææè½¬ï¼åè¿å True\n- å¦åæå½ä¸¤æ°ç»é¿åº¦ä¸åæ¶è¿å False\n- å¤çç©ºæ°ç»ï¼ä¸¤ä¸ªç©ºæ°ç»è§ä¸ºæææè½¬ï¼",
+      "ar": "Ø­Ø¯Ø¯ ÙØ§ Ø¥Ø°Ø§ ÙØ§ÙØª Ø§ÙÙØµÙÙÙØ© array2 ØªÙØ«Ù ØªØ¯ÙÙØ±Ø§Ù ÙÙÙØµÙÙÙØ© array1. ÙØ¤Ø¯Ù Ø§ÙØªØ¯ÙÙØ± Ø¥ÙÙ Ø¥Ø²Ø§Ø­Ø© Ø§ÙØ¹ÙØ§ØµØ± Ø¯ÙØ±ÙØ§Ù ÙØ¹ Ø§ÙØ­ÙØ§Ø¸ Ø¹ÙÙ Ø§ÙØªØ±ØªÙØ¨ Ø§ÙÙØ³Ø¨Ù.\n\n- Ø£Ø±Ø¬Ø¹ True Ø¥Ø°Ø§ ÙØ§ÙØª array2 ØªØ¯ÙÙØ±Ø§Ù ØµØ­ÙØ­Ø§Ù ÙÙ array1\n- Ø£Ø±Ø¬Ø¹ False Ø®ÙØ§Ù Ø°ÙÙ Ø£Ù Ø¥Ø°Ø§ Ø§Ø®ØªÙÙØª Ø£Ø·ÙØ§Ù Ø§ÙÙØµÙÙÙØªÙÙ\n- Ø§ÙØªØ¹Ø§ÙÙ ÙØ¹ Ø§ÙÙØµÙÙÙØ§Øª Ø§ÙÙØ§Ø±ØºØ© (ØªÙØ¹ØªØ¨Ø± Ø§ÙÙØµÙÙÙØªØ§Ù Ø§ÙÙØ§Ø±ØºØªØ§Ù ØªØ¯ÙÙØ±Ø§Ù ØµØ­ÙØ­Ø§Ù)"
+    },
+    "signature": "def array_rotation_detector(arr1: list, arr2: list) -> bool:",
+    "examples": [
+      {
+        "input": "array_rotation_detector([1, 2, 3, 4, 5], [4, 5, 1, 2, 3])",
+        "output": "True"
+      },
+      {
+        "input": "array_rotation_detector([1, 2, 3, 4, 5], [5, 1, 2, 3, 4])",
+        "output": "True"
+      },
+      {
+        "input": "array_rotation_detector([1, 2, 3], [3, 2, 1])",
+        "output": "False"
+      },
+      {
+        "input": "array_rotation_detector([1, 2], [1, 2, 3])",
+        "output": "False"
+      },
+      {
+        "input": "array_rotation_detector([], [])",
+        "output": "True"
+      }
+    ],
+    "forbidden": [
+      "collections.deque.rotate()"
+    ]
+  },
+  {
+    "id": 2.0,
+    "level": 1.0,
+    "difficulty": "medium",
+    "name": "py_constellation_mapper",
+    "file": "py_constellation_mapper.py",
+    "description": {
+      "en": "Write a function that maps a constellation of stars onto a grid and returns the visual representation as a list of strings.\n\nThe function should:\n- Take a list of star coordinates as tuples (row, col) and grid size as integer\n- Return a list of strings representing the grid\n- Stars are represented by '*' and empty spaces by '.'\n- Grid coordinates start from (0, 0) at top-left\n- Ignore coordinates outside the grid boundaries\n- Handle duplicate coordinates (star appears only once)",
+      "de": "Schreibe eine Funktion, die eine Sternkonstellation auf ein Raster abbildet und das Ergebnis als Liste von Zeichenketten zurÃ¼ckgibt.\n\nDie Funktion soll:\n- Eine Liste von Sternkoordinaten als Tupel (Zeile, Spalte) und die RastergrÃ¶Ãe als Ganzzahl entgegennehmen\n- Eine Liste von Zeichenketten zurÃ¼ckgeben, die das Raster darstellen\n- Sterne werden durch '*' und leere Felder durch '.' dargestellt\n- Rasterkoordinaten beginnen bei (0, 0) oben links\n- Koordinaten auÃerhalb der Rastergrenzen ignorieren\n- Doppelte Koordinaten behandeln (jeder Stern wird nur einmal platziert)",
+      "fr": "Ãcris une fonction qui projette une constellation d'Ã©toiles sur une grille et renvoie sa reprÃ©sentation visuelle sous forme de liste de chaÃ®nes.\n\nLa fonction doit :\n- Prendre une liste de coordonnÃ©es d'Ã©toiles sous forme de tuples (ligne, colonne) et la taille de la grille sous forme d'entier\n- Renvoyer une liste de chaÃ®nes reprÃ©sentant la grille\n- Les Ã©toiles sont reprÃ©sentÃ©es par '*' et les espaces vides par '.'\n- Les coordonnÃ©es de la grille commencent Ã  (0, 0) en haut Ã  gauche\n- Ignorer les coordonnÃ©es en dehors des limites de la grille\n- GÃ©rer les doublons de coordonnÃ©es (l'Ã©toile n'apparaÃ®t qu'une seule fois)",
+      "es": "Escribe una funciÃ³n que proyecte una constelaciÃ³n de estrellas en una cuadrÃ­cula y devuelva la representaciÃ³n visual como una lista de cadenas.\n\nLa funciÃ³n debe:\n- Tomar una lista de coordenadas de estrellas como tuplas (fila, columna) y el tamaÃ±o de la cuadrÃ­cula como entero\n- Devolver una lista de cadenas que represente la cuadrÃ­cula\n- Las estrellas se representan con '*' y los espacios vacÃ­os con '.'\n- Las coordenadas de la cuadrÃ­cula comienzan en (0, 0) en la esquina superior izquierda\n- Ignorar las coordenadas fuera de los lÃ­mites de la cuadrÃ­cula\n- Manejar coordenadas duplicadas (cada estrella aparece solo una vez)",
+      "it": "Scrivi una funzione che proietti una costellazione di stelle su una griglia e restituisca la rappresentazione visiva come lista di stringhe.\n\nLa funzione deve:\n- Ricevere una lista di coordinate di stelle come tuple (riga, colonna) e la dimensione della griglia come intero\n- Restituire una lista di stringhe che rappresenta la griglia\n- Le stelle sono rappresentate da '*' e gli spazi vuoti da '.'\n- Le coordinate partono da (0, 0) in alto a sinistra\n- Ignorare le coordinate fuori dai limiti della griglia\n- Gestire coordinate duplicate (ogni stella appare una volta sola)",
+      "ru": "Ð ÑÑÐ¾Ð¼ ÑÐ¿ÑÐ°Ð¶Ð½ÐµÐ½Ð¸Ð¸ Ð²Ð°Ð¼ Ð½ÑÐ¶Ð½Ð¾ ÑÐµÐ°Ð»Ð¸Ð·Ð¾Ð²Ð°ÑÑ ÑÑÐ½ÐºÑÐ¸Ñ constellation_mapper.\n\nÐ¤ÑÐ½ÐºÑÐ¸Ñ Ð´Ð¾Ð»Ð¶Ð½Ð°:\n- ÐÑÐ¸Ð½Ð¸Ð¼Ð°ÑÑ Ð² ÐºÐ°ÑÐµÑÑÐ²Ðµ Ð¿Ð°ÑÐ°Ð¼ÐµÑÑÐ° ÑÐ¿Ð¸ÑÐ¾Ðº ÐºÐ¾ÑÑÐµÐ¶ÐµÐ¹, ÐºÐ°Ð¶Ð´ÑÐ¹ Ð¸Ð· ÐºÐ¾ÑÐ¾ÑÑÑ ÑÐ¾ÑÑÐ¾Ð¸Ñ Ð¸Ð· int(ÑÑÑÐ¾ÐºÐ°) Ð¸ int(ÐºÐ¾Ð»Ð¾Ð½ÐºÐ°).\n- ÐÐ¾Ð·Ð²ÑÐ°ÑÐ°ÑÑ ÑÐ¿Ð¸ÑÐ¾Ðº ÑÑÑÐ¾Ðº (list[str]), Ð¿ÑÐµÐ´ÑÑÐ°Ð²Ð»ÑÑÑÐ¸Ð¹ ÑÐµÑÐºÑ ÑÐ°Ð·Ð¼ÐµÑÐ° size * size, ÑÐ¾ÑÑÐ¾ÑÑÑÑ Ð¸Ð· ÑÐ¸Ð¼Ð²Ð¾Ð»Ð¾Ð² \".\" Ð¸ \"*\" Ð½Ð° Ð¾ÑÐ½Ð¾Ð²Ðµ ÐºÐ¾Ð¾ÑÐ´Ð¸Ð½Ð°Ñ, Ð¿ÐµÑÐµÐ´Ð°Ð½Ð½ÑÑ Ð² Ð¿ÐµÑÐµÐ¼ÐµÐ½Ð½Ð¾Ð¹ stars.\n- ÐÐ³Ð½Ð¾ÑÐ¸ÑÐ¾Ð²Ð°ÑÑ ÐºÐ¾Ð¾ÑÐ´Ð¸Ð½Ð°ÑÑ, Ð²ÑÑÐ¾Ð´ÑÑÐ¸Ðµ Ð·Ð° Ð³ÑÐ°Ð½Ð¸ÑÑ ÑÐµÑÐºÐ¸.\n- ÐÐ³Ð½Ð¾ÑÐ¸ÑÐ¾Ð²Ð°ÑÑ Ð´ÑÐ±Ð»Ð¸ÑÑÑÑÐ¸ÐµÑÑ ÐºÐ¾Ð¾ÑÐ´Ð¸Ð½Ð°ÑÑ.",
+      "tr": "Bir yÄ±ldÄ±z takÄ±myÄ±ldÄ±zÄ±nÄ± Ä±zgara Ã¼zerine yerleÅtiren ve gÃ¶rsel temsilini dizeler listesi olarak dÃ¶ndÃ¼ren bir fonksiyon yazÄ±n.\n\nFonksiyon ÅunlarÄ± yapmalÄ±dÄ±r:\n- Demetler (satÄ±r, sÃ¼tun) halinde yÄ±ldÄ±z koordinatlarÄ± listesini ve tamsayÄ± olarak Ä±zgara boyutunu almalÄ±dÄ±r\n- IzgarayÄ± temsil eden dizeler listesi dÃ¶ndÃ¼rmelidir\n- YÄ±ldÄ±zlar '*' ve boÅluklar '.' ile temsil edilir\n- Izgara koordinatlarÄ± sol Ã¼stte (0, 0) noktasÄ±ndan baÅlar\n- Izgara sÄ±nÄ±rlarÄ± dÄ±ÅÄ±ndaki koordinatlarÄ± yoksaymalÄ±dÄ±r\n- Yinelenen koordinatlarÄ± iÅlemelidir (yÄ±ldÄ±z yalnÄ±zca bir kez gÃ¶rÃ¼nÃ¼r)",
+      "zh": "ç¼åä¸ä¸ªå½æ°ï¼å°æç³»åæ æ å°å°ç½æ ¼ä¸ï¼å¹¶ä»¥å­ç¬¦ä¸²åè¡¨å½¢å¼è¿åå¶å¯è§åç½æ ¼è¡¨ç¤ºã\n\nè¯¥å½æ°åºè¯¥ï¼\n- æ¥æ¶æç³»åæ åç»åè¡¨ (è¡, å) ä»¥åæ´æ°è¡¨ç¤ºçç½æ ¼å¤§å°\n- è¿åä»£è¡¨ç½æ ¼çå­ç¬¦ä¸²åè¡¨\n- ææç¨ '*' è¡¨ç¤ºï¼ç©ºæ ¼ç¨ '.' è¡¨ç¤º\n- ç½æ ¼åæ ä»å·¦ä¸è§ç (0, 0) å¼å§\n- å¿½ç¥è¶åºç½æ ¼è¾¹ççåæ \n- å¤çéå¤çåæ ï¼æ¯ä¸ªææä»åºç°ä¸æ¬¡ï¼",
+      "ar": "Ø§ÙØªØ¨ Ø¯Ø§ÙØ© ØªØ±Ø³Ù ÙÙÙØ¨Ø© ÙÙ Ø§ÙÙØ¬ÙÙ Ø¹ÙÙ Ø´Ø¨ÙØ© ÙØªÙØ±Ø¬Ø¹ Ø§ÙØªÙØ«ÙÙ Ø§ÙÙØ±Ø¦Ù ÙÙØ§Ø¦ÙØ© ÙÙ Ø§ÙØ³ÙØ§Ø³Ù Ø§ÙÙØµÙØ©.\n\nÙØ¬Ø¨ Ø¹ÙÙ Ø§ÙØ¯Ø§ÙØ©:\n- Ø£Ø®Ø° ÙØ§Ø¦ÙØ© Ø¨Ø¥Ø­Ø¯Ø§Ø«ÙØ§Øª Ø§ÙÙØ¬ÙÙ ÙØ£Ø²ÙØ§Ø¬ (ØµÙØ Ø¹ÙÙØ¯) ÙØ­Ø¬Ù Ø§ÙØ´Ø¨ÙØ© ÙØ¹Ø¯Ø¯ ØµØ­ÙØ­\n- Ø¥Ø±Ø¬Ø§Ø¹ ÙØ§Ø¦ÙØ© Ø³ÙØ§Ø³Ù ÙØµÙØ© ØªÙØ«Ù Ø§ÙØ´Ø¨ÙØ©\n- ØªÙØ«ÙÙ Ø§ÙÙØ¬ÙÙ Ø¨Ø§ÙØ±ÙØ² '*' ÙØ§ÙØ£ÙØ§ÙÙ Ø§ÙÙØ§Ø±ØºØ© Ø¨Ø§ÙØ±ÙØ² '.'\n- ØªØ¨Ø¯Ø£ Ø¥Ø­Ø¯Ø§Ø«ÙØ§Øª Ø§ÙØ´Ø¨ÙØ© ÙÙ (0Ø 0) ÙÙ Ø§ÙØ²Ø§ÙÙØ© Ø§ÙØ¹ÙÙÙØ© Ø§ÙÙØ³Ø±Ù\n- ØªØ¬Ø§ÙÙ Ø§ÙØ¥Ø­Ø¯Ø§Ø«ÙØ§Øª Ø§ÙØ®Ø§Ø±Ø¬Ø© Ø¹Ù Ø­Ø¯ÙØ¯ Ø§ÙØ´Ø¨ÙØ©\n- Ø§ÙØªØ¹Ø§ÙÙ ÙØ¹ Ø§ÙØ¥Ø­Ø¯Ø§Ø«ÙØ§Øª Ø§ÙÙÙØ±Ø±Ø© (ÙØ¸ÙØ± Ø§ÙÙØ¬Ù ÙØ±Ø© ÙØ§Ø­Ø¯Ø© ÙÙØ·)"
+    },
+    "signature": "def constellation_mapper(stars: list[tuple[int, int]], dim: int) -> list[str]:",
+    "examples": [
+      {
+        "input": "constellation_mapper([(0, 0), (1, 1), (2, 2)], 3)",
+        "output": "['*..', '.*.', '..*']"
+      },
+      {
+        "input": "constellation_mapper([(1, 1), (0, 1), (2, 1), (1, 0), (1, 2)], 3)",
+        "output": "['.*.', '***', '.*.']"
+      },
+      {
+        "input": "constellation_mapper([], 2)",
+        "output": "['..', '..']"
+      },
+      {
+        "input": "constellation_mapper([(0, 0), (0, 0), (1, 1)], 2)",
+        "output": "['*.', '.*']"
+      },
+      {
+        "input": "constellation_mapper([(0, 0), (5, 5)], 3)",
+        "output": "['*..', '...', '...']"
+      },
+      {
+        "input": "constellation_mapper([(1, 0), (1, 1), (1, 2)], 3)",
+        "output": "['...', '***', '...']"
+      }
+    ]
+  },
+  {
+    "id": 3.0,
+    "level": 2.0,
+    "difficulty": "easy",
+    "name": "py_list_intersection_finder",
+    "file": "py_list_intersection_finder.py",
+    "description": {
+      "en": "Write a function that finds the intersection of multiple sorted lists.\nReturn a new list containing elements that appear in ALL input lists, in sorted order.\n\nThe function should:\n- Return elements that appear in ALL lists\n- Result should be sorted in ascending order\n- Remove duplicates from the result\n- Handle empty input or empty lists gracefully\n- If any list is empty, the intersection is empty",
+      "de": "Schreibe eine Funktion, die die Schnittmenge mehrerer sortierter Listen findet. Gibt eine neue Liste zurÃ¼ck, die die Elemente enthÃ¤lt, die in ALLEN Eingabelisten vorkommen, in sortierter Reihenfolge.\n\nDie Funktion sollte:\n- Elemente zurÃ¼ckgeben, die in ALLEN Listen vorkommen\n- Das Ergebnis sollte in aufsteigender Reihenfolge sortiert sein\n- Duplikate aus dem Ergebnis entfernen\n- Leere Eingaben oder leere Listen ordnungsgemÃ¤Ã behandeln\n- Wenn eine Liste leer ist, ist die Schnittmenge leer",
+      "fr": "Ãcris une fonction qui trouve l'intersection de plusieurs listes triÃ©es. Renvoyez une nouvelle liste contenant les Ã©lÃ©ments qui apparaissent dans TOUTES les listes d'entrÃ©e, dans l'ordre triÃ©.\n\nLa fonction doit :\n- Renvoyer les Ã©lÃ©ments qui apparaissent dans TOUTES les listes\n- Le rÃ©sultat doit Ãªtre triÃ© par ordre croissant\n- Supprimer les doublons du rÃ©sultat\n- GÃ©rer proprement les entrÃ©es vides ou les listes vides\n- Si une liste est vide, l'intersection est vide",
+      "es": "Escribe una funciÃ³n que encuentre la intersecciÃ³n de varias listas ordenadas. Devuelve una nueva lista que contenga los elementos que aparecen en TODAS las listas de entrada, en orden ordenado.\n\nLa funciÃ³n debe:\n- Devolver los elementos que aparecen en TODAS las listas\n- El resultado debe estar ordenado en orden ascendente\n- Eliminar duplicados del resultado\n- Manejar adecuadamente las entradas vacÃ­as o listas vacÃ­as\n- Si alguna lista estÃ¡ vacÃ­a, la intersecciÃ³n estÃ¡ vacÃ­a",
+      "it": "Scrivi una funzione che trovi l'intersezione di piÃ¹ liste ordinate. Restituisci una nuova lista contenente gli elementi che appaiono in TUTTE le liste di input, in ordine ordinato.\n\nLa funzione deve:\n- Restituire gli elementi che appaiono in TUTTE le liste\n- Il risultato deve essere ordinato in ordine crescente\n- Rimuovere i duplicati dal risultato\n- Gestire correttamente gli input vuoti o le liste vuote\n- Se una qualsiasi lista Ã¨ vuota, l'intersezione Ã¨ vuota",
+      "ru": "ÐÐ°Ð¿Ð¸ÑÐ¸ÑÐµ ÑÑÐ½ÐºÑÐ¸Ñ, ÐºÐ¾ÑÐ¾ÑÐ°Ñ Ð½Ð°ÑÐ¾Ð´Ð¸Ñ Ð¿ÐµÑÐµÑÐµÑÐµÐ½Ð¸Ðµ Ð½ÐµÑÐºÐ¾Ð»ÑÐºÐ¸Ñ Ð¾ÑÑÐ¾ÑÑÐ¸ÑÐ¾Ð²Ð°Ð½Ð½ÑÑ ÑÐ¿Ð¸ÑÐºÐ¾Ð². ÐÐ¾Ð·Ð²ÑÐ°ÑÐ°Ð¹ÑÐµ Ð½Ð¾Ð²ÑÐ¹ ÑÐ¿Ð¸ÑÐ¾Ðº, ÑÐ¾Ð´ÐµÑÐ¶Ð°ÑÐ¸Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½ÑÑ, ÐºÐ¾ÑÐ¾ÑÑÐµ Ð¿ÑÐ¸ÑÑÑÑÑÐ²ÑÑÑ Ð²Ð¾ ÐÐ¡ÐÐ¥ Ð²ÑÐ¾Ð´Ð½ÑÑ ÑÐ¿Ð¸ÑÐºÐ°Ñ, Ð² Ð¾ÑÑÐ¾ÑÑÐ¸ÑÐ¾Ð²Ð°Ð½Ð½Ð¾Ð¼ Ð¿Ð¾ÑÑÐ´ÐºÐµ.\n\nÐ¤ÑÐ½ÐºÑÐ¸Ñ Ð´Ð¾Ð»Ð¶Ð½Ð°:\n- ÐÐ¾Ð·Ð²ÑÐ°ÑÐ°ÑÑ ÑÐ»ÐµÐ¼ÐµÐ½ÑÑ, Ð¿ÑÐ¸ÑÑÑÑÑÐ²ÑÑÑÐ¸Ðµ Ð²Ð¾ ÐÐ¡ÐÐ¥ ÑÐ¿Ð¸ÑÐºÐ°Ñ\n- Ð ÐµÐ·ÑÐ»ÑÑÐ°Ñ Ð´Ð¾Ð»Ð¶ÐµÐ½ Ð±ÑÑÑ Ð¾ÑÑÐ¾ÑÑÐ¸ÑÐ¾Ð²Ð°Ð½ Ð¿Ð¾ Ð²Ð¾Ð·ÑÐ°ÑÑÐ°Ð½Ð¸Ñ\n- Ð£Ð´Ð°Ð»ÑÑÑ Ð´ÑÐ±Ð»Ð¸ÐºÐ°ÑÑ Ð¸Ð· ÑÐµÐ·ÑÐ»ÑÑÐ°ÑÐ°\n- ÐÐ¾ÑÑÐµÐºÑÐ½Ð¾ Ð¾Ð±ÑÐ°Ð±Ð°ÑÑÐ²Ð°ÑÑ Ð¿ÑÑÑÐ¾Ð¹ Ð²Ð²Ð¾Ð´ Ð¸Ð»Ð¸ Ð¿ÑÑÑÑÐµ ÑÐ¿Ð¸ÑÐºÐ¸\n- ÐÑÐ»Ð¸ ÐºÐ°ÐºÐ¾Ð¹-Ð»Ð¸Ð±Ð¾ ÑÐ¿Ð¸ÑÐ¾Ðº Ð¿ÑÑÑ, Ð¿ÐµÑÐµÑÐµÑÐµÐ½Ð¸Ðµ ÑÑÐ¸ÑÐ°ÐµÑÑÑ Ð¿ÑÑÑÑÐ¼",
+      "tr": "Verilen tÃ¼m tamsayÄ± listelerinde bulunan ortak elemanlarÄ± bulun. Artan dÃ¼zende sÄ±ralanmÄ±Å benzersiz ortak elemanlarÄ± dÃ¶ndÃ¼rÃ¼n.\n\n- Herhangi bir liste boÅsa veya ortak eleman yoksa boÅ liste dÃ¶ndÃ¼rÃ¼n\n- ÃÄ±ktÄ±da benzersizliÄi koruyun",
+      "zh": "æ¾åºå­å¨äºææç»å®æ´æ°åè¡¨ä¸­çå¬å±åç´ ãè¿åæååºæåºçå¯ä¸å¬å±åç´ ã\n\n- å¦æä»»ä½åè¡¨ä¸ºç©ºæä¸å­å¨å¬å±åç´ ï¼åè¿åç©ºåè¡¨\n- ç¡®ä¿è¾åºä¸­åç´ çå¯ä¸æ§",
+      "ar": "Ø§Ø¨Ø­Ø« Ø¹Ù Ø§ÙØ¹ÙØ§ØµØ± Ø§ÙÙØ´ØªØ±ÙØ© Ø§ÙÙÙØ¬ÙØ¯Ø© ÙÙ Ø¬ÙÙØ¹ ÙÙØ§Ø¦Ù Ø§ÙØ£Ø¹Ø¯Ø§Ø¯ Ø§ÙØµØ­ÙØ­Ø© Ø§ÙÙØ¹Ø·Ø§Ø©. Ø£Ø±Ø¬Ø¹ Ø§ÙØ¹ÙØ§ØµØ± Ø§ÙÙØ´ØªØ±ÙØ© Ø§ÙÙØ±ÙØ¯Ø© ÙØ±ØªØ¨Ø© ØªØµØ§Ø¹Ø¯ÙØ§Ù.\n\n- Ø£Ø±Ø¬Ø¹ ÙØ§Ø¦ÙØ© ÙØ§Ø±ØºØ© Ø¥Ø°Ø§ ÙØ§ÙØª Ø£Ù ÙØ§Ø¦ÙØ© ÙØ§Ø±ØºØ© Ø£Ù ÙÙ Ø­Ø§Ù Ø¹Ø¯Ù ÙØ¬ÙØ¯ Ø¹ÙØ§ØµØ± ÙØ´ØªØ±ÙØ©\n- Ø§ÙØ­ÙØ§Ø¸ Ø¹ÙÙ ØªÙØ±Ø¯ Ø§ÙØ¹ÙØ§ØµØ± ÙØ¹Ø¯Ù Ø§ÙØªÙØ±Ø§Ø± ÙÙ Ø§ÙÙØ®Ø±Ø¬Ø§Øª"
+    },
+    "signature": "def list_intersection_finder(lists: list[list[int]]) -> list[int]:",
+    "examples": [
+      {
+        "input": "list_intersection_finder([[1, 2, 3], [2, 3, 4], [2, 3, 5]])",
+        "output": "[2, 3]"
+      },
+      {
+        "input": "list_intersection_finder([[1, 2, 3, 4], [2, 4, 6, 8], [4, 8, 12]])",
+        "output": "[4]"
+      },
+      {
+        "input": "list_intersection_finder([[1, 1, 2, 3], [1, 2, 2, 3], [1, 2, 3, 3]])",
+        "output": "[1, 2, 3]"
+      },
+      {
+        "input": "list_intersection_finder([[1, 2, 3], [4, 5, 6]])",
+        "output": "[]"
+      },
+      {
+        "input": "list_intersection_finder([])",
+        "output": "[]"
+      },
+      {
+        "input": "list_intersection_finder([[1, 2, 3], []])",
+        "output": "[]"
+      },
+      {
+        "input": "list_intersection_finder([[5]])",
+        "output": "[5]"
+      }
+    ]
+  },
+  {
+    "id": 4.0,
+    "level": 2.0,
+    "difficulty": "medium",
+    "name": "py_merge_sorted_lists",
+    "file": "py_merge_sorted_lists.py",
+    "description": {
+      "en": "Write a function that merges multiple sorted lists into one sorted list while maintaining the sort order efficiently.\n\nThe function should:\n- Take a list of sorted integer lists as input\n- Return a single merged list in ascending order\n- Preserve all duplicate elements in the final result\n- Handle empty lists and empty input gracefully\n- Maintain optimal efficiency for large inputs\n\nRules:\n- All input lists are guaranteed to be sorted in ascending order\n- Empty lists should be ignored during merging\n- Return empty list if no valid input is provided\n- Preserve duplicates across different lists\n- Handle negative numbers correctly\n\nEdge cases to handle:\n- Empty input list: return empty list\n- Lists containing only empty lists: return empty list\n- Single list input: return copy of that list\n- All duplicate elements: preserve all instances\n- Negative numbers: handle correctly in sort order",
+      "de": "Schreibe eine Funktion, die mehrere sortierte Listen effizient zu einer einzigen aufsteigend sortierten Liste zusammenfÃ¼hrt.\n\nDie Funktion soll:\n- Eine Liste von sortierten Integer-Listen entgegennehmen\n- Eine einzelne zusammengefÃ¼hrte Liste in aufsteigender Reihenfolge zurÃ¼ckgeben\n- Alle doppelten Elemente im Endergebnis beibehalten\n- Leere Listen und leere Eingaben sauber behandeln\n- Optimale Effizienz bei groÃen Eingabemengen aufweisen",
+      "fr": "Ãcris une fonction qui fusionne plusieurs listes triÃ©es en une seule liste triÃ©e de maniÃ¨re efficace.\n\nLa fonction doit :\n- Prendre en entrÃ©e une liste de listes d'entiers triÃ©es\n- Renvoyer une seule liste fusionnÃ©e par ordre croissant\n- Conserver tous les doublons dans le rÃ©sultat final\n- GÃ©rer correctement les listes vides et les entrÃ©es vides\n- Maintenir une efficacitÃ© optimale pour les grands volumes de donnÃ©es",
+      "es": "Escribe una funciÃ³n que fusione mÃºltiples listas ordenadas en una sola lista ordenada de forma eficiente.\n\nLa funciÃ³n debe:\n- Tomar como entrada una lista de listas de enteros ordenadas\n- Devolver una Ãºnica lista fusionada en orden ascendente\n- Conservar todos los elementos duplicados en el resultado final\n- Manejar listas vacÃ­as y entradas vacÃ­as de forma adecuada\n- Mantener una eficiencia Ã³ptima para entradas grandes",
+      "it": "Scrivi una funzione che unisca piÃ¹ liste ordinate in una sola lista ordinata in modo efficiente.\n\nLa funzione deve:\n- Ricevere in input una lista di liste di interi ordinate\n- Restituire un'unica lista unita in ordine crescente\n- Mantenere tutti gli elementi duplicati nel risultato finale\n- Gestire correttamente le liste vuote e gli input vuoti\n- Mantenere un'efficienza ottimale per grandi volumi di dati",
+      "ru": "ÐÐ°Ð¼ Ð´Ð°Ð½ ÑÐ¿Ð¸ÑÐ¾Ðº Ð¾ÑÑÐ¾ÑÑÐ¸ÑÐ¾Ð²Ð°Ð½Ð½ÑÑ Ð¿Ð¾Ð´ÑÐ¿Ð¸ÑÐºÐ¾Ð² ÑÐµÐ»ÑÑ ÑÐ¸ÑÐµÐ» Ð² Ð¿ÑÐ¾Ð¸Ð·Ð²Ð¾Ð»ÑÐ½Ð¾Ð¼ Ð¿Ð¾ÑÑÐ´ÐºÐµ.\nÐÐ±ÑÐµÐ´Ð¸Ð½Ð¸ÑÐµ Ð²ÑÐµ Ð¿Ð¾Ð´ÑÐ¿Ð¸ÑÐºÐ¸ Ð² Ð¾Ð´Ð¸Ð½ Ð¾ÑÑÐ¾ÑÑÐ¸ÑÐ¾Ð²Ð°Ð½Ð½ÑÐ¹ Ð¿Ð¾ Ð²Ð¾Ð·ÑÐ°ÑÑÐ°Ð½Ð¸Ñ ÑÐ¿Ð¸ÑÐ¾Ðº Ð¸ Ð²ÐµÑÐ½Ð¸ÑÐµ ÐµÐ³Ð¾.\n\nÐÐ³ÑÐ°Ð½Ð¸ÑÐµÐ½Ð¸Ñ:\n- ÐÐ½ÐµÑÐ½Ð¸Ð¹ ÑÐ¿Ð¸ÑÐ¾Ðº Ð¼Ð¾Ð¶ÐµÑ Ð±ÑÑÑ Ð¿ÑÑÑÑÐ¼ -> Ð²ÐµÑÐ½ÑÑÑ []\n- ÐÐ¾Ð³ÑÑ ÑÑÑÐµÑÑÐ²Ð¾Ð²Ð°ÑÑ Ð¿ÑÑÑÑÐµ Ð¿Ð¾Ð´ÑÐ¿Ð¸ÑÐºÐ¸, ÐºÐ¾ÑÐ¾ÑÑÐµ ÑÐ»ÐµÐ´ÑÐµÑ Ð¸Ð³Ð½Ð¾ÑÐ¸ÑÐ¾Ð²Ð°ÑÑ.\n- ÐÐ½Ð°ÑÐµÐ½Ð¸Ñ Ð¼Ð¾Ð³ÑÑ Ð¿Ð¾Ð²ÑÐ¾ÑÑÑÑÑÑ (ÑÐ¾ÑÑÐ°Ð½ÑÐ¹ÑÐµ Ð´ÑÐ±Ð»Ð¸ÐºÐ°ÑÑ).\n- ÐÐ°Ð¶Ð´ÑÐ¹ Ð¿Ð¾Ð´ÑÐ¿Ð¸ÑÐ¾Ðº ÑÐ¶Ðµ Ð¾ÑÑÐ¾ÑÑÐ¸ÑÐ¾Ð²Ð°Ð½ Ð¿Ð¾ Ð¾ÑÐ´ÐµÐ»ÑÐ½Ð¾ÑÑÐ¸.",
+      "tr": "Birden Ã§ok sÄ±ralÄ± listeyi sÄ±ralama dÃ¼zenini verimli Åekilde koruyarak tek bir sÄ±ralÄ± listede birleÅtiren bir fonksiyon yazÄ±n.\n\nFonksiyon ÅunlarÄ± yapmalÄ±dÄ±r:\n- SÄ±ralÄ± tamsayÄ± listelerinden oluÅan bir listeyi girdi olarak almalÄ±dÄ±r\n- Artan dÃ¼zende tek bir birleÅtirilmiÅ liste dÃ¶ndÃ¼rmelidir\n- SonuÃ§ta tÃ¼m yinelenen elemanlarÄ± korumalÄ±dÄ±r\n- BoÅ listeleri ve boÅ girdileri sorunsuz Åekilde iÅlemelidir\n- BÃ¼yÃ¼k girdiler iÃ§in optimum verimlilik saÄlamalÄ±dÄ±r",
+      "zh": "ç¼åä¸ä¸ªå½æ°ï¼é«æå°å°å¤ä¸ªå·²æåºçåè¡¨åå¹¶ä¸ºä¸ä¸ªä¿æååºæåºçåè¡¨ã\n\nè¯¥å½æ°åºè¯¥ï¼\n- æ¥æ¶å·²æåºçæ´æ°åè¡¨ç»æçåè¡¨ä½ä¸ºè¾å¥\n- è¿åä¸ä¸ªæååºæåçåå¹¶ååè¡¨\n- å¨æç»ç»æä¸­ä¿çææéå¤åç´ \n- å¦¥åå¤çç©ºåè¡¨åç©ºè¾å¥\n- å¯¹å¤§è§æ¨¡è¾å¥ä¿ææä¼çå¤çæç",
+      "ar": "Ø§ÙØªØ¨ Ø¯Ø§ÙØ© ØªØ¯ÙØ¬ ÙÙØ§Ø¦Ù ÙØªØ¹Ø¯Ø¯Ø© ÙØ±ØªØ¨Ø© ÙÙ ÙØ§Ø¦ÙØ© ÙØ§Ø­Ø¯Ø© ÙØ±ØªØ¨Ø© Ø¨ÙÙØ§Ø¡Ø© Ø¹Ø§ÙÙØ©.\n\nÙØ¬Ø¨ Ø¹ÙÙ Ø§ÙØ¯Ø§ÙØ©:\n- Ø£Ø®Ø° ÙØ§Ø¦ÙØ© ÙÙ ÙÙØ§Ø¦Ù Ø§ÙØ£Ø¹Ø¯Ø§Ø¯ Ø§ÙØµØ­ÙØ­Ø© Ø§ÙÙØ±ØªØ¨Ø© ÙÙØ¯Ø®Ù\n- Ø¥Ø±Ø¬Ø§Ø¹ ÙØ§Ø¦ÙØ© ÙØ¯ÙØ¬Ø© ÙØ§Ø­Ø¯Ø© Ø¨ØªØ±ØªÙØ¨ ØªØµØ§Ø¹Ø¯Ù\n- Ø§ÙØ­ÙØ§Ø¸ Ø¹ÙÙ Ø¬ÙÙØ¹ Ø§ÙØ¹ÙØ§ØµØ± Ø§ÙÙÙØ±Ø±Ø© ÙÙ Ø§ÙÙØªÙØ¬Ø© Ø§ÙÙÙØ§Ø¦ÙØ©\n- Ø§ÙØªØ¹Ø§ÙÙ Ø¨Ø³ÙØ§Ø³Ø© ÙØ¹ Ø§ÙÙÙØ§Ø¦Ù Ø§ÙÙØ§Ø±ØºØ© ÙØ§ÙÙØ¯Ø®ÙØ§Øª Ø§ÙÙØ§Ø±ØºØ©\n- Ø§ÙØ­ÙØ§Ø¸ Ø¹ÙÙ Ø§ÙÙÙØ§Ø¡Ø© Ø§ÙÙØ«Ø§ÙÙØ© ÙÙÙØ¯Ø®ÙØ§Øª Ø§ÙÙØ¨ÙØ±Ø©"
+    },
+    "signature": "def merge_sorted_lists(lists: list[list[int]]) -> list[int]:",
+    "examples": [
+      {
+        "input": "merge_sorted_lists([[1, 3, 5], [2, 4, 6]])",
+        "output": "[1, 2, 3, 4, 5, 6]"
+      },
+      {
+        "input": "merge_sorted_lists([[1, 5, 9], [2, 3, 8], [4, 6, 7]])",
+        "output": "[1, 2, 3, 4, 5, 6, 7, 8, 9]"
+      },
+      {
+        "input": "merge_sorted_lists([[5], [1, 3], [2, 4]])",
+        "output": "[1, 2, 3, 4, 5]"
+      },
+      {
+        "input": "merge_sorted_lists([[1, 1, 2], [2, 3, 3]])",
+        "output": "[1, 1, 2, 2, 3, 3]"
+      },
+      {
+        "input": "merge_sorted_lists([[], [1, 2, 3]])",
+        "output": "[1, 2, 3]"
+      },
+      {
+        "input": "merge_sorted_lists([[]])",
+        "output": "[]"
+      },
+      {
+        "input": "merge_sorted_lists([[-5, -1, 0], [-3, 2, 4]])",
+        "output": "[-5, -3, -1, 0, 2, 4]"
+      },
+      {
+        "input": "merge_sorted_lists([[10], [10], [10]])",
+        "output": "[10, 10, 10]"
+      }
+    ],
+    "forbidden": [
+      "sorted()",
+      ".sort()",
+      "heapq.merge()"
+    ]
+  },
+  {
+    "id": 5.0,
+    "level": 3.0,
+    "difficulty": "hard",
+    "name": "py_palindrome_partitioner",
+    "file": "py_palindrome_partitioner.py",
+    "description": {
+      "en": "Given a string `s`, find the minimum number of cuts needed to partition it such that every resulting substring is a palindrome.\n\nA cut divides the string between two characters. With `c` cuts, the string is split into `c + 1` substrings. We want the minimum number of cuts `c` such that all parts are palindromes.\n\nReturn this minimum number of cuts (an integer).\n\nConstraints:\n- An empty string or a string of length 1 is already a palindrome -> 0 cuts.\n- If the entire string is already a palindrome -> 0 cuts.\n- In the worst case (all characters are distinct), the result is len(s) - 1 cuts.",
+      "de": "Finde fÃ¼r einen gegebenen String s die minimale Anzahl an Schnitten, die nÃ¶tig sind, um ihn so zu zerteilen, dass jeder resultierende Teilstring ein Palindrom ist.\n\n- Gibt die minimale Anzahl an Schnitten (Ganzzahl) zurÃ¼ck\n- Ein String der LÃ¤nge 1 erfordert 0 Schnitte\n- Ein leerer String erfordert 0 Schnitte",
+      "fr": "Ãtant donnÃ© une chaÃ®ne s, trouve le nombre minimum de dÃ©coupes nÃ©cessaires pour la partitionner de maniÃ¨re Ã  ce que chaque sous-chaÃ®ne rÃ©sultante soit un palindrome.\n\n- Renvoie le nombre minimum de dÃ©coupes (un entier)\n- Une chaÃ®ne de longueur 1 nÃ©cessite 0 dÃ©coupe\n- Une chaÃ®ne vide nÃ©cessite 0 dÃ©coupe",
+      "es": "Dada una cadena s, encuentra el nÃºmero mÃ­nimo de cortes necesarios para particionarla de manera que cada subcadena resultante sea un palÃ­ndromo.\n\n- Devuelve el nÃºmero mÃ­nimo de cortes (un entero)\n- Una cadena de longitud 1 requiere 0 cortes\n- Una cadena vacÃ­a requiere 0 cortes",
+      "it": "Data una stringa s, trova il numero minimo di tagli necessari per partizionarla in modo che ogni sottostringa risultante sia un palindromo.\n\n- Restituisce il numero minimo di tagli (un intero)\n- Una stringa di lunghezza 1 richiede 0 tagli\n- Una stringa vuota richiede 0 tagli",
+      "ru": "ÐÐ°Ð½Ð° ÑÑÑÐ¾ÐºÐ° s. ÐÐ°Ð¹Ð´Ð¸ÑÐµ Ð¼Ð¸Ð½Ð¸Ð¼Ð°Ð»ÑÐ½Ð¾Ðµ ÐºÐ¾Ð»Ð¸ÑÐµÑÑÐ²Ð¾ ÑÐ°Ð·ÑÐµÐ·Ð¾Ð², Ð½ÐµÐ¾Ð±ÑÐ¾Ð´Ð¸Ð¼ÑÑ Ð´Ð»Ñ ÑÐ°Ð·Ð´ÐµÐ»ÐµÐ½Ð¸Ñ ÑÑÑÐ¾ÐºÐ¸ ÑÐ°Ðº, ÑÑÐ¾Ð±Ñ ÐºÐ°Ð¶Ð´Ð°Ñ Ð¿Ð¾Ð»ÑÑÐµÐ½Ð½Ð°Ñ Ð¿Ð¾Ð´ÑÑÑÐ¾ÐºÐ° Ð±ÑÐ»Ð° Ð¿Ð°Ð»Ð¸Ð½Ð´ÑÐ¾Ð¼Ð¾Ð¼.\n\nÐ Ð°Ð·ÑÐµÐ· Ð´ÐµÐ»Ð¸Ñ ÑÑÑÐ¾ÐºÑ Ð¼ÐµÐ¶Ð´Ñ Ð´Ð²ÑÐ¼Ñ ÑÐ¸Ð¼Ð²Ð¾Ð»Ð°Ð¼Ð¸. ÐÑÐ¸ c ÑÐ°Ð·ÑÐµÐ·Ð°Ñ ÑÑÑÐ¾ÐºÐ° Ð´ÐµÐ»Ð¸ÑÑÑ Ð½Ð° c + 1 Ð¿Ð¾Ð´ÑÑÑÐ¾ÐºÑ. Ð¢ÑÐµÐ±ÑÐµÑÑÑ Ð½Ð°Ð¹ÑÐ¸ Ð¼Ð¸Ð½Ð¸Ð¼Ð°Ð»ÑÐ½Ð¾Ðµ ÐºÐ¾Ð»Ð¸ÑÐµÑÑÐ²Ð¾ ÑÐ°Ð·ÑÐµÐ·Ð¾Ð² c, Ð¿ÑÐ¸ ÐºÐ¾ÑÐ¾ÑÐ¾Ð¼ Ð²ÑÐµ ÑÐ°ÑÑÐ¸ ÑÐ²Ð»ÑÑÑÑÑ Ð¿Ð°Ð»Ð¸Ð½Ð´ÑÐ¾Ð¼Ð°Ð¼Ð¸.\n\nÐÐµÑÐ½Ð¸ÑÐµ ÑÑÐ¾ Ð¼Ð¸Ð½Ð¸Ð¼Ð°Ð»ÑÐ½Ð¾Ðµ ÐºÐ¾Ð»Ð¸ÑÐµÑÑÐ²Ð¾ ÑÐ°Ð·ÑÐµÐ·Ð¾Ð² (ÑÐµÐ»Ð¾Ðµ ÑÐ¸ÑÐ»Ð¾).\n\nÐÐ³ÑÐ°Ð½Ð¸ÑÐµÐ½Ð¸Ñ:\n- ÐÑÑÑÐ°Ñ ÑÑÑÐ¾ÐºÐ° Ð¸Ð»Ð¸ ÑÑÑÐ¾ÐºÐ° Ð´Ð»Ð¸Ð½Ð¾Ð¹ 1 ÑÐ¶Ðµ ÑÐ²Ð»ÑÐµÑÑÑ Ð¿Ð°Ð»Ð¸Ð½Ð´ÑÐ¾Ð¼Ð¾Ð¼ -> 0 ÑÐ°Ð·ÑÐµÐ·Ð¾Ð².\n- ÐÑÐ»Ð¸ Ð²ÑÑ ÑÑÑÐ¾ÐºÐ° ÑÐ¶Ðµ ÑÐ²Ð»ÑÐµÑÑÑ Ð¿Ð°Ð»Ð¸Ð½Ð´ÑÐ¾Ð¼Ð¾Ð¼ -> 0 ÑÐ°Ð·ÑÐµÐ·Ð¾Ð².\n- Ð ÑÑÐ´ÑÐµÐ¼ ÑÐ»ÑÑÐ°Ðµ (Ð²ÑÐµ ÑÐ¸Ð¼Ð²Ð¾Ð»Ñ ÑÐ°Ð·Ð»Ð¸ÑÐ½Ñ) ÑÐµÐ·ÑÐ»ÑÑÐ°Ñ ÑÐ°Ð²ÐµÐ½ len(s) - 1 ÑÐ°Ð·ÑÐµÐ·Ð¾Ð².",
+      "tr": "Verilen bir s dizesi iÃ§in, ortaya Ã§Ä±kan her alt dizenin bir palindrom olacaÄÄ± Åekilde bÃ¶lmek iÃ§in gereken minimum kesme sayÄ±sÄ±nÄ± bulun.\n\n- Minimum kesme sayÄ±sÄ±nÄ± dÃ¶ndÃ¼rÃ¼n (tamsayÄ±)\n- 1 uzunluÄundaki dize 0 kesme gerektirir\n- BoÅ dize 0 kesme gerektirir",
+      "zh": "ç»å®ä¸ä¸ªå­ç¬¦ä¸² sï¼æ¾åºå°å¶åå²æéçæå°åå²æ¬¡æ°ï¼ä½¿åå²åºçæ¯ä¸ªå­ä¸²é½æ¯åæä¸²ã\n\n- è¿åæå°åå²æ¬¡æ°ï¼æ´æ°ï¼\n- é¿åº¦ä¸º 1 çå­ç¬¦ä¸²éè¦ 0 æ¬¡åå²\n- ç©ºå­ç¬¦ä¸²éè¦ 0 æ¬¡åå²",
+      "ar": "Ø¨Ø§ÙÙØ¸Ø± Ø¥ÙÙ Ø³ÙØ³ÙØ© ÙØµÙØ© sØ Ø£ÙØ¬Ø¯ Ø§ÙØ­Ø¯ Ø§ÙØ£Ø¯ÙÙ ÙØ¹Ø¯Ø¯ ÙØ±Ø§Øª Ø§ÙØªÙØ³ÙÙ Ø§ÙÙØ·ÙÙØ¨Ø© ÙØªØ¬Ø²Ø¦ØªÙØ§ Ø¨Ø­ÙØ« ØªÙÙÙ ÙÙ Ø³ÙØ³ÙØ© ÙØ±Ø¹ÙØ© ÙØ§ØªØ¬Ø© ÙØªÙØ§Ø¸Ø±Ø© (palindrome).\n\n- Ø£Ø±Ø¬Ø¹ Ø§ÙØ­Ø¯ Ø§ÙØ£Ø¯ÙÙ ÙØ¹Ø¯Ø¯ ÙØ±Ø§Øª Ø§ÙØªÙØ³ÙÙ (Ø¹Ø¯Ø¯ ØµØ­ÙØ­)\n- Ø§ÙØ³ÙØ³ÙØ© Ø°Ø§Øª Ø§ÙØ·ÙÙ 1 ØªØªØ·ÙØ¨ 0 ØªÙØ³ÙÙ\n- Ø§ÙØ³ÙØ³ÙØ© Ø§ÙÙØ§Ø±ØºØ© ØªØªØ·ÙØ¨ 0 ØªÙØ³ÙÙ"
+    },
+    "signature": "def palindrome_partitioner(s: str) -> int:",
+    "examples": [
+      {
+        "input": "palindrome_partitioner(\"aab\")",
+        "output": "1"
+      },
+      {
+        "input": "palindrome_partitioner(\"aba\")",
+        "output": "0"
+      },
+      {
+        "input": "palindrome_partitioner(\"abc\")",
+        "output": "2"
+      }
+    ]
+  },
+  {
+    "id": 6.0,
+    "level": 3.0,
+    "difficulty": "hard",
+    "name": "py_package_dependency_resolver",
+    "file": "py_package_dependency_resolver.py",
+    "description": {
+      "en": "Write a function that determines a valid package installation order by resolving dependencies. Use topological sorting to ensure dependencies are installed before the packages that require them.\n\nThe function should:\n- Take a dictionary where keys are package names and values are lists of dependencies\n- Return packages in installation order (dependencies first)\n- Return empty list if no valid order exists (circular dependencies)\n- Handle empty input and isolated dependency chains\n- Ignore references to packages not in the input dictionary\n\nAlgorithm requirements:\n- Use topological sorting (e.g., Kahn's algorithm)\n- Process packages with no remaining dependencies first\n- Ensure deterministic output when multiple valid orders exist\n\nEdge cases to handle:\n- Empty input: return empty list\n- Packages with no dependencies: include in output first\n- Multiple independent chains: process all chains\n- Circular dependencies: return empty list\n- Non-existent dependencies: ignore missing packages\n- Self-dependencies: return empty list\n\nNotes:\n- For deterministic output, process packages alphabetically when choices exist\n- A package cannot be installed until all its dependencies are installed\n- If any circular dependency exists, no valid installation order is possible",
+      "de": "Schreibe eine Funktion, die eine gÃ¼ltige Installationsreihenfolge fÃ¼r Softwarepakete durch AuflÃ¶sung von AbhÃ¤ngigkeiten ermittelt. Verwende topologisches Sortieren, um sicherzustellen, dass AbhÃ¤ngigkeiten vor den abhÃ¤ngigen Paketen installiert werden.\n\nDie Funktion soll:\n- Ein Dictionary entgegennehmen, dessen SchlÃ¼ssel Paketnamen und Werte Listen von AbhÃ¤ngigkeiten sind\n- Pakete in Installationsreihenfolge (AbhÃ¤ngigkeiten zuerst) zurÃ¼ckgeben\n- Eine leere Liste zurÃ¼ckgeben, falls keine gÃ¼ltige Reihenfolge existiert (zyklische AbhÃ¤ngigkeiten)\n- Leere Eingaben und isolierte AbhÃ¤ngigkeitsketten behandeln\n- Referenzen auf Pakete ignorieren, die nicht im Eingabe-Dictionary vorhanden sind",
+      "fr": "Ãcris une fonction qui dÃ©termine un ordre d'installation valide des paquets en rÃ©solvant les dÃ©pendances. Utilise le tri topologique pour t'assurer que les dÃ©pendances sont installÃ©es avant les paquets qui les requiÃ¨rent.\n\nLa fonction doit :\n- Prendre un dictionnaire dont les clÃ©s sont les noms de paquets et les valeurs des listes de dÃ©pendances\n- Renvoyer les paquets dans l'ordre d'installation (les dÃ©pendances en premier)\n- Renvoyer une liste vide si aucun ordre valide n'existe (dÃ©pendances circulaires)\n- GÃ©rer les entrÃ©es vides et les chaÃ®nes de dÃ©pendances isolÃ©es\n- Ignorer les rÃ©fÃ©rences Ã  des paquets absents du dictionnaire d'entrÃ©e",
+      "es": "Escribe una funciÃ³n que determine un orden de instalaciÃ³n de paquetes vÃ¡lido resolviendo dependencias. Usa ordenamiento topolÃ³gico para garantizar que las dependencias se instalen antes de los paquetes que las requieren.\n\nLa funciÃ³n debe:\n- Tomar un diccionario donde las claves son nombres de paquetes y los valores son listas de dependencias\n- Devolver los paquetes en orden de instalaciÃ³n (dependencias primero)\n- Devolver una lista vacÃ­a si no existe un orden vÃ¡lido (dependencias circulares)\n- Manejar entradas vacÃ­as y cadenas de dependencias aisladas\n- Ignorar referencias a paquetes que no estÃ¡n en el diccionario de entrada",
+      "it": "Scrivi una funzione che determini un ordine di installazione valido dei pacchetti risolvendo le dipendenze. Usa l'ordinamento topologico per garantire che le dipendenze siano installate prima dei pacchetti che le richiedono.\n\nLa funzione deve:\n- Ricevere un dizionario in cui le chiavi sono i nomi dei pacchetti e i valori sono liste di dipendenze\n- Restituire i pacchetti nell'ordine di installazione (prima le dipendenze)\n- Restituire una lista vuota se non esiste un ordine valido (dipendenze circolari)\n- Gestire input vuoti e catene di dipendenze isolate\n- Ignorare i riferimenti a pacchetti non presenti nel dizionario di input",
+      "ru": "ÐÐ°Ð¿Ð¸ÑÐ¸ÑÐµ ÑÑÐ½ÐºÑÐ¸Ñ, ÐºÐ¾ÑÐ¾ÑÐ°Ñ Ð¾Ð¿ÑÐµÐ´ÐµÐ»ÑÐµÑ Ð²Ð°Ð»Ð¸Ð´Ð½ÑÐ¹ Ð¿Ð¾ÑÑÐ´Ð¾Ðº ÑÑÑÐ°Ð½Ð¾Ð²ÐºÐ¸ Ð¿Ð°ÐºÐµÑÐ¾Ð² Ð¿ÑÑÐµÐ¼ ÑÐ°Ð·ÑÐµÑÐµÐ½Ð¸Ñ Ð·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð¾ÑÑÐµÐ¹. ÐÑÐ¿Ð¾Ð»ÑÐ·ÑÐ¹ÑÐµ ÑÐ¾Ð¿Ð¾Ð»Ð¾Ð³Ð¸ÑÐµÑÐºÑÑ ÑÐ¾ÑÑÐ¸ÑÐ¾Ð²ÐºÑ, ÑÑÐ¾Ð±Ñ Ð·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð¾ÑÑÐ¸ ÑÑÑÐ°Ð½Ð°Ð²Ð»Ð¸Ð²Ð°Ð»Ð¸ÑÑ Ð¿ÐµÑÐµÐ´ Ð¿Ð°ÐºÐµÑÐ°Ð¼Ð¸, ÐºÐ¾ÑÐ¾ÑÑÐµ Ð¸Ñ ÑÑÐµÐ±ÑÑÑ.\n\nÐ¤ÑÐ½ÐºÑÐ¸Ñ Ð´Ð¾Ð»Ð¶Ð½Ð°:\n- ÐÑÐ¸Ð½Ð¸Ð¼Ð°ÑÑ ÑÐ»Ð¾Ð²Ð°ÑÑ, Ð³Ð´Ðµ ÐºÐ»ÑÑÐ¸ â Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ñ Ð¿Ð°ÐºÐµÑÐ¾Ð², Ð° Ð·Ð½Ð°ÑÐµÐ½Ð¸Ñ â ÑÐ¿Ð¸ÑÐºÐ¸ Ð¸Ñ Ð·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð¾ÑÑÐµÐ¹.\n- ÐÐ¾Ð·Ð²ÑÐ°ÑÐ°ÑÑ Ð¿Ð°ÐºÐµÑÑ Ð² Ð¿Ð¾ÑÑÐ´ÐºÐµ ÑÑÑÐ°Ð½Ð¾Ð²ÐºÐ¸ (Ð·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð¾ÑÑÐ¸ Ð¿ÐµÑÐ²ÑÐ¼Ð¸).\n- ÐÐ¾Ð·Ð²ÑÐ°ÑÐ°ÑÑ Ð¿ÑÑÑÐ¾Ð¹ ÑÐ¿Ð¸ÑÐ¾Ðº ([]), ÐµÑÐ»Ð¸ Ð²Ð°Ð»Ð¸Ð´Ð½Ð¾Ð³Ð¾ Ð¿Ð¾ÑÑÐ´ÐºÐ° Ð½Ðµ ÑÑÑÐµÑÑÐ²ÑÐµÑ (Ð½Ð°Ð¿ÑÐ¸Ð¼ÐµÑ, Ð¿ÑÐ¸ ÑÐ¸ÐºÐ»Ð¸ÑÐµÑÐºÐ¸Ñ Ð¸Ð»Ð¸ Ð°Ð²ÑÐ¾-Ð·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð¾ÑÑÑÑ).\n- ÐÐ¾ÑÑÐµÐºÑÐ½Ð¾ Ð¾Ð±ÑÐ°Ð±Ð°ÑÑÐ²Ð°ÑÑ Ð¿ÑÑÑÐ¾Ð¹ Ð²Ð²Ð¾Ð´ Ð¸ Ð¸Ð·Ð¾Ð»Ð¸ÑÐ¾Ð²Ð°Ð½Ð½ÑÐµ ÑÐµÐ¿Ð¾ÑÐºÐ¸ Ð·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð¾ÑÑÐµÐ¹.\n- ÐÐ³Ð½Ð¾ÑÐ¸ÑÐ¾Ð²Ð°ÑÑ ÑÑÑÐ»ÐºÐ¸ Ð½Ð° Ð¿Ð°ÐºÐµÑÑ, ÐºÐ¾ÑÐ¾ÑÑÑ Ð½ÐµÑ ÑÑÐµÐ´Ð¸ ÐºÐ»ÑÑÐµÐ¹ Ð²ÑÐ¾Ð´Ð½Ð¾Ð³Ð¾ ÑÐ»Ð¾Ð²Ð°ÑÑ.\n- ÐÐ°ÑÐ°Ð½ÑÐ¸ÑÐ¾Ð²Ð°ÑÑ, ÑÑÐ¾ Ð¿Ð°ÐºÐµÑ Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ Ð±ÑÑÑ ÑÑÑÐ°Ð½Ð¾Ð²Ð»ÐµÐ½, Ð¿Ð¾ÐºÐ° Ð½Ðµ ÑÑÑÐ°Ð½Ð¾Ð²Ð»ÐµÐ½Ñ Ð²ÑÐµ ÐµÐ³Ð¾ Ð·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð¾ÑÑÐ¸.\n\nÐÐµÑÐ°Ð»Ð¸ Ð°Ð»Ð³Ð¾ÑÐ¸ÑÐ¼Ð° Ð¸ ÐºÑÐ°Ð¹Ð½Ð¸Ðµ ÑÐ»ÑÑÐ°Ð¸:\n- Ð¢Ð¾Ð¿Ð¾Ð»Ð¾Ð³Ð¸ÑÐµÑÐºÐ°Ñ ÑÐ¾ÑÑÐ¸ÑÐ¾Ð²ÐºÐ°: ÐÑÐ¿Ð¾Ð»ÑÐ·ÑÐ¹ÑÐµ Ð°Ð»Ð³Ð¾ÑÐ¸ÑÐ¼ ÑÐ¾Ð¿Ð¾Ð»Ð¾Ð³Ð¸ÑÐµÑÐºÐ¾Ð¹ ÑÐ¾ÑÑÐ¸ÑÐ¾Ð²ÐºÐ¸ (Ð½Ð°Ð¿ÑÐ¸Ð¼ÐµÑ, Ð°Ð»Ð³Ð¾ÑÐ¸ÑÐ¼ ÐÐ°Ð½Ð°).\n- ÐÑÐ¸Ð¾ÑÐ¸ÑÐµÑ Ð·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð¾ÑÑÐµÐ¹: Ð¡Ð½Ð°ÑÐ°Ð»Ð° Ð¾Ð±ÑÐ°Ð±Ð°ÑÑÐ²Ð°Ð¹ÑÐµ Ð¿Ð°ÐºÐµÑÑ, Ñ ÐºÐ¾ÑÐ¾ÑÑÑ Ð±Ð¾Ð»ÑÑÐµ Ð½Ðµ Ð¾ÑÑÐ°Ð»Ð¾ÑÑ Ð½ÐµÑÐ°Ð·ÑÐµÑÐµÐ½Ð½ÑÑ Ð·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð¾ÑÑÐµÐ¹.\n- ÐÐµÑÐµÑÐ¼Ð¸Ð½Ð¸ÑÐ¾Ð²Ð°Ð½Ð½ÑÐ¹ Ð²ÑÐ²Ð¾Ð´: ÐÑÐ»Ð¸ Ð¾Ð´Ð½Ð¾Ð²ÑÐµÐ¼ÐµÐ½Ð½Ð¾ Ð¼Ð¾Ð³ÑÑ Ð±ÑÑÑ Ð¾Ð±ÑÐ°Ð±Ð¾ÑÐ°Ð½Ñ Ð½ÐµÑÐºÐ¾Ð»ÑÐºÐ¾ Ð¿Ð°ÐºÐµÑÐ¾Ð² (ÐµÑÑÑ Ð²ÑÐ±Ð¾Ñ), Ð¾Ð±ÑÐ°Ð±Ð°ÑÑÐ²Ð°Ð¹ÑÐµ Ð¸Ñ Ð² Ð°Ð»ÑÐ°Ð²Ð¸ÑÐ½Ð¾Ð¼ Ð¿Ð¾ÑÑÐ´ÐºÐµ Ð´Ð»Ñ Ð¾Ð±ÐµÑÐ¿ÐµÑÐµÐ½Ð¸Ñ Ð´ÐµÑÐµÑÐ¼Ð¸Ð½Ð¸ÑÐ¾Ð²Ð°Ð½Ð½Ð¾ÑÑÐ¸.\n- ÐÑÑÑÐ¾Ð¹ Ð²Ð²Ð¾Ð´: ÐÐ¾Ð·Ð²ÑÐ°ÑÐ°Ð¹ÑÐµ Ð¿ÑÑÑÐ¾Ð¹ ÑÐ¿Ð¸ÑÐ¾Ðº.\n- ÐÐµÑÐºÐ¾Ð»ÑÐºÐ¾ Ð½ÐµÐ·Ð°Ð²Ð¸ÑÐ¸Ð¼ÑÑ ÑÐµÐ¿Ð¾ÑÐµÐº: ÐÐ±ÑÐ°Ð±Ð°ÑÑÐ²Ð°Ð¹ÑÐµ Ð²ÑÐµ ÑÐµÐ¿Ð¾ÑÐºÐ¸, ÑÐ¾Ð±Ð»ÑÐ´Ð°Ñ Ð°Ð»ÑÐ°Ð²Ð¸ÑÐ½ÑÐ¹ Ð¿Ð¾ÑÑÐ´Ð¾Ðº.\n- ÐÑÑÑÑÑÑÐ²ÑÑÑÐ¸Ðµ Ð·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð¾ÑÑÐ¸: ÐÐ³Ð½Ð¾ÑÐ¸ÑÑÐ¹ÑÐµ Ð¾ÑÑÑÑÑÑÐ²ÑÑÑÐ¸Ðµ Ð¿Ð°ÐºÐµÑÑ (Ð¾ÑÐ½Ð¾ÑÐ¸ÑÐµÑÑ Ðº Ð½Ð¸Ð¼ ÑÐ°Ðº, Ð±ÑÐ´ÑÐ¾ Ð¸Ñ Ð½ÐµÑ Ð² ÑÐ¿Ð¸ÑÐºÐµ ÑÑÐµÐ±Ð¾Ð²Ð°Ð½Ð¸Ð¹).",
+      "tr": "BaÄÄ±mlÄ±lÄ±klarÄ± Ã§Ã¶zerek geÃ§erli bir paket kurulum sÄ±rasÄ± belirleyen bir fonksiyon yazÄ±n. BaÄÄ±mlÄ±lÄ±klarÄ±n, onlarÄ± gerektiren paketlerden Ã¶nce kurulmasÄ±nÄ± saÄlamak iÃ§in topolojik sÄ±ralama kullanÄ±n.\n\nFonksiyon ÅunlarÄ± yapmalÄ±dÄ±r:\n- AnahtarlarÄ±n paket adlarÄ± ve deÄerlerin baÄÄ±mlÄ±lÄ±k listeleri olduÄu bir sÃ¶zlÃ¼k almalÄ±dÄ±r\n- Paketleri kurulum sÄ±rasÄ±nda dÃ¶ndÃ¼rmelidir (Ã¶nce baÄÄ±mlÄ±lÄ±klar)\n- GeÃ§erli bir sÄ±ra yoksa boÅ liste dÃ¶ndÃ¼rmelidir (dÃ¶ngÃ¼sel baÄÄ±mlÄ±lÄ±klar)\n- BoÅ girdileri ve izole baÄÄ±mlÄ±lÄ±k zincirlerini iÅlemelidir\n- Girdi sÃ¶zlÃ¼ÄÃ¼nde bulunmayan paket referanslarÄ±nÄ± yoksaymalÄ±dÄ±r",
+      "zh": "ç¼åä¸ä¸ªå½æ°ï¼éè¿è§£æä¾èµå³ç³»æ¥ç¡®å®ææçè½¯ä»¶åå®è£é¡ºåºãä½¿ç¨æææåºç¡®ä¿ä¾èµé¡¹åäºéè¦å®ä»¬çè½¯ä»¶åå®è£ã\n\nè¯¥å½æ°åºè¯¥ï¼\n- æ¥æ¶ä¸ä¸ªå­å¸ï¼å¶ä¸­é®æ¯ååç§°ï¼å¼æ¯ä¾èµé¡¹åè¡¨\n- æå®è£é¡ºåºè¿ååï¼åå®è£ä¾èµé¡¹ï¼\n- å¦æä¸å­å¨ææé¡ºåºï¼å­å¨å¾ªç¯ä¾èµï¼ï¼åè¿åç©ºåè¡¨\n- å¤çç©ºè¾å¥åå­¤ç«çä¾èµé¾\n- å¿½ç¥è¾å¥å­å¸ä¸­æªåå«çåå¼ç¨",
+      "ar": "Ø§ÙØªØ¨ Ø¯Ø§ÙØ© ØªØ­Ø¯Ø¯ ØªØ±ØªÙØ¨Ø§Ù ØµØ­ÙØ­Ø§Ù ÙØªØ«Ø¨ÙØª Ø§ÙØ­Ø²Ù Ø§ÙØ¨Ø±ÙØ¬ÙØ© Ø¹Ù Ø·Ø±ÙÙ Ø­Ù Ø§ÙØªØ¨Ø¹ÙØ§Øª. Ø§Ø³ØªØ®Ø¯Ù Ø§ÙØªØ±ØªÙØ¨ Ø§ÙØ·ÙØ¨ÙÙÙØ¬Ù ÙØ¶ÙØ§Ù ØªØ«Ø¨ÙØª Ø§ÙØªØ¨Ø¹ÙØ§Øª ÙØ¨Ù Ø§ÙØ­Ø²Ù Ø§ÙØªÙ ØªØªØ·ÙØ¨ÙØ§.\n\nÙØ¬Ø¨ Ø¹ÙÙ Ø§ÙØ¯Ø§ÙØ©:\n- Ø£Ø®Ø° ÙØ§ÙÙØ³ ÙÙØ§ØªÙØ­Ù Ø£Ø³ÙØ§Ø¡ Ø§ÙØ­Ø²Ù ÙÙÙÙÙ ÙÙØ§Ø¦Ù Ø§ÙØªØ¨Ø¹ÙØ§Øª\n- Ø¥Ø±Ø¬Ø§Ø¹ Ø§ÙØ­Ø²Ù Ø¨ØªØ±ØªÙØ¨ Ø§ÙØªØ«Ø¨ÙØª (Ø§ÙØªØ¨Ø¹ÙØ§Øª Ø£ÙÙØ§Ù)\n- Ø¥Ø±Ø¬Ø§Ø¹ ÙØ§Ø¦ÙØ© ÙØ§Ø±ØºØ© Ø¥Ø°Ø§ ÙÙ ÙÙÙ ÙÙØ§Ù ØªØ±ØªÙØ¨ ØµØ§ÙØ­ (ØªØ¨Ø¹ÙØ§Øª Ø¯Ø§Ø¦Ø±ÙØ©)\n- Ø§ÙØªØ¹Ø§ÙÙ ÙØ¹ Ø§ÙÙØ¯Ø®ÙØ§Øª Ø§ÙÙØ§Ø±ØºØ© ÙØ³ÙØ§Ø³Ù Ø§ÙØªØ¨Ø¹ÙØ§Øª Ø§ÙÙÙØ¹Ø²ÙØ©\n- ØªØ¬Ø§ÙÙ Ø§ÙØ¥Ø´Ø§Ø±Ø§Øª Ø¥ÙÙ Ø§ÙØ­Ø²Ù ØºÙØ± Ø§ÙÙÙØ¬ÙØ¯Ø© ÙÙ Ø§ÙÙØ§ÙÙØ³ Ø§ÙÙØ¯Ø®Ù"
+    },
+    "signature": "def package_dependency_resolver(packages: dict[str, list[str]]) -> list[str]:",
+    "examples": [
+      {
+        "input": "package_dependency_resolver({\"app\": [\"database\"], \"database\": [\"driver\"], \"driver\": []})",
+        "output": "[\"driver\", \"database\", \"app\"]"
+      },
+      {
+        "input": "package_dependency_resolver({\"A\": [], \"B\": [\"A\"], \"C\": [\"A\", \"B\"]})",
+        "output": "[\"A\", \"B\", \"C\"]"
+      },
+      {
+        "input": "package_dependency_resolver({})",
+        "output": "[]"
+      },
+      {
+        "input": "package_dependency_resolver({\"X\": [\"Y\"], \"Y\": [\"X\"]})",
+        "output": "[]"
+      },
+      {
+        "input": "package_dependency_resolver({\"web\": [], \"api\": [], \"frontend\": [\"web\"], \"backend\": [\"api\"]})",
+        "output": "[\"api\", \"web\", \"backend\", \"frontend\"]"
+      }
+    ],
+    "forbidden": [
+      "graphlib.TopologicalSorter"
+    ]
+  },
+  {
+    "id": 7.0,
+    "level": 4.0,
+    "difficulty": "hard",
+    "name": "py_sliding_window_maximum",
+    "file": "py_sliding_window_maximum.py",
+    "description": {
+      "en": "Write a function that finds the maximum element in each sliding window of size k in an array. Return a list of maximums for each window position.\n\nThe function should:\n- Slide a window of size k through the array\n- Find the maximum element in each window position\n- Return a list of maximum values\n- Handle edge cases (empty array, k <= 0, k > array length)\n- Return empty list for invalid inputs",
+      "de": "Schreibe eine Funktion, die das maximale Element in jedem gleitenden Fenster der GrÃ¶Ãe k in einem Array ermittelt. Gibt eine Liste der Maxima fÃ¼r jede Fensterposition zurÃ¼ck.\n\nDie Funktion soll:\n- Ein Fenster der GrÃ¶Ãe k Ã¼ber das Array verschieben\n- Das maximale Element in jeder Fensterposition finden\n- Eine Liste von Maximalwerten zurÃ¼ckgeben\n- RandfÃ¤lle behandeln (leeres Array, k <= 0, k > Array-LÃ¤nge)\n- Eine leere Liste bei ungÃ¼ltigen Eingaben zurÃ¼ckgeben",
+      "fr": "Ãcris une fonction qui trouve l'Ã©lÃ©ment maximal dans chaque fenÃªtre glissante de taille k dans un tableau. Renvoyez une liste des maximums pour chaque position de la fenÃªtre.\n\nLa fonction doit :\n- Faire glisser une fenÃªtre de taille k Ã  travers le tableau\n- Trouver l'Ã©lÃ©ment maximal dans chaque position de la fenÃªtre\n- Renvoyer une liste des valeurs maximales\n- GÃ©rer les cas limites (tableau vide, k <= 0, k > longueur du tableau)\n- Renvoyer une liste vide pour les entrÃ©es invalides",
+      "es": "Escribe una funciÃ³n que encuentre el elemento mÃ¡ximo en cada ventana deslizante de tamaÃ±o k en un arreglo. Devuelve una lista de los mÃ¡ximos para cada posiciÃ³n de ventana.\n\nLa funciÃ³n debe:\n- Deslizar una ventana de tamaÃ±o k a travÃ©s del arreglo\n- Encontrar el elemento mÃ¡ximo en cada posiciÃ³n de la ventana\n- Devolver una lista de valores mÃ¡ximos\n- Manejar casos lÃ­mite (arreglo vacÃ­o, k <= 0, k > longitud del arreglo)\n- Devolver una lista vacÃ­a para entradas no vÃ¡lidas",
+      "it": "Scrivi una funzione che trovi l'elemento massimo in ciascuna finestra scorrevole di dimensione k in un array. Restituisce una lista dei massimi per ciascuna posizione della finestra.\n\nLa funzione deve:\n- Far scorrere una finestra di dimensione k attraverso l'array\n- Trovare l'elemento massimo in ogni posizione della finestra\n- Restituire una lista di valori massimi\n- Gestire i casi limite (array vuoto, k <= 0, k > lunghezza dell'array)\n- Restituire una lista vuota per input non validi",
+      "ru": "ÐÐ°Ð½ ÑÐ¿Ð¸ÑÐ¾Ðº ÑÐµÐ»ÑÑ ÑÐ¸ÑÐµÐ» nums Ð¸ ÑÐµÐ»Ð¾Ðµ ÑÐ¸ÑÐ»Ð¾ k. ÐÑÐµÐ´ÑÑÐ°Ð²ÑÑÐµ Â«Ð¾ÐºÐ½Ð¾Â» ÑÐ°Ð·Ð¼ÐµÑÐ° k, ÑÐºÐ¾Ð»ÑÐ·ÑÑÐµÐµ ÑÐ»ÐµÐ²Ð° Ð½Ð°Ð¿ÑÐ°Ð²Ð¾ Ð¿Ð¾ Ð¾Ð´Ð½Ð¾Ð¹ Ð¿Ð¾Ð·Ð¸ÑÐ¸Ð¸ Ð·Ð° ÑÐ°Ð·.\n\nÐÐ»Ñ ÐºÐ°Ð¶Ð´Ð¾Ð³Ð¾ Ð¿Ð¾Ð»Ð¾Ð¶ÐµÐ½Ð¸Ñ Ð¾ÐºÐ½Ð° Ð½Ð°Ð¹Ð´Ð¸ÑÐµ Ð¼Ð°ÐºÑÐ¸Ð¼Ð°Ð»ÑÐ½Ð¾Ðµ Ð·Ð½Ð°ÑÐµÐ½Ð¸Ðµ Ð²Ð½ÑÑÑÐ¸ Ð½ÐµÐ³Ð¾.\nÐÐµÑÐ½Ð¸ÑÐµ ÑÐ¿Ð¸ÑÐ¾Ðº Ð²ÑÐµÑ ÑÑÐ¸Ñ Ð¼Ð°ÐºÑÐ¸Ð¼Ð°Ð»ÑÐ½ÑÑ Ð·Ð½Ð°ÑÐµÐ½Ð¸Ð¹ Ð² Ð¿Ð¾ÑÑÐ´ÐºÐµ Ð¿Ð¾ÑÐ²Ð»ÐµÐ½Ð¸Ñ Ð¾ÐºÐ¾Ð½.\n\nÐÐ³ÑÐ°Ð½Ð¸ÑÐµÐ½Ð¸Ñ:\n- 1 <= k <= len(nums) Ð² Ð¾Ð±ÑÑÐ½ÑÑ ÑÐ»ÑÑÐ°ÑÑ.\n- ÐÑÐ»Ð¸ ÑÐ¿Ð¸ÑÐ¾Ðº nums Ð¿ÑÑÑ Ð¸Ð»Ð¸ k <= 0, Ð²ÐµÑÐ½Ð¸ÑÐµ [].\n- ÐÐ¾Ð»Ð¸ÑÐµÑÑÐ²Ð¾ Ð¾ÐºÐ¾Ð½ (Ð¸ Ð¼Ð°ÐºÑÐ¸Ð¼ÑÐ¼Ð¾Ð²) ÑÐ°Ð²Ð½Ð¾: len(nums) - k + 1.",
+      "tr": "Bir dizideki her k boyutundaki kayan penceredeki maksimum elemanÄ± bulan bir fonksiyon yazÄ±n. Her pencere konumu iÃ§in maksimumlarÄ±n listesini dÃ¶ndÃ¼rÃ¼n.\n\nFonksiyon ÅunlarÄ± yapmalÄ±dÄ±r:\n- Dizi boyunca k boyutunda bir pencere kaydÄ±rmalÄ±dÄ±r\n- Her pencere konumundaki maksimum elemanÄ± bulmalÄ±dÄ±r\n- Maksimum deÄerlerin listesini dÃ¶ndÃ¼rmelidir\n- UÃ§ durumlarÄ± iÅlemelidir (boÅ dizi, k <= 0, k > dizi uzunluÄu)\n- GeÃ§ersiz girdiler iÃ§in boÅ liste dÃ¶ndÃ¼rmelidir",
+      "zh": "ç¼åä¸ä¸ªå½æ°ï¼æ¾åºæ°ç»ä¸­æ¯ä¸ªå¤§å°ä¸º k çæ»å¨çªå£ä¸­çæå¤§åç´ ãè¿åæ¯ä¸ªçªå£ä½ç½®çæå¤§å¼åè¡¨ã\n\nè¯¥å½æ°åºè¯¥ï¼\n- å¨æ°ç»ä¸­æ»å¨å¤§å°ä¸º k ççªå£\n- æ¾å°æ¯ä¸ªçªå£ä½ç½®çæå¤§åç´ \n- è¿åæå¤§å¼åè¡¨\n- å¤çè¾¹çæåµï¼ç©ºæ°ç»ãk <= 0ãk > æ°ç»é¿åº¦ï¼\n- å¯¹æ æè¾å¥è¿åç©ºåè¡¨",
+      "ar": "Ø§ÙØªØ¨ Ø¯Ø§ÙØ© ØªØ¨Ø­Ø« Ø¹Ù Ø§ÙØ¹ÙØµØ± Ø§ÙØ£ÙØ¨Ø± ÙÙ ÙÙ ÙØ§ÙØ°Ø© ÙÙØ²ÙÙØ© Ø¨Ø­Ø¬Ù k ÙÙ ÙØµÙÙÙØ©. ØªÙØ±Ø¬Ø¹ ÙØ§Ø¦ÙØ© Ø¨Ø§ÙÙÙÙ Ø§ÙÙØµÙÙ ÙÙÙ ÙÙØ¶Ø¹ ÙØ§ÙØ°Ø©.\n\nÙØ¬Ø¨ Ø¹ÙÙ Ø§ÙØ¯Ø§ÙØ©:\n- ØªÙØ±ÙØ± ÙØ§ÙØ°Ø© Ø¨Ø­Ø¬Ù k Ø¹Ø¨Ø± Ø§ÙÙØµÙÙÙØ©\n- Ø§ÙØ¹Ø«ÙØ± Ø¹ÙÙ Ø§ÙØ¹ÙØµØ± Ø§ÙØ£ÙØ¨Ø± ÙÙ ÙÙ ÙÙØ¶Ø¹ ÙÙÙØ§ÙØ°Ø©\n- Ø¥Ø±Ø¬Ø§Ø¹ ÙØ§Ø¦ÙØ© Ø¨Ø§ÙÙÙÙ Ø§ÙÙØµÙÙ\n- Ø§ÙØªØ¹Ø§ÙÙ ÙØ¹ Ø§ÙØ­Ø§ÙØ§Øª Ø§ÙØ®Ø§ØµØ© (ÙØµÙÙÙØ© ÙØ§Ø±ØºØ©Ø k <= 0Ø k > Ø·ÙÙ Ø§ÙÙØµÙÙÙØ©)\n- Ø¥Ø±Ø¬Ø§Ø¹ ÙØ§Ø¦ÙØ© ÙØ§Ø±ØºØ© ÙÙÙØ¯Ø®ÙØ§Øª ØºÙØ± Ø§ÙØµØ§ÙØ­Ø©"
+    },
+    "signature": "def sliding_window_maximum(nums: list[int], k: int) -> list[int]:",
+    "examples": [
+      {
+        "input": "sliding_window_maximum([1, 3, -1, -3, 5, 3, 6, 7], 3)",
+        "output": "[3, 3, 5, 5, 6, 7]"
+      },
+      {
+        "input": "sliding_window_maximum([1, 2, 3, 4, 5], 2)",
+        "output": "[2, 3, 4, 5]"
+      },
+      {
+        "input": "sliding_window_maximum([5, 4, 3, 2, 1], 1)",
+        "output": "[5, 4, 3, 2, 1]"
+      },
+      {
+        "input": "sliding_window_maximum([1, 2, 3], 3)",
+        "output": "[3]"
+      },
+      {
+        "input": "sliding_window_maximum([1, 2, 3], 4)",
+        "output": "[]"
+      },
+      {
+        "input": "sliding_window_maximum([], 2)",
+        "output": "[]"
+      },
+      {
+        "input": "sliding_window_maximum([1, 2, 3], 0)",
+        "output": "[]"
+      }
+    ]
+  }
+]

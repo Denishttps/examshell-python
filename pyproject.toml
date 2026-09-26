@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "examshell-python"
-version = "0.1.6"
+version = "0.1.9"
 description = "Interactive 42-style exam practice shell for Python exercises"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -13,8 +13,10 @@ authors = [
     { name = "Denis" }
 ]
 dependencies = [
+    "pyjsparser>=2.7.1",
     "pydantic>=2.0",
     "rich>=13.0",
+    "requests>=2.0",
 ]
 
 [project.scripts]

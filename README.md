@@ -32,7 +32,7 @@ pip install .
 examshell42
 ```
 
-On launch you choose a mode:
+On launch you choose a mode. In Real mode, you then choose an available exam rank:
 
 ```
 ╭─ Choose your Exam mode ─╮
@@ -40,6 +40,10 @@ On launch you choose a mode:
 │ Practice mode   (2)     │
 ╰─────────────────────────╯
 ```
+
+At startup, examshell attempts to refresh ranks 03, 04, and 05 from the exam
+sites and saves valid task data as `rank*.json`. If an update fails, existing
+local task files remain available and the application continues offline.
 
 ### Real mode
 
@@ -103,8 +107,10 @@ Write your solution in `rendu/<task_name>/<task_name>.py`, then run `grademe`. T
 
 ## Dependencies
 
+- [`pyjsparser`](https://pypi.org/project/pyjsparser/) ≥ 2.7.1 — parse downloaded task data
 - [`pydantic`](https://docs.pydantic.dev/) ≥ 2.0 — task data models
 - [`rich`](https://github.com/Textualize/rich) ≥ 13.0 — terminal UI
+- [`requests`](https://requests.readthedocs.io/) ≥ 2.0 — download task data
 
 ## Project structure
 

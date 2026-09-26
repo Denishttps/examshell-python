@@ -1,588 +1,648 @@
 [
-    {
-        "id": 1,
-        "level": 1,
-        "difficulty": "easy",
-        "name": "py_bracket_validator",
-        "file": "py_bracket_validator.py",
-        "description": {
-            "en": "Write a function that checks if the brackets in a string are valid.\nA string is valid if every opening bracket has a matching closing bracket\nin the correct order.\nAllowed brackets: (), [], {}",
-            "de": "Schreibe eine Funktion, die prГјft, ob Klammern in einem String korrekt gepaart und geschachtelt sind.\nUnterstГјtze drei Arten: (), [], {}.\n\nDie Funktion soll:\n- True zurГјckgeben, wenn alle Klammern korrekt gepaart sind\n- True fГјr Strings ohne Klammern zurГјckgeben\n- False bei nicht passenden oder falsch geschachtelten Klammern zurГјckgeben\n- Zeichen auГџerhalb von Klammern ignorieren",
-            "fr": "Г‰cris une fonction qui vГ©rifie si les parenthГЁses dвЂ™une chaГ®ne sont correctement appariГ©es et imbriquГ©es.\nPrends en charge trois types : (), [], {}.\n\nLa fonction doit :\n- Retourner True si toutes les parenthГЁses sont correctement appariГ©es\n- Retourner True pour les chaГ®nes sans aucune parenthГЁse\n- Retourner False si elles ne correspondent pas ou sont mal imbriquГ©es\n- Ignorer les caractГЁres qui ne sont pas des parenthГЁses",
-            "es": "Escribe una funciГіn que compruebe si los parГ©ntesis de una cadena estГЎn bien emparejados y anidados.\nAdmite tres tipos: (), [], {}.\n\nLa funciГіn debe:\n- Devolver True si todos los parГ©ntesis estГЎn bien emparejados\n- Devolver True si la cadena no tiene parГ©ntesis\n- Devolver False si faltan pares o el anidamiento es incorrecto\n- Ignorar caracteres que no sean parГ©ntesis",
-            "it": "Scrivi una funzione che verifichi se le parentesi in una stringa sono accoppiate e annidate correttamente.\nSupporta tre tipi: (), [], {}.\n\nLa funzione deve:\n- Restituire True se tutte le parentesi sono corrette\n- Restituire True per stringhe senza parentesi\n- Restituire False se mancano coppie o lвЂ™annidamento ГЁ errato\n- Ignorare i caratteri che non sono parentesi"
-        },
-        "signature": "def bracket_validator(s: str) -> bool:",
-        "examples": [
-            {
-                "input": "bracket_validator(\"()\")",
-                "output": "True"
-            },
-            {
-                "input": "bracket_validator(\"()[]{}\")",
-                "output": "True"
-            },
-            {
-                "input": "bracket_validator(\"(]\")",
-                "output": "False"
-            },
-            {
-                "input": "bracket_validator(\"([)]\")",
-                "output": "False"
-            },
-            {
-                "input": "bracket_validator(\"{[]}\")",
-                "output": "True"
-            },
-            {
-                "input": "bracket_validator(\"hello(world)\")",
-                "output": "True"
-            },
-            {
-                "input": "bracket_validator(\"((())\")",
-                "output": "False"
-            },
-            {
-                "input": "bracket_validator(\"\")",
-                "output": "True"
-            }
-        ]
+  {
+    "id": 1.0,
+    "level": 1.0,
+    "difficulty": "easy",
+    "name": "py_bracket_validator",
+    "file": "py_bracket_validator.py",
+    "description": {
+      "en": "Write a function that checks if the brackets in a string are valid.\n\nA string is valid if every opening bracket has a matching closing bracket\nin the correct order.\n\nAllowed brackets: (), [], {}",
+      "de": "Schreibe eine Funktion, die prÃ¼ft, ob Klammern in einem String korrekt gepaart und geschachtelt sind.\nUnterstÃ¼tze drei Arten: (), [], {}.\n\nDie Funktion soll:\n- True zurÃ¼ckgeben, wenn alle Klammern korrekt gepaart sind\n- True fÃ¼r Strings ohne Klammern zurÃ¼ckgeben\n- False bei nicht passenden oder falsch geschachtelten Klammern zurÃ¼ckgeben\n- Zeichen auÃerhalb von Klammern ignorieren",
+      "fr": "Ãcris une fonction qui vÃ©rifie si les parenthÃ¨ses dâune chaÃ®ne sont correctement appariÃ©es et imbriquÃ©es.\nPrends en charge trois types : (), [], {}.\n\nLa fonction doit :\n- Retourner True si toutes les parenthÃ¨ses sont correctement appariÃ©es\n- Retourner True pour les chaÃ®nes sans aucune parenthÃ¨se\n- Retourner False si elles ne correspondent pas ou sont mal imbriquÃ©es\n- Ignorer les caractÃ¨res qui ne sont pas des parenthÃ¨ses",
+      "es": "Escribe una funciÃ³n que compruebe si los parÃ©ntesis de una cadena estÃ¡n bien emparejados y anidados.\nAdmite tres tipos: (), [], {}.\n\nLa funciÃ³n debe:\n- Devolver True si todos los parÃ©ntesis estÃ¡n bien emparejados\n- Devolver True si la cadena no tiene parÃ©ntesis\n- Devolver False si faltan pares o el anidamiento es incorrecto\n- Ignorar caracteres que no sean parÃ©ntesis",
+      "it": "Scrivi una funzione che verifichi se le parentesi in una stringa sono accoppiate e annidate correttamente.\nSupporta tre tipi: (), [], {}.\n\nLa funzione deve:\n- Restituire True se tutte le parentesi sono corrette\n- Restituire True per stringhe senza parentesi\n- Restituire False se mancano coppie o lâannidamento Ã¨ errato\n- Ignorare i caratteri che non sono parentesi",
+      "ru": "ÐÐ°Ð¿Ð¸ÑÐ¸ÑÐµ ÑÑÐ½ÐºÑÐ¸Ñ, ÐºÐ¾ÑÐ¾ÑÐ°Ñ Ð¿ÑÐ¾Ð²ÐµÑÑÐµÑ, ÐºÐ¾ÑÑÐµÐºÑÐ½Ð¾ Ð»Ð¸ ÑÐ°ÑÑÑÐ°Ð²Ð»ÐµÐ½Ñ ÑÐºÐ¾Ð±ÐºÐ¸ Ð² ÑÑÑÐ¾ÐºÐµ.\n\nÐ¡ÑÑÐ¾ÐºÐ° ÑÑÐ¸ÑÐ°ÐµÑÑÑ Ð¿ÑÐ°Ð²Ð¸Ð»ÑÐ½Ð¾Ð¹, ÐµÑÐ»Ð¸ Ð´Ð»Ñ ÐºÐ°Ð¶Ð´Ð¾Ð¹ Ð¾ÑÐºÑÑÐ²Ð°ÑÑÐµÐ¹ ÑÐºÐ¾Ð±ÐºÐ¸ ÐµÑÑÑ ÑÐ¾Ð¾ÑÐ²ÐµÑÑÑÐ²ÑÑÑÐ°Ñ Ð·Ð°ÐºÑÑÐ²Ð°ÑÑÐ°Ñ ÑÐºÐ¾Ð±ÐºÐ° Ð² Ð¿ÑÐ°Ð²Ð¸Ð»ÑÐ½Ð¾Ð¼ Ð¿Ð¾ÑÑÐ´ÐºÐµ.\n\nÐ Ð°Ð·ÑÐµÑÐµÐ½Ð½ÑÐµ ÑÐ¸Ð¿Ñ ÑÐºÐ¾Ð±Ð¾Ðº: (), [], {}",
+      "tr": "Bir dizedeki parantezlerin geÃ§erli olup olmadÄ±ÄÄ±nÄ± kontrol eden bir fonksiyon yazÄ±n.\n\nHer aÃ§Ä±lÄ±Å parantezinin doÄru sÄ±rada eÅleÅen bir kapanÄ±Å parantezi varsa dize geÃ§erlidir.\n\nÄ°zin verilen parantezler: (), [], {}",
+      "zh": "ç¼åä¸ä¸ªå½æ°ï¼æ£æ¥å­ç¬¦ä¸²ä¸­çæ¬å·æ¯å¦ææã\n\nå¦ææ¯ä¸ªå¼æ¬å·é½æææ­£ç¡®é¡ºåºå¹éçé­æ¬å·ï¼åè¯¥å­ç¬¦ä¸²ææã\n\nåè®¸çæ¬å·ç±»åï¼()ã[]ã{}",
+      "ar": "Ø§ÙØªØ¨ Ø¯Ø§ÙØ© ØªØªØ­ÙÙ ÙÙØ§ Ø¥Ø°Ø§ ÙØ§ÙØª Ø§ÙØ£ÙÙØ§Ø³ ÙÙ Ø§ÙØ³ÙØ³ÙØ© Ø§ÙÙØµÙØ© ØµØ­ÙØ­Ø© ÙÙØªÙØ§Ø²ÙØ©.\n\nØªØ¹ØªØ¨Ø± Ø§ÙØ³ÙØ³ÙØ© ØµØ­ÙØ­Ø© Ø¥Ø°Ø§ ÙØ§Ù ÙÙÙ ÙÙØ³ ÙØªØ­ ÙÙØ³ Ø¥ØºÙØ§Ù ÙØ·Ø§Ø¨Ù ÙÙ Ø¨Ø§ÙØªØ±ØªÙØ¨ Ø§ÙØ³ÙÙÙ.\n\nØ§ÙØ£ÙÙØ§Ø³ Ø§ÙÙØ³ÙÙØ­ Ø¨ÙØ§: ()Ø []Ø {}"
     },
-    {
-        "id": 2,
-        "level": 1,
-        "difficulty": "easy",
-        "name": "py_cryptic_sorter",
-        "file": "py_cryptic_sorter.py",
-        "description": {
-            "en": "Write a function that sorts a list of strings according to multiple criteria:\n1. Primary sort: By string length (shortest first)\n2. Secondary sort: ASCII order, except letters are compared case-insensitively\n   (for strings of same length)\n3. Tertiary sort: By number of vowels (ascending, for same length and lexically equal)\n4. Equal strings will appear in the same order as in the input list.",
-            "de": "Schreibe eine Funktion, die eine Liste von Strings mit dreistufiger PrioritГ¤t sortiert:\n1. PrimГ¤r: nach LГ¤nge (aufsteigend)\n2. SekundГ¤r: lexikographisch (alphabetisch, ohne GroГџ-/Kleinschreibung, aufsteigend)\n3. TertiГ¤r: nach Anzahl der Vokale (aufsteigend bei gleicher LГ¤nge und lexikalischer Gleichheit)\n\nDie Funktion muss:\n- Leere Strings und leere Listen verarbeiten\n- Gemischte GroГџ-/Kleinschreibung (fГјr Sortierung wie Kleinbuchstaben behandeln)\n- Sonderzeichen (fГјr VokalzГ¤hlung ignorieren)",
-            "fr": "Г‰cris une fonction qui trie une liste de chaГ®nes avec une prioritГ© Г  trois niveaux :\n1. Tri principal : par longueur (croissant)\n2. Tri secondaire : lexicographique (alphabГ©tique, insensible Г  la casse, croissant)\n3. Tri tertiaire : par nombre de voyelles (croissant, si longueur et ordre lexicographique Г©gaux)\n\nLa fonction doit gГ©rer :\n- ChaГ®nes vides et listes vides\n- Casses mixtes (traiter comme des minuscules pour le tri)\n- CaractГЁres spГ©ciaux (les ignorer pour compter les voyelles)",
-            "es": "Escribe una funciГіn que ordene una lista de cadenas con prioridad en tres niveles:\n1. Primario: por longitud (ascendente)\n2. Secundario: lexicogrГЎfico (alfabГ©tico, sin distinguir mayГєsculas, ascendente)\n3. Terciario: por nГєmero de vocales (ascendente si la longitud y el orden lГ©xico coinciden)\n\nLa funciГіn debe manejar:\n- Cadenas vacГ­as y listas vacГ­as\n- MayГєsculas y minГєsculas mezcladas (tratar como minГєsculas al ordenar)\n- Caracteres especiales (ignorarlos al contar vocales)",
-            "it": "Scrivi una funzione che ordini una lista di stringhe con prioritГ  a tre livelli:\n1. Primario: per lunghezza (crescente)\n2. Secondario: lessicografico (alfabetico, case-insensitive, crescente)\n3. Terziario: per numero di vocali (crescente a paritГ  di lunghezza e ordine lessicale)\n\nLa funzione deve gestire:\n- Stringhe vuote e liste vuote\n- Maiuscole e minuscole miste (per lвЂ™ordinamento trattare come minuscole)\n- Caratteri speciali (ignorarli nel conteggio delle vocali)"
-        },
-        "signature": "def cryptic_sorter(strings: list[str]) -> list[str]:",
-        "examples": [
-            {
-                "input": "cryptic_sorter([\"apple\",\"cat\",\"banana\",\"dog\",\"elephant\"])",
-                "output": "[\"cat\",\"dog\",\"apple\",\"banana\",\"elephant\"]"
-            },
-            {
-                "input": "cryptic_sorter([\"aaa\",\"bbb\",\"AAA\",\"BBB\"])",
-                "output": "[\"AAA\", \"aaa\", \"BBB\", \"bbb\"]"
-            },
-            {
-                "input": "cryptic_sorter([\"hello\",\"world\",\"hi\",\"test\"])",
-                "output": "[\"hi\",\"test\",\"hello\",\"world\"]"
-            },
-            {
-                "input": "cryptic_sorter([])",
-                "output": "[]"
-            },
-            {
-                "input": "cryptic_sorter([\"\"])",
-                "output": "[\"\"]"
-            }
-        ]
+    "signature": "def bracket_validator(s: str) -> bool:",
+    "examples": [
+      {
+        "input": "bracket_validator(\"()\")",
+        "output": "True"
+      },
+      {
+        "input": "bracket_validator(\"()[]{}\")",
+        "output": "True"
+      },
+      {
+        "input": "bracket_validator(\"(]\")",
+        "output": "False"
+      },
+      {
+        "input": "bracket_validator(\"([)]\")",
+        "output": "False"
+      },
+      {
+        "input": "bracket_validator(\"{[]}\")",
+        "output": "True"
+      },
+      {
+        "input": "bracket_validator(\"hello(world)\")",
+        "output": "True"
+      },
+      {
+        "input": "bracket_validator(\"((())\")",
+        "output": "False"
+      },
+      {
+        "input": "bracket_validator(\"\")",
+        "output": "True"
+      }
+    ]
+  },
+  {
+    "id": 2.0,
+    "level": 1.0,
+    "difficulty": "easy",
+    "name": "py_cryptic_sorter",
+    "file": "py_cryptic_sorter.py",
+    "forbidden": [
+      "sorted()",
+      "list.sort()"
+    ],
+    "description": {
+      "en": "Write a function that sorts a list of strings according to multiple criteria:\n1. Primary sort: By string length (shortest first)\n2. Secondary sort: ASCII order, except letters are compared case-insensitively\n   (for strings of same length)\n3. Tertiary sort: By number of vowels (ascending, for same length and lexically equal)\n4. Equal strings will appear in the same order as in the input list.\n\n**Forbidden functions: sorted(), list.sort()**",
+      "de": "Schreibe eine Funktion, die eine Liste von Strings mit dreistufiger PrioritÃ¤t sortiert:\n1. PrimÃ¤r: nach LÃ¤nge (aufsteigend)\n2. SekundÃ¤r: lexikographisch (alphabetisch, ohne GroÃ-/Kleinschreibung, aufsteigend)\n3. TertiÃ¤r: nach Anzahl der Vokale (aufsteigend bei gleicher LÃ¤nge und lexikalischer Gleichheit)\n\nDie Funktion muss:\n- Leere Strings und leere Listen verarbeiten\n- Gemischte GroÃ-/Kleinschreibung (fÃ¼r Sortierung wie Kleinbuchstaben behandeln)\n- Sonderzeichen (fÃ¼r VokalzÃ¤hlung ignorieren)\n\n**Verbotene Funktionen: sorted(), list.sort()**",
+      "fr": "Ãcris une fonction qui trie une liste de chaÃ®nes avec une prioritÃ© Ã  trois niveaux :\n1. Tri principal : par longueur (croissant)\n2. Tri secondaire : lexicographique (alphabÃ©tique, insensible Ã  la casse, croissant)\n3. Tri tertiaire : par nombre de voyelles (croissant, si longueur et ordre lexicographique Ã©gaux)\n\nLa fonction doit gÃ©rer :\n- ChaÃ®nes vides et listes vides\n- Casses mixtes (traiter comme des minuscules pour le tri)\n- CaractÃ¨res spÃ©ciaux (les ignorer pour compter les voyelles)\n\n**Fonctions interdites : sorted(), list.sort()**",
+      "es": "Escribe una funciÃ³n que ordene una lista de cadenas con prioridad en tres niveles:\n1. Primario: por longitud (ascendente)\n2. Secundario: lexicogrÃ¡fico (alfabÃ©tico, sin distinguir mayÃºsculas, ascendente)\n3. Terciario: por nÃºmero de vocales (ascendente si la longitud y el orden lÃ©xico coinciden)\n\nLa funciÃ³n debe manejar:\n- Cadenas vacÃ­as y listas vacÃ­as\n- MayÃºsculas y minÃºsculas mezcladas (tratar como minÃºsculas al ordenar)\n- Caracteres especiales (ignorarlos al contar vocales)\n\n**Funciones prohibidas: sorted(), list.sort()**",
+      "it": "Scrivi una funzione che ordini una lista di stringhe con prioritÃ  a tre livelli:\n1. Primario: per lunghezza (crescente)\n2. Secondario: lessicografico (alfabetico, case-insensitive, crescente)\n3. Terziario: per numero di vocali (crescente a paritÃ  di lunghezza e ordine lessicale)\n\nLa funzione deve gestire:\n- Stringhe vuote e liste vuote\n- Maiuscole e minuscole miste (per lâordinamento trattare come minuscole)\n- Caratteri speciali (ignorarli nel conteggio delle vocali)\n\n**Funzioni vietate: sorted(), list.sort()**",
+      "ru": "ÐÐ°Ð¿Ð¸ÑÐ¸ÑÐµ ÑÑÐ½ÐºÑÐ¸Ñ, ÐºÐ¾ÑÐ¾ÑÐ°Ñ ÑÐ¾ÑÑÐ¸ÑÑÐµÑ ÑÐ¿Ð¸ÑÐ¾Ðº ÑÑÑÐ¾Ðº Ð¿Ð¾ Ð½ÐµÑÐºÐ¾Ð»ÑÐºÐ¸Ð¼ ÐºÑÐ¸ÑÐµÑÐ¸ÑÐ¼:\n1. ÐÐµÑÐ²Ð¸ÑÐ½Ð°Ñ ÑÐ¾ÑÑÐ¸ÑÐ¾Ð²ÐºÐ°: Ð¿Ð¾ Ð´Ð»Ð¸Ð½Ðµ ÑÑÑÐ¾ÐºÐ¸ (ÑÐ°Ð¼ÑÐµ ÐºÐ¾ÑÐ¾ÑÐºÐ¸Ðµ ÑÐ½Ð°ÑÐ°Ð»Ð°)\n2. ÐÑÐ¾ÑÐ¸ÑÐ½Ð°Ñ ÑÐ¾ÑÑÐ¸ÑÐ¾Ð²ÐºÐ°: Ð² ÐºÐ¾Ð´Ð¸ÑÐ¾Ð²ÐºÐµ ASCII, Ð½Ð¾ Ð±ÑÐºÐ²Ñ ÑÑÐ°Ð²Ð½Ð¸Ð²Ð°ÑÑÑÑ Ð±ÐµÐ· ÑÑÐµÑÐ° ÑÐµÐ³Ð¸ÑÑÑÐ° (Ð´Ð»Ñ ÑÑÑÐ¾Ðº Ð¾Ð´Ð¸Ð½Ð°ÐºÐ¾Ð²Ð¾Ð¹ Ð´Ð»Ð¸Ð½Ñ)\n3. Ð¢ÑÐµÑÐ¸ÑÐ½Ð°Ñ ÑÐ¾ÑÑÐ¸ÑÐ¾Ð²ÐºÐ°: Ð¿Ð¾ ÐºÐ¾Ð»Ð¸ÑÐµÑÑÐ²Ñ Ð³Ð»Ð°ÑÐ½ÑÑ Ð±ÑÐºÐ² (Ð¿Ð¾ Ð²Ð¾Ð·ÑÐ°ÑÑÐ°Ð½Ð¸Ñ, Ð´Ð»Ñ ÑÑÑÐ¾Ðº Ð¾Ð´Ð¸Ð½Ð°ÐºÐ¾Ð²Ð¾Ð¹ Ð´Ð»Ð¸Ð½Ñ Ð¸ Ð»ÐµÐºÑÐ¸ÑÐµÑÐºÐ¸ ÑÐ°Ð²Ð½ÑÑ)\n4. ÐÐ´Ð¸Ð½Ð°ÐºÐ¾Ð²ÑÐµ ÑÑÑÐ¾ÐºÐ¸ Ð´Ð¾Ð»Ð¶Ð½Ñ ÑÐ¾ÑÑÐ°Ð½ÑÑÑ ÑÐ²Ð¾Ð¹ Ð¸ÑÑÐ¾Ð´Ð½ÑÐ¹ Ð¿Ð¾ÑÑÐ´Ð¾Ðº, ÐºÐ°Ðº Ð²Ð¾ Ð²ÑÐ¾Ð´Ð½Ð¾Ð¼ ÑÐ¿Ð¸ÑÐºÐµ.\n\nÐÐ°Ð¿ÑÐµÑÐµÐ½Ð½ÑÐµ ÑÑÐ½ÐºÑÐ¸Ð¸: sorted(), list.sort()",
+      "tr": "Bir dize listesini birden Ã§ok kritere gÃ¶re sÄ±ralayan bir fonksiyon yazÄ±n:\n1. Birincil sÄ±ralama: Dize uzunluÄuna gÃ¶re (en kÄ±sa Ã¶nce)\n2. Ä°kincil sÄ±ralama: ASCII sÄ±rasÄ±, ancak harfler bÃ¼yÃ¼k/kÃ¼Ã§Ã¼k harf duyarsÄ±z karÅÄ±laÅtÄ±rÄ±lÄ±r (aynÄ± uzunluktaki dizeler iÃ§in)\n3. ÃÃ§Ã¼ncÃ¼l sÄ±ralama: Sesli harf sayÄ±sÄ±na gÃ¶re (artan sÄ±rada, aynÄ± uzunlukta ve sÃ¶zcÃ¼ksel olarak eÅitse)\n4. EÅit dizeler girdi listesindeki sÄ±rayla kalmalÄ±dÄ±r.\n\n**Yasak fonksiyonlar: sorted(), list.sort()**",
+      "zh": "ç¼åä¸ä¸ªå½æ°ï¼æ ¹æ®å¤ä¸ªæ¡ä»¶å¯¹å­ç¬¦ä¸²åè¡¨è¿è¡æåºï¼\n1. ä¸»è¦æåºï¼æå­ç¬¦ä¸²é¿åº¦ï¼ç­çæå¨åé¢ï¼\n2. æ¬¡è¦æåºï¼ASCII é¡ºåºï¼å­æ¯ä¸åºåå¤§å°åï¼éå¯¹é¿åº¦ç¸åçå­ç¬¦ä¸²ï¼\n3. ç¬¬ä¸æåºï¼æåé³å­æ¯æ°éï¼ååºï¼éå¯¹é¿åº¦ç¸åä¸å­å¸åºç¸ç­çå­ç¬¦ä¸²ï¼\n4. ç¸ç­çå­ç¬¦ä¸²å¨ç»æä¸­ä¿æå¶å¨è¾å¥åè¡¨ä¸­çåå§ç¸å¯¹é¡ºåºã\n\n**ç¦ç¨å½æ°ï¼sorted()ãlist.sort()**",
+      "ar": "Ø§ÙØªØ¨ Ø¯Ø§ÙØ© ØªÙÙÙ Ø¨ÙØ±Ø² ÙØ§Ø¦ÙØ© ÙÙ Ø§ÙØ³ÙØ§Ø³Ù Ø§ÙÙØµÙØ© ÙÙÙØ§Ù ÙÙØ¹Ø§ÙÙØ± ÙØªØ¹Ø¯Ø¯Ø©:\n1. Ø§ÙÙØ±Ø² Ø§ÙØ£Ø³Ø§Ø³Ù: Ø­Ø³Ø¨ Ø·ÙÙ Ø§ÙØ³ÙØ³ÙØ© (Ø§ÙØ£ÙØµØ± Ø£ÙÙØ§Ù)\n2. Ø§ÙÙØ±Ø² Ø§ÙØ«Ø§ÙÙÙ: Ø¨ØªØ±ØªÙØ¨ ASCIIØ ÙØ¹ ÙÙØ§Ø±ÙØ© Ø§ÙØ­Ø±ÙÙ Ø¯ÙÙ ÙØ±Ø§Ø¹Ø§Ø© Ø­Ø§ÙØ© Ø§ÙØ£Ø­Ø±Ù (ÙÙØ³ÙØ§Ø³Ù Ø°Ø§Øª Ø§ÙØ·ÙÙ ÙÙØ³Ù)\n3. Ø§ÙÙØ±Ø² Ø§ÙØ«Ø§ÙØ«: Ø­Ø³Ø¨ Ø¹Ø¯Ø¯ Ø£Ø­Ø±Ù Ø§ÙØ¹ÙØ© (ØªØµØ§Ø¹Ø¯ÙØ§ÙØ ÙÙØ³ÙØ§Ø³Ù Ø°Ø§Øª Ø§ÙØ·ÙÙ Ø§ÙÙØªØ³Ø§ÙÙ ÙØ§ÙÙØªØ·Ø§Ø¨ÙØ© ÙØ¹Ø¬ÙÙØ§Ù)\n4. Ø§ÙØ³ÙØ§Ø³Ù Ø§ÙÙØªØ·Ø§Ø¨ÙØ© ØªØ¸ÙØ± Ø¨ÙÙØ³ Ø§ÙØªØ±ØªÙØ¨ Ø§ÙØ°Ù ÙØ±Ø¯Øª Ø¨Ù ÙÙ Ø§ÙÙØ§Ø¦ÙØ© Ø§ÙÙØ¯Ø®ÙØ©.\n\n**Ø§ÙÙØ¸Ø§Ø¦Ù Ø§ÙÙÙÙÙØ¹Ø©: ()sorted Ù ()list.sort**"
     },
-    {
-        "id": 3,
-        "level": 2,
-        "difficulty": "easy",
-        "name": "py_echo_validator",
-        "file": "py_echo_validator.py",
-        "description": {
-            "en": "Write a function that checks if a string is a palindrome,\nignoring spaces and case, only consider alphabetic characters\nfor the comparison.",
-            "de": "Schreibe eine Funktion, die prГјft, ob ein String ein Palindrom ist - Leerzeichen und GroГџ-/Kleinschreibung ignorieren; nur alphabetische Zeichen fГјr den Vergleich berГјcksichtigen.",
-            "fr": "Г‰cris une fonction qui vГ©rifie si une chaГ®ne est un palindrome, en ignorant espaces et casse, et en ne considГ©rant que les caractГЁres alphabГ©tiques pour la comparaison.",
-            "es": "Escribe una funciГіn que compruebe si una cadena es un palГ­ndromo, ignorando espacios y mayГєsculas/minГєsculas, y considerando solo caracteres alfabГ©ticos en la comparaciГіn.",
-            "it": "Scrivi una funzione che verifichi se una stringa ГЁ palindroma, ignorando spazi e maiuscole/minuscole e considerando solo i caratteri alfabetici nel confronto."
-        },
-        "signature": "def echo_validator(text: str) -> bool:",
-        "examples": [
-            {
-                "input": "echo_validator(\"racecar\")",
-                "output": "True"
-            },
-            {
-                "input": "echo_validator(\"A man a plan a canal Panama\")",
-                "output": "True"
-            },
-            {
-                "input": "echo_validator(\"race a car\")",
-                "output": "False"
-            },
-            {
-                "input": "echo_validator(\"Was it a car or a cat I saw\")",
-                "output": "True"
-            },
-            {
-                "input": "echo_validator(\"hello\")",
-                "output": "False"
-            },
-            {
-                "input": "echo_validator(\"Madam Im Adam\")",
-                "output": "True"
-            },
-            {
-                "input": "echo_validator(\"\")",
-                "output": "False"
-            }
-        ]
+    "signature": "def cryptic_sorter(strings: list[str]) -> list[str]:",
+    "examples": [
+      {
+        "input": "cryptic_sorter([\"apple\",\"cat\",\"banana\",\"dog\",\"elephant\"])",
+        "output": "[\"cat\",\"dog\",\"apple\",\"banana\",\"elephant\"]"
+      },
+      {
+        "input": "cryptic_sorter([\"aaa\",\"bbb\",\"AAA\",\"BBB\"])",
+        "output": "[\"aaa\", \"AAA\", \"bbb\", \"BBB\"]"
+      },
+      {
+        "input": "cryptic_sorter([\"hello\",\"world\",\"hi\",\"test\"])",
+        "output": "[\"hi\",\"test\",\"hello\",\"world\"]"
+      },
+      {
+        "input": "cryptic_sorter([])",
+        "output": "[]"
+      },
+      {
+        "input": "cryptic_sorter([\"\"])",
+        "output": "[\"\"]"
+      }
+    ]
+  },
+  {
+    "id": 3.0,
+    "level": 2.0,
+    "difficulty": "easy",
+    "name": "py_echo_validator",
+    "file": "py_echo_validator.py",
+    "description": {
+      "en": "Write a function that checks if a string is a palindrome,\nignoring spaces and case, only consider alphabetic characters\nfor the comparison.",
+      "de": "Schreibe eine Funktion, die prÃ¼ft, ob ein String ein Palindrom ist - Leerzeichen und GroÃ-/Kleinschreibung ignorieren; nur alphabetische Zeichen fÃ¼r den Vergleich berÃ¼cksichtigen.",
+      "fr": "Ãcris une fonction qui vÃ©rifie si une chaÃ®ne est un palindrome, en ignorant espaces et casse, et en ne considÃ©rant que les caractÃ¨res alphabÃ©tiques pour la comparaison.",
+      "es": "Escribe una funciÃ³n que compruebe si una cadena es un palÃ­ndromo, ignorando espacios y mayÃºsculas/minÃºsculas, y considerando solo caracteres alfabÃ©ticos en la comparaciÃ³n.",
+      "it": "Scrivi una funzione che verifichi se una stringa Ã¨ palindroma, ignorando spazi e maiuscole/minuscole e considerando solo i caratteri alfabetici nel confronto.",
+      "ru": "ÐÐ°Ð¿Ð¸ÑÐ¸ÑÐµ ÑÑÐ½ÐºÑÐ¸Ñ, ÐºÐ¾ÑÐ¾ÑÐ°Ñ Ð¿ÑÐ¾Ð²ÐµÑÑÐµÑ, ÑÐ²Ð»ÑÐµÑÑÑ Ð»Ð¸ ÑÑÑÐ¾ÐºÐ° Ð¿Ð°Ð»Ð¸Ð½Ð´ÑÐ¾Ð¼Ð¾Ð¼, Ð¸Ð³Ð½Ð¾ÑÐ¸ÑÑÑ Ð¿ÑÐ¾Ð±ÐµÐ»Ñ Ð¸ ÑÐµÐ³Ð¸ÑÑÑ. ÐÐ»Ñ ÑÑÐ°Ð²Ð½ÐµÐ½Ð¸Ñ ÑÑÐ¸ÑÑÐ²Ð°Ð¹ÑÐµ ÑÐ¾Ð»ÑÐºÐ¾ Ð±ÑÐºÐ²Ñ.",
+      "tr": "Bir dizenin palindrom olup olmadÄ±ÄÄ±nÄ± kontrol eden bir fonksiyon yazÄ±n. BoÅluklarÄ± ve bÃ¼yÃ¼k/kÃ¼Ã§Ã¼k harfleri yok sayÄ±n, karÅÄ±laÅtÄ±rma iÃ§in yalnÄ±zca alfabetik karakterleri dikkate alÄ±n.",
+      "zh": "ç¼åä¸ä¸ªå½æ°ï¼æ£æ¥å­ç¬¦ä¸²æ¯å¦ä¸ºåæä¸²ãå¿½ç¥ç©ºæ ¼åå¤§å°åï¼ä»æ¯è¾å­æ¯å­ç¬¦ã",
+      "ar": "Ø§ÙØªØ¨ Ø¯Ø§ÙØ© ØªØªØ­ÙÙ ÙÙØ§ Ø¥Ø°Ø§ ÙØ§ÙØª Ø§ÙØ³ÙØ³ÙØ© Ø§ÙÙØµÙØ© ÙØªÙØ§Ø¸Ø±Ø© (Palindrome)Ø ÙØ¹ ØªØ¬Ø§ÙÙ Ø§ÙÙØ³Ø§ÙØ§Øª ÙØ­Ø§ÙØ© Ø§ÙØ£Ø­Ø±ÙØ ÙÙØ±Ø§Ø¹Ø§Ø© Ø§ÙØ£Ø­Ø±Ù Ø§ÙÙØ¬Ø§Ø¦ÙØ© ÙÙØ· Ø£Ø«ÙØ§Ø¡ Ø§ÙÙÙØ§Ø±ÙØ©."
     },
-    {
-        "id": 4,
-        "level": 2,
-        "difficulty": "easy",
-        "name": "py_mirror_matrix",
-        "file": "py_mirror_matrix.py",
-        "description": {
-            "en": "Given a 2D matrix (list of lists), return a new matrix where each row\nis reversed.",
-            "de": "Schreibe eine Funktion, die eine 2D-Matrix horizontal spiegelt, indem jede Zeile umgekehrt wird.\n\nDie Funktion soll:\n- Eine 2D-Liste (Matrix) aus ganzen Zahlen als Eingabe nehmen\n- Eine neue 2D-Liste zurГјckgeben, in der jede Zeile horizontal umgekehrt ist\n- Matrizen beliebiger GrГ¶Гџe (quadratisch oder rechteckig) verarbeiten\n- Die ursprГјngliche Zeilenreihenfolge beibehalten\n- Die ursprГјngliche Matrix nicht verГ¤ndern",
-            "fr": "Г‰cris une fonction qui miroite une matrice 2D horizontalement en inversant chaque ligne.\n\nLa fonction doit :\n- Prendre une liste 2D (matrice) dвЂ™entiers en entrГ©e\n- Retourner une nouvelle liste 2D oГ№ chaque ligne est inversГ©e horizontalement\n- GГ©rer des matrices de toute taille (carrГ©es ou rectangulaires)\n- Conserver lвЂ™ordre dвЂ™origine des lignes\n- Ne pas modifier la matrice dвЂ™origine",
-            "es": "Escribe una funciГіn que espeje una matriz 2D horizontalmente invirtiendo cada fila.\n\nLa funciГіn debe:\n- Recibir una lista 2D (matriz) de enteros\n- Devolver una nueva lista 2D donde cada fila estГ© invertida horizontalmente\n- Manejar matrices de cualquier tamaГ±o (cuadradas o rectangulares)\n- Conservar el orden original de las filas\n- No modificar la matriz original",
-            "it": "Scrivi una funzione che specchia una matrice 2D in orizzontale invertendo ogni riga.\n\nLa funzione deve:\n- Prendere in input una lista 2D (matrice) di interi\n- Restituire una nuova lista 2D in cui ogni riga ГЁ invertita orizzontalmente\n- Gestire matrici di qualsiasi dimensione (quadrate o rettangolari)\n- Preservare lвЂ™ordine originale delle righe\n- Non modificare la matrice originale"
-        },
-        "signature": "def mirror_matrix(matrix: list[list[int]]) -> list[list[int]]:",
-        "examples": [
-            {
-                "input": "mirror_matrix([[1,2,3],[4,5,6]])",
-                "output": "[[3,2,1],[6,5,4]]"
-            },
-            {
-                "input": "mirror_matrix([[1,2],[3,4],[5,6]])",
-                "output": "[[2,1],[4,3],[6,5]]"
-            },
-            {
-                "input": "mirror_matrix([[7]])",
-                "output": "[[7]]"
-            },
-            {
-                "input": "mirror_matrix([[1,2,3,4]])",
-                "output": "[[4,3,2,1]]"
-            },
-            {
-                "input": "mirror_matrix([[-1,-2],[-3,-4]])",
-                "output": "[[-2,-1],[-4,-3]]"
-            }
-        ]
+    "signature": "def echo_validator(text: str) -> bool:",
+    "examples": [
+      {
+        "input": "echo_validator(\"racecar\")",
+        "output": "True"
+      },
+      {
+        "input": "echo_validator(\"A man a plan a canal Panama\")",
+        "output": "True"
+      },
+      {
+        "input": "echo_validator(\"race a car\")",
+        "output": "False"
+      },
+      {
+        "input": "echo_validator(\"Was it a car or a cat I saw\")",
+        "output": "True"
+      },
+      {
+        "input": "echo_validator(\"hello\")",
+        "output": "False"
+      },
+      {
+        "input": "echo_validator(\"Madam Im Adam\")",
+        "output": "True"
+      },
+      {
+        "input": "echo_validator(\"\")",
+        "output": "False"
+      }
+    ]
+  },
+  {
+    "id": 4.0,
+    "level": 2.0,
+    "difficulty": "easy",
+    "name": "py_mirror_matrix",
+    "file": "py_mirror_matrix.py",
+    "description": {
+      "en": "Given a 2D matrix (list of lists), return a new matrix where each row\nis reversed.",
+      "de": "Schreibe eine Funktion, die eine 2D-Matrix horizontal spiegelt, indem jede Zeile umgekehrt wird.\n\nDie Funktion soll:\n- Eine 2D-Liste (Matrix) aus ganzen Zahlen als Eingabe nehmen\n- Eine neue 2D-Liste zurÃ¼ckgeben, in der jede Zeile horizontal umgekehrt ist\n- Matrizen beliebiger GrÃ¶Ãe (quadratisch oder rechteckig) verarbeiten\n- Die ursprÃ¼ngliche Zeilenreihenfolge beibehalten\n- Die ursprÃ¼ngliche Matrix nicht verÃ¤ndern",
+      "fr": "Ãcris une fonction qui miroite une matrice 2D horizontalement en inversant chaque ligne.\n\nLa fonction doit :\n- Prendre une liste 2D (matrice) dâentiers en entrÃ©e\n- Retourner une nouvelle liste 2D oÃ¹ chaque ligne est inversÃ©e horizontalement\n- GÃ©rer des matrices de toute taille (carrÃ©es ou rectangulaires)\n- Conserver lâordre dâorigine des lignes\n- Ne pas modifier la matrice dâorigine",
+      "es": "Escribe una funciÃ³n que espeje una matriz 2D horizontalmente invirtiendo cada fila.\n\nLa funciÃ³n debe:\n- Recibir una lista 2D (matriz) de enteros\n- Devolver una nueva lista 2D donde cada fila estÃ© invertida horizontalmente\n- Manejar matrices de cualquier tamaÃ±o (cuadradas o rectangulares)\n- Conservar el orden original de las filas\n- No modificar la matriz original",
+      "it": "Scrivi una funzione che specchia una matrice 2D in orizzontale invertendo ogni riga.\n\nLa funzione deve:\n- Prendere in input una lista 2D (matrice) di interi\n- Restituire una nuova lista 2D in cui ogni riga Ã¨ invertita orizzontalmente\n- Gestire matrici di qualsiasi dimensione (quadrate o rettangolari)\n- Preservare lâordine originale delle righe\n- Non modificare la matrice originale",
+      "ru": "ÐÐ°Ð¿Ð¸ÑÐ¸ÑÐµ ÑÑÐ½ÐºÑÐ¸Ñ, ÐºÐ¾ÑÐ¾ÑÐ°Ñ Ð¿ÑÐ¸Ð½Ð¸Ð¼Ð°ÐµÑ Ð´Ð²ÑÐ¼ÐµÑÐ½ÑÑ Ð¼Ð°ÑÑÐ¸ÑÑ (ÑÐ¿Ð¸ÑÐ¾Ðº ÑÐ¿Ð¸ÑÐºÐ¾Ð²) Ð¸ Ð²Ð¾Ð·Ð²ÑÐ°ÑÐ°ÐµÑ Ð½Ð¾Ð²ÑÑ Ð¼Ð°ÑÑÐ¸ÑÑ, Ð² ÐºÐ¾ÑÐ¾ÑÐ¾Ð¹ ÐºÐ°Ð¶Ð´Ð°Ñ ÑÑÑÐ¾ÐºÐ° Ð¿ÐµÑÐµÐ²ÐµÑÐ½ÑÑÐ° Ð¿Ð¾ Ð³Ð¾ÑÐ¸Ð·Ð¾Ð½ÑÐ°Ð»Ð¸.",
+      "tr": "2B bir matris (listeler listesi) verildiÄinde, her satÄ±rÄ±n tersine Ã§evrildiÄi yeni bir matris dÃ¶ndÃ¼rÃ¼n.",
+      "zh": "ç»å®ä¸ä¸ªäºç»´ç©éµï¼åè¡¨çåè¡¨ï¼ï¼è¿åä¸ä¸ªæ°ç©éµï¼å¶ä¸­æ¯ä¸è¡é½è¢«æ°´å¹³åè½¬ã",
+      "ar": "Ø¨ÙØ§Ø¡Ù Ø¹ÙÙ ÙØµÙÙÙØ© Ø«ÙØ§Ø¦ÙØ© Ø§ÙØ£Ø¨Ø¹Ø§Ø¯ (ÙØ§Ø¦ÙØ© ÙÙ Ø§ÙÙÙØ§Ø¦Ù)Ø Ø£Ø±Ø¬Ø¹ ÙØµÙÙÙØ© Ø¬Ø¯ÙØ¯Ø© ÙØªÙ ÙÙÙØ§ Ø¹ÙØ³ Ø¹ÙØ§ØµØ± ÙÙ ØµÙ Ø£ÙÙÙØ§Ù."
     },
-    {
-        "id": 5,
-        "level": 3,
-        "difficulty": "medium",
-        "name": "py_hidenp",
-        "file": "py_hidenp.py",
-        "description": {
-            "en": "Write a function that checks if the string 'small' is a subsequence\nof 'big'. A subsequence means all characters of 'small' appear in 'big'\nin the same order, but not necessarily consecutively.\nFunction is case-sensitive.",
-            "de": "Write a function that checks if the string 'small' is a subsequence\nof 'big'. A subsequence means all characters of 'small' appear in 'big'\nin the same order, but not necessarily consecutively.\nFunction is case-sensitive.",
-            "fr": "Write a function that checks if the string 'small' is a subsequence\nof 'big'. A subsequence means all characters of 'small' appear in 'big'\nin the same order, but not necessarily consecutively.\nFunction is case-sensitive.",
-            "es": "Write a function that checks if the string 'small' is a subsequence\nof 'big'. A subsequence means all characters of 'small' appear in 'big'\nin the same order, but not necessarily consecutively.\nFunction is case-sensitive.",
-            "it": "Write a function that checks if the string 'small' is a subsequence\nof 'big'. A subsequence means all characters of 'small' appear in 'big'\nin the same order, but not necessarily consecutively.\nFunction is case-sensitive."
-        },
-        "signature": "def hidenp(small: str, big: str) -> bool:",
-        "examples": [
-            {
-                "input": "hidenp(\"abc\", \"a1b2c3\")",
-                "output": "True"
-            },
-            {
-                "input": "hidenp(\"ace\", \"abcde\")",
-                "output": "True"
-            },
-            {
-                "input": "hidenp(\"aec\", \"abcde\")",
-                "output": "False"
-            },
-            {
-                "input": "hidenp(\"\", \"abc\")",
-                "output": "True"
-            },
-            {
-                "input": "hidenp(\"abc\", \"ab\")",
-                "output": "False"
-            },
-            {
-                "input": "hidenp(\"aaaa\", \"aaa\")",
-                "output": "False"
-            },
-            {
-                "input": "hidenp(\"sing\",\"subsequence testing\")",
-                "output": "True"
-            }
-        ]
+    "signature": "def mirror_matrix(matrix: list[list[int]]) -> list[list[int]]:",
+    "examples": [
+      {
+        "input": "mirror_matrix([[1,2,3],[4,5,6]])",
+        "output": "[[3,2,1],[6,5,4]]"
+      },
+      {
+        "input": "mirror_matrix([[1,2],[3,4],[5,6]])",
+        "output": "[[2,1],[4,3],[6,5]]"
+      },
+      {
+        "input": "mirror_matrix([[7]])",
+        "output": "[[7]]"
+      },
+      {
+        "input": "mirror_matrix([[1,2,3,4]])",
+        "output": "[[4,3,2,1]]"
+      },
+      {
+        "input": "mirror_matrix([[-1,-2],[-3,-4]])",
+        "output": "[[-2,-1],[-4,-3]]"
+      }
+    ]
+  },
+  {
+    "id": 5.0,
+    "level": 3.0,
+    "difficulty": "medium",
+    "name": "py_hidenp",
+    "file": "py_hidenp.py",
+    "description": {
+      "en": "Write a function that checks if the string 'small' is a subsequence\nof 'big'. A subsequence means all characters of 'small' appear in 'big'\nin the same order, but not necessarily consecutively.\nFunction is case-sensitive.",
+      "de": "Schreibe eine Funktion, die prÃ¼ft, ob die Zeichenkette 'small' eine Teilfolge (Subsequence) von 'big' ist. Eine Teilfolge bedeutet, dass alle Zeichen von 'small' in 'big' in derselben Reihenfolge vorkommen, aber nicht unbedingt aufeinanderfolgend. Die Funktion berÃ¼cksichtigt GroÃ- und Kleinschreibung.",
+      "fr": "Ãcris une fonction qui vÃ©rifie si la chaÃ®ne 'small' est une sous-suite (subsequence) de 'big'. Une sous-suite signifie que tous les caractÃ¨res de 'small' apparaissent dans 'big' dans le mÃªme ordre, mais pas nÃ©cessairement de maniÃ¨re consÃ©cutive. La fonction est sensible Ã  la casse.",
+      "es": "Escribe una funciÃ³n que compruebe si la cadena 'small' es una subsecuencia de 'big'. Una subsecuencia significa que todos los caracteres de 'small' aparecen en 'big' en el mismo orden, pero no necesariamente de forma consecutiva. La funciÃ³n distingue entre mayÃºsculas y minÃºsculas.",
+      "it": "Scrivi una funzione che verifichi se la stringa 'small' Ã¨ una sottosequenza di 'big'. Una sottosequenza significa che tutti i caratteri di 'small' appaiono in 'big' nello stesso ordine, ma non necessariamente in modo consecutivo. La funzione Ã¨ case-sensitive.",
+      "ru": "ÐÐ°Ð¿Ð¸ÑÐ¸ÑÐµ ÑÑÐ½ÐºÑÐ¸Ñ, ÐºÐ¾ÑÐ¾ÑÐ°Ñ Ð¿ÑÐ¾Ð²ÐµÑÑÐµÑ, ÑÐ²Ð»ÑÐµÑÑÑ Ð»Ð¸ ÑÑÑÐ¾ÐºÐ° 'small' Ð¿Ð¾Ð´Ð¿Ð¾ÑÐ»ÐµÐ´Ð¾Ð²Ð°ÑÐµÐ»ÑÐ½Ð¾ÑÑÑÑ ÑÑÑÐ¾ÐºÐ¸ 'big'. ÐÐ¾Ð´Ð¿Ð¾ÑÐ»ÐµÐ´Ð¾Ð²Ð°ÑÐµÐ»ÑÐ½Ð¾ÑÑÑ Ð¾Ð·Ð½Ð°ÑÐ°ÐµÑ, ÑÑÐ¾ Ð²ÑÐµ ÑÐ¸Ð¼Ð²Ð¾Ð»Ñ ÑÑÑÐ¾ÐºÐ¸ 'small' Ð¿ÑÐ¸ÑÑÑÑÑÐ²ÑÑÑ Ð² ÑÑÑÐ¾ÐºÐµ 'big' Ð² ÑÐ¾Ð¼ Ð¶Ðµ Ð¿Ð¾ÑÑÐ´ÐºÐµ, Ð½Ð¾ Ð½Ðµ Ð¾Ð±ÑÐ·Ð°ÑÐµÐ»ÑÐ½Ð¾ Ð¿Ð¾Ð´ÑÑÐ´. Ð¤ÑÐ½ÐºÑÐ¸Ñ ÑÑÐ²ÑÑÐ²Ð¸ÑÐµÐ»ÑÐ½Ð° Ðº ÑÐµÐ³Ð¸ÑÑÑÑ.",
+      "tr": "'small' dizesinin 'big' dizesinin bir alt dizisi (subsequence) olup olmadÄ±ÄÄ±nÄ± kontrol eden bir fonksiyon yazÄ±n. Alt dizi, 'small' dizesindeki tÃ¼m karakterlerin 'big' dizesinde aynÄ± sÄ±rada, ancak ardÄ±ÅÄ±k olmasÄ± gerekmeksizin bulunmasÄ± anlamÄ±na gelir. Fonksiyon bÃ¼yÃ¼k/kÃ¼Ã§Ã¼k harfe duyarlÄ±dÄ±r.",
+      "zh": "ç¼åä¸ä¸ªå½æ°ï¼æ£æ¥å­ç¬¦ä¸² 'small' æ¯å¦ä¸º 'big' çå­åºåï¼Subsequenceï¼ãå­åºåæå³ç 'small' ä¸­çææå­ç¬¦é½æç¸åé¡ºåºåºç°å¨ 'big' ä¸­ï¼ä½ä¸éè¦è¿ç»­åºç°ãå½æ°åºåå¤§å°åã",
+      "ar": "Ø§ÙØªØ¨ Ø¯Ø§ÙØ© ØªØªØ­ÙÙ ÙÙØ§ Ø¥Ø°Ø§ ÙØ§ÙØª Ø§ÙØ³ÙØ³ÙØ© Ø§ÙÙØµÙØ© 'small' ØªØ´ÙÙ Ø³ÙØ³ÙØ© ÙØ±Ø¹ÙØ© (Subsequence) ÙÙ Ø§ÙØ³ÙØ³ÙØ© 'big'. Ø§ÙØ³ÙØ³ÙØ© Ø§ÙÙØ±Ø¹ÙØ© ØªØ¹ÙÙ Ø£Ù Ø¬ÙÙØ¹ Ø£Ø­Ø±Ù 'small' ØªØ¸ÙØ± ÙÙ 'big' Ø¨ÙÙØ³ Ø§ÙØªØ±ØªÙØ¨Ø ÙÙÙÙ ÙÙØ³ Ø¨Ø§ÙØ¶Ø±ÙØ±Ø© Ø¨Ø´ÙÙ ÙØªØªØ§Ø¨Ø¹. Ø§ÙØ¯Ø§ÙØ© Ø­Ø³Ø§Ø³Ø© ÙØ­Ø§ÙØ© Ø§ÙØ£Ø­Ø±Ù."
     },
-    {
-        "id": 6,
-        "level": 3,
-        "difficulty": "medium",
-        "name": "py_inter",
-        "file": "py_inter.py",
-        "description": {
-            "en": "Write a function that returns a string with the characters that appear\nin both strings, without repetitions. Characters are added in the order\nthey appear in the first string.",
-            "de": "Write a function that returns a string with the characters that appear\nin both strings, without repetitions. Characters are added in the order\nthey appear in the first string.",
-            "fr": "Write a function that returns a string with the characters that appear\nin both strings, without repetitions. Characters are added in the order\nthey appear in the first string.",
-            "es": "Write a function that returns a string with the characters that appear\nin both strings, without repetitions. Characters are added in the order\nthey appear in the first string.",
-            "it": "Write a function that returns a string with the characters that appear\nin both strings, without repetitions. Characters are added in the order\nthey appear in the first string."
-        },
-        "signature": "def inter(s1: str, s2: str) -> str:",
-        "examples": [
-            {
-                "input": "inter(\"hello\", \"world\")",
-                "output": "\"lo\""
-            },
-            {
-                "input": "inter(\"banana\", \"band\")",
-                "output": "\"ban\""
-            },
-            {
-                "input": "inter(\"abcabc\", \"bc\")",
-                "output": "\"bc\""
-            },
-            {
-                "input": "inter(\"abc\", \"xyz\")",
-                "output": "\"\""
-            },
-            {
-                "input": "inter(\"\", \"abc\")",
-                "output": "\"\""
-            }
-        ]
+    "signature": "def hidenp(small: str, big: str) -> bool:",
+    "examples": [
+      {
+        "input": "hidenp(\"abc\", \"a1b2c3\")",
+        "output": "True"
+      },
+      {
+        "input": "hidenp(\"ace\", \"abcde\")",
+        "output": "True"
+      },
+      {
+        "input": "hidenp(\"aec\", \"abcde\")",
+        "output": "False"
+      },
+      {
+        "input": "hidenp(\"\", \"abc\")",
+        "output": "True"
+      },
+      {
+        "input": "hidenp(\"abc\", \"ab\")",
+        "output": "False"
+      },
+      {
+        "input": "hidenp(\"aaaa\", \"aaa\")",
+        "output": "False"
+      },
+      {
+        "input": "hidenp(\"sing\",\"subsequence testing\")",
+        "output": "True"
+      }
+    ]
+  },
+  {
+    "id": 6.0,
+    "level": 3.0,
+    "difficulty": "medium",
+    "name": "py_inter",
+    "file": "py_inter.py",
+    "description": {
+      "en": "Write a function that returns a string with the characters that appear\nin both strings, without repetitions. Characters are added in the order\nthey appear in the first string.",
+      "de": "Schreibe eine Funktion, die eine Zeichenkette mit den Zeichen zurÃ¼ckgibt, die in beiden Zeichenketten vorkommen, ohne Wiederholungen. Die Zeichen werden in der Reihenfolge hinzugefÃ¼gt, in der sie in der ersten Zeichenkette erscheinen.",
+      "fr": "Ãcris une fonction qui renvoie une chaÃ®ne contenant les caractÃ¨res qui apparaissent dans les deux chaÃ®nes, sans rÃ©pÃ©tition. Les caractÃ¨res sont ajoutÃ©s dans l'ordre oÃ¹ ils apparaissent dans la premiÃ¨re chaÃ®ne.",
+      "es": "Escribe una funciÃ³n que devuelva una cadena con los caracteres que aparecen en ambas cadenas, sin repeticiones. Los caracteres se aÃ±aden en el orden en que aparecen en la primera cadena.",
+      "it": "Scrivi una funzione che restituisca una stringa con i caratteri che appaiono in entrambe le stringhe, senza ripetizioni. I caratteri vengono aggiunti nell'ordine in cui appaiono nella prima stringa.",
+      "ru": "ÐÐ°Ð¿Ð¸ÑÐ¸ÑÐµ ÑÑÐ½ÐºÑÐ¸Ñ, ÐºÐ¾ÑÐ¾ÑÐ°Ñ Ð²Ð¾Ð·Ð²ÑÐ°ÑÐ°ÐµÑ ÑÑÑÐ¾ÐºÑ, ÑÐ¾Ð´ÐµÑÐ¶Ð°ÑÑÑ ÑÐ¸Ð¼Ð²Ð¾Ð»Ñ, Ð²ÑÑÑÐµÑÐ°ÑÑÐ¸ÐµÑÑ Ð² Ð¾Ð±ÐµÐ¸Ñ ÑÑÑÐ¾ÐºÐ°Ñ, Ð±ÐµÐ· Ð¿Ð¾Ð²ÑÐ¾ÑÐµÐ½Ð¸Ð¹. Ð¡Ð¸Ð¼Ð²Ð¾Ð»Ñ Ð´Ð¾Ð»Ð¶Ð½Ñ Ð±ÑÑÑ ÑÐ¿Ð¾ÑÑÐ´Ð¾ÑÐµÐ½Ñ Ð¿Ð¾ Ð¸Ñ Ð¿ÐµÑÐ²Ð¾Ð¼Ñ Ð¿Ð¾ÑÐ²Ð»ÐµÐ½Ð¸Ñ Ð² Ð¿ÐµÑÐ²Ð¾Ð¹ ÑÑÑÐ¾ÐºÐµ.",
+      "tr": "Her iki dizede de bulunan karakterleri tekrarsÄ±z olarak iÃ§eren bir dize dÃ¶ndÃ¼ren bir fonksiyon yazÄ±n. Karakterler ilk dizede gÃ¶rÃ¼nme sÄ±ralarÄ±na gÃ¶re eklenir.",
+      "zh": "ç¼åä¸ä¸ªå½æ°ï¼è¿åä¸ä¸ªåå«åæ¶åºç°å¨ä¸¤ä¸ªå­ç¬¦ä¸²ä¸­å­ç¬¦çå­ç¬¦ä¸²ï¼ä¸ä¸åå«éå¤å­ç¬¦ãå­ç¬¦æå®ä»¬å¨ç¬¬ä¸ä¸ªå­ç¬¦ä¸²ä¸­åºç°çé¡ºåºæ·»å ã",
+      "ar": "Ø§ÙØªØ¨ Ø¯Ø§ÙØ© ØªØ±Ø¬Ø¹ Ø³ÙØ³ÙØ© ÙØµÙØ© ØªØ­ØªÙÙ Ø¹ÙÙ Ø§ÙØ£Ø­Ø±Ù Ø§ÙÙØ´ØªØ±ÙØ© Ø¨ÙÙ Ø§ÙØ³ÙØ³ÙØªÙÙØ Ø¯ÙÙ Ø£Ù ØªÙØ±Ø§Ø±. ØªÙØ¶Ø§Ù Ø§ÙØ£Ø­Ø±Ù Ø¨ÙÙØ³ ØªØ±ØªÙØ¨ Ø¸ÙÙØ±ÙØ§ ÙÙ Ø§ÙØ³ÙØ³ÙØ© Ø§ÙØ£ÙÙÙ."
     },
-    {
-        "id": 7,
-        "level": 3,
-        "difficulty": "medium",
-        "name": "py_number_base_converter",
-        "file": "py_number_base_converter.py",
-        "description": {
-            "en": "Write a function that converts a number from one base to another.\nSupport bases from 2 to 36 inclusive.\nUse digits 0-9 and letters A-Z for values 10-35.\nReturn \"ERROR\" for invalid inputs.",
-            "de": "Schreibe eine Funktion, die eine Zahl von einer Basis in eine andere konvertiert.\nUnterstГјtze Basen von 2 bis 36 einschlieГџlich, mit Ziffern 0-9 und Buchstaben A-Z fГјr die Werte 10-35. Gib bei ungГјltigen Eingaben (Basis, Ziffern) \"ERROR\" zurГјck.",
-            "fr": "Г‰cris une fonction qui convertit un nombre d'une base vers une autre.\nPrends en charge les bases de 2 Г  36 inclus, avec les chiffres 0-9 et les lettres A-Z pour les valeurs 10-35. Renvoie \"ERROR\" pour les entrГ©es invalides (base, chiffres).",
-            "es": "Escribe una funciГіn que convierta un nГєmero de una base a otra.\nAdmite bases de 2 a 36 inclusive, usando dГ­gitos 0-9 y letras A-Z para los valores 10-35. Devuelve \"ERROR\" si la entrada no es vГЎlida (base, dГ­gitos).",
-            "it": "Scrivi una funzione che converta un numero da una base a un'altra.\nSupporta basi da 2 a 36 inclusive, usando cifre 0-9 e lettere A-Z per i valori 10-35. Restituisci \"ERROR\" per input non validi (base, cifre)."
-        },
-        "signature": "def number_base_converter(number: str, from_base: int, to_base: int) -> str:",
-        "examples": [
-            {
-                "input": "number_base_converter(\"1010\", 2, 10)",
-                "output": "\"10\""
-            },
-            {
-                "input": "number_base_converter(\"FF\", 16, 10)",
-                "output": "\"255\""
-            },
-            {
-                "input": "number_base_converter(\"255\", 10, 16)",
-                "output": "\"FF\""
-            },
-            {
-                "input": "number_base_converter(\"123\", 10, 2)",
-                "output": "\"1111011\""
-            },
-            {
-                "input": "number_base_converter(\"Z\", 36, 10)",
-                "output": "\"35\""
-            },
-            {
-                "input": "number_base_converter(\"35\", 10, 36)",
-                "output": "\"Z\""
-            },
-            {
-                "input": "number_base_converter(\"123\", 1, 10)",
-                "output": "\"ERROR\""
-            },
-            {
-                "input": "number_base_converter(\"G\", 16, 10)",
-                "output": "\"ERROR\""
-            }
-        ]
+    "signature": "def inter(s1: str, s2: str) -> str:",
+    "examples": [
+      {
+        "input": "inter(\"hello\", \"world\")",
+        "output": "\"lo\""
+      },
+      {
+        "input": "inter(\"banana\", \"band\")",
+        "output": "\"ban\""
+      },
+      {
+        "input": "inter(\"abcabc\", \"bc\")",
+        "output": "\"bc\""
+      },
+      {
+        "input": "inter(\"abc\", \"xyz\")",
+        "output": "\"\""
+      },
+      {
+        "input": "inter(\"\", \"abc\")",
+        "output": "\"\""
+      }
+    ]
+  },
+  {
+    "id": 7.0,
+    "level": 3.0,
+    "difficulty": "medium",
+    "name": "py_number_base_converter",
+    "file": "py_number_base_converter.py",
+    "description": {
+      "en": "Write a function that converts a number from one base to another.\nSupport bases from 2 to 36 inclusive.\nUse digits 0-9 and letters A-Z for values 10-35.\nReturn \"ERROR\" for invalid inputs.",
+      "de": "Schreibe eine Funktion, die eine Zahl von einer Basis in eine andere konvertiert.\nUnterstÃ¼tze Basen von 2 bis 36 einschlieÃlich, mit Ziffern 0-9 und Buchstaben A-Z fÃ¼r die Werte 10-35. Gib bei ungÃ¼ltigen Eingaben (Basis, Ziffern) \"ERROR\" zurÃ¼ck.",
+      "fr": "Ãcris une fonction qui convertit un nombre d'une base vers une autre.\nPrends en charge les bases de 2 Ã  36 inclus, avec les chiffres 0-9 et les lettres A-Z pour les valeurs 10-35. Renvoie \"ERROR\" pour les entrÃ©es invalides (base, chiffres).",
+      "es": "Escribe una funciÃ³n que convierta un nÃºmero de una base a otra.\nAdmite bases de 2 a 36 inclusive, usando dÃ­gitos 0-9 y letras A-Z para los valores 10-35. Devuelve \"ERROR\" si la entrada no es vÃ¡lida (base, dÃ­gitos).",
+      "it": "Scrivi una funzione che converta un numero da una base a un'altra.\nSupporta basi da 2 a 36 inclusive, usando cifre 0-9 e lettere A-Z per i valori 10-35. Restituisci \"ERROR\" per input non validi (base, cifre).",
+      "ru": "ÐÐ°Ð¿Ð¸ÑÐ¸ÑÐµ ÑÑÐ½ÐºÑÐ¸Ñ, ÐºÐ¾ÑÐ¾ÑÐ°Ñ Ð¿ÐµÑÐµÐ²Ð¾Ð´Ð¸Ñ ÑÐ¸ÑÐ»Ð¾ Ð¸Ð· Ð¾Ð´Ð½Ð¾Ð¹ ÑÐ¸ÑÑÐµÐ¼Ñ ÑÑÐ¸ÑÐ»ÐµÐ½Ð¸Ñ Ð² Ð´ÑÑÐ³ÑÑ. ÐÐ¾Ð´Ð´ÐµÑÐ¶Ð¸Ð²Ð°ÑÑÑÑ Ð¾ÑÐ½Ð¾Ð²Ð°Ð½Ð¸Ñ ÑÐ¸ÑÑÐµÐ¼ ÑÑÐ¸ÑÐ»ÐµÐ½Ð¸Ñ Ð¾Ñ 2 Ð´Ð¾ 36 Ð²ÐºÐ»ÑÑÐ¸ÑÐµÐ»ÑÐ½Ð¾. ÐÑÐ¿Ð¾Ð»ÑÐ·ÑÐ¹ÑÐµ ÑÐ¸ÑÑÑ 0-9 Ð¸ Ð±ÑÐºÐ²Ñ A-Z Ð´Ð»Ñ Ð¿ÑÐµÐ´ÑÑÐ°Ð²Ð»ÐµÐ½Ð¸Ñ Ð·Ð½Ð°ÑÐµÐ½Ð¸Ð¹ Ð¾Ñ 10 Ð´Ð¾ 35. ÐÐ¾Ð·Ð²ÑÐ°ÑÐ°Ð¹ÑÐµ \"ERROR\" Ð¿ÑÐ¸ Ð½ÐµÐ´Ð¾Ð¿ÑÑÑÐ¸Ð¼ÑÑ Ð²ÑÐ¾Ð´Ð½ÑÑ Ð´Ð°Ð½Ð½ÑÑ.",
+      "tr": "Bir sayÄ±yÄ± bir tabandan diÄerine dÃ¶nÃ¼ÅtÃ¼ren bir fonksiyon yazÄ±n.\n2'den 36'ya kadar olan tabanlarÄ± destekleyin.\n10-35 arasÄ±ndaki deÄerler iÃ§in 0-9 rakamlarÄ±nÄ± ve A-Z harflerini kullanÄ±n.\nGeÃ§ersiz girdiler iÃ§in \"ERROR\" dÃ¶ndÃ¼rÃ¼n.",
+      "zh": "ç¼åä¸ä¸ªå½æ°ï¼å°æ°å­ä»ä¸ç§è¿å¶è½¬æ¢ä¸ºå¦ä¸ç§è¿å¶ã\næ¯æä» 2 å° 36ï¼å«ï¼çè¿å¶åºæ°ã\nå¯¹å¼ 10-35 ä½¿ç¨æ°å­ 0-9 åå­æ¯ A-Zã\nå¯¹äºæ æè¾å¥è¿å \"ERROR\"ã",
+      "ar": "Ø§ÙØªØ¨ Ø¯Ø§ÙØ© ØªÙÙÙ Ø¨ØªØ­ÙÙÙ Ø±ÙÙ ÙÙ ÙØ¸Ø§Ù Ø¹Ø¯ Ø¥ÙÙ ÙØ¸Ø§Ù Ø¹Ø¯ Ø¢Ø®Ø±.\nØªØ¯Ø¹Ù Ø§ÙØ¯Ø§ÙØ© Ø£ÙØ¸ÙØ© Ø§ÙØ¹Ø¯ ÙÙ 2 Ø¥ÙÙ 36 Ø¶ÙÙØ§Ù.\nØ§Ø³ØªØ®Ø¯Ù Ø§ÙØ£Ø±ÙØ§Ù 0-9 ÙØ§ÙØ­Ø±ÙÙ A-Z ÙÙÙÙÙ ÙÙ 10 Ø¥ÙÙ 35.\nØ£Ø±Ø¬Ø¹ \"ERROR\" ÙÙ Ø­Ø§Ù ÙØ§ÙØª Ø§ÙÙØ¯Ø®ÙØ§Øª ØºÙØ± ØµØ§ÙØ­Ø©."
     },
-    {
-        "id": 8,
-        "level": 3,
-        "difficulty": "medium",
-        "name": "py_pattern_tracker",
-        "file": "py_pattern_tracker.py",
-        "description": {
-            "en": "Write a function that counts the number of valid consecutive digit pairs\nin a string. A valid pair consists of two adjacent digits where the second\ndigit is exactly one greater than the first.\nA 9 followed by a 0 is NOT a valid pair.",
-            "de": "Schreibe eine Funktion, die die Anzahl gГјltiger aufeinanderfolgender Ziffernpaare in einem String zГ¤hlt. Ein gГјltiges Paar besteht aus zwei benachbarten Ziffern, bei denen die zweite genau um eins grГ¶Гџer ist als die erste. Eine 9 gefolgt von 0 ist KEIN gГјltiges Paar.",
-            "fr": "Г‰cris une fonction qui compte le nombre de paires de chiffres consГ©cutifs valides dans une chaГ®ne. Une paire valide est formГ©e de deux chiffres adjacents dont le second vaut exactement un de plus que le premier. Un 9 suivi dвЂ™un 0 nвЂ™est PAS une paire valide.",
-            "es": "Escribe una funciГіn que cuente cuГЎntos pares consecutivos de dГ­gitos vГЎlidos hay en una cadena. Un par vГЎlido son dos dГ­gitos adyacentes donde el segundo es exactamente uno mayor que el primero. Un 9 seguido de 0 NO es un par vГЎlido.",
-            "it": "Scrivi una funzione che conti quante coppie consecutive di cifre valide ci sono in una stringa. Una coppia valida ГЁ formata da due cifre adiacenti in cui la seconda ГЁ esattamente uno piГ№ della prima. Un 9 seguito da 0 NON ГЁ una coppia valida."
-        },
-        "signature": "def pattern_tracker(text: str) -> int:",
-        "examples": [
-            {
-                "input": "pattern_tracker(\"123\")",
-                "output": "2"
-            },
-            {
-                "input": "pattern_tracker(\"12a34\")",
-                "output": "2"
-            },
-            {
-                "input": "pattern_tracker(\"987654321\")",
-                "output": "0"
-            },
-            {
-                "input": "pattern_tracker(\"01234567\")",
-                "output": "7"
-            },
-            {
-                "input": "pattern_tracker(\"abc\")",
-                "output": "0"
-            },
-            {
-                "input": "pattern_tracker(\"1a2b3c4\")",
-                "output": "0"
-            },
-            {
-                "input": "pattern_tracker(\"112233\")",
-                "output": "2"
-            }
-        ]
+    "signature": "def number_base_converter(number: str, from_base: int, to_base: int) -> str:",
+    "examples": [
+      {
+        "input": "number_base_converter(\"1010\", 2, 10)",
+        "output": "\"10\""
+      },
+      {
+        "input": "number_base_converter(\"FF\", 16, 10)",
+        "output": "\"255\""
+      },
+      {
+        "input": "number_base_converter(\"255\", 10, 16)",
+        "output": "\"FF\""
+      },
+      {
+        "input": "number_base_converter(\"123\", 10, 2)",
+        "output": "\"1111011\""
+      },
+      {
+        "input": "number_base_converter(\"Z\", 36, 10)",
+        "output": "\"35\""
+      },
+      {
+        "input": "number_base_converter(\"35\", 10, 36)",
+        "output": "\"Z\""
+      },
+      {
+        "input": "number_base_converter(\"123\", 1, 10)",
+        "output": "\"ERROR\""
+      },
+      {
+        "input": "number_base_converter(\"G\", 16, 10)",
+        "output": "\"ERROR\""
+      }
+    ]
+  },
+  {
+    "id": 8.0,
+    "level": 3.0,
+    "difficulty": "medium",
+    "name": "py_pattern_tracker",
+    "file": "py_pattern_tracker.py",
+    "description": {
+      "en": "Write a function that counts the number of valid consecutive digit pairs\nin a string. A valid pair consists of two adjacent digits where the second\ndigit is exactly one greater than the first.\nA 9 followed by a 0 is NOT a valid pair.",
+      "de": "Schreibe eine Funktion, die die Anzahl gÃ¼ltiger aufeinanderfolgender Ziffernpaare in einem String zÃ¤hlt. Ein gÃ¼ltiges Paar besteht aus zwei benachbarten Ziffern, bei denen die zweite genau um eins grÃ¶Ãer ist als die erste. Eine 9 gefolgt von 0 ist KEIN gÃ¼ltiges Paar.",
+      "fr": "Ãcris une fonction qui compte le nombre de paires de chiffres consÃ©cutifs valides dans une chaÃ®ne. Une paire valide est formÃ©e de deux chiffres adjacents dont le second vaut exactement un de plus que le premier. Un 9 suivi dâun 0 nâest PAS une paire valide.",
+      "es": "Escribe una funciÃ³n que cuente cuÃ¡ntos pares consecutivos de dÃ­gitos vÃ¡lidos hay en una cadena. Un par vÃ¡lido son dos dÃ­gitos adyacentes donde el segundo es exactamente uno mayor que el primero. Un 9 seguido de 0 NO es un par vÃ¡lido.",
+      "it": "Scrivi una funzione che conti quante coppie consecutive di cifre valide ci sono in una stringa. Una coppia valida Ã¨ formata da due cifre adiacenti in cui la seconda Ã¨ esattamente uno piÃ¹ della prima. Un 9 seguito da 0 NON Ã¨ una coppia valida.",
+      "ru": "ÐÐ°Ð¿Ð¸ÑÐ¸ÑÐµ ÑÑÐ½ÐºÑÐ¸Ñ, ÐºÐ¾ÑÐ¾ÑÐ°Ñ Ð¿Ð¾Ð´ÑÑÐ¸ÑÑÐ²Ð°ÐµÑ ÐºÐ¾Ð»Ð¸ÑÐµÑÑÐ²Ð¾ Ð¿ÑÐ°Ð²Ð¸Ð»ÑÐ½ÑÑ Ð¿Ð°Ñ Ð¿Ð¾ÑÐ»ÐµÐ´Ð¾Ð²Ð°ÑÐµÐ»ÑÐ½ÑÑ ÑÐ¸ÑÑ Ð² ÑÑÑÐ¾ÐºÐµ. ÐÑÐ°Ð²Ð¸Ð»ÑÐ½Ð°Ñ Ð¿Ð°ÑÐ° ÑÐ¾ÑÑÐ¾Ð¸Ñ Ð¸Ð· Ð´Ð²ÑÑ ÑÐ¾ÑÐµÐ´Ð½Ð¸Ñ ÑÐ¸ÑÑ, Ð³Ð´Ðµ Ð²ÑÐ¾ÑÐ°Ñ ÑÐ¸ÑÑÐ° ÑÐ¾Ð²Ð½Ð¾ Ð½Ð° ÐµÐ´Ð¸Ð½Ð¸ÑÑ Ð±Ð¾Ð»ÑÑÐµ Ð¿ÐµÑÐ²Ð¾Ð¹.\nÐ¦Ð¸ÑÑÐ° 9, Ð·Ð° ÐºÐ¾ÑÐ¾ÑÐ¾Ð¹ ÑÐ»ÐµÐ´ÑÐµÑ 0, ÐÐ ÑÐ²Ð»ÑÐµÑÑÑ Ð¿ÑÐ°Ð²Ð¸Ð»ÑÐ½Ð¾Ð¹ Ð¿Ð°ÑÐ¾Ð¹.",
+      "tr": "Bir dizedeki geÃ§erli ardÄ±ÅÄ±k basamak Ã§iftlerinin sayÄ±sÄ±nÄ± sayan bir fonksiyon yazÄ±n. GeÃ§erli bir Ã§ift, ikinci basamaÄÄ±n birinciden tam olarak bir bÃ¼yÃ¼k olduÄu iki bitiÅik basamaktan oluÅur.\n0'Ä±n takip ettiÄi bir 9 geÃ§erli bir Ã§ift DEÄÄ°LDÄ°R.",
+      "zh": "ç¼åä¸ä¸ªå½æ°ï¼ç»è®¡å­ç¬¦ä¸²ä¸­ææè¿ç»­æ°å­å¯¹çæ°éãæææ°å­å¯¹ç±ä¸¤ä¸ªç¸é»çæ°å­ç»æï¼å¶ä¸­ç¬¬äºä¸ªæ°å­æ°å¥½æ¯ç¬¬ä¸ä¸ªæ°å­å¤§ 1ã\n9 åé¢è·ç 0 ä¸æ¯æææ°å­å¯¹ã",
+      "ar": "Ø§ÙØªØ¨ Ø¯Ø§ÙØ© ØªØ­Ø³Ø¨ Ø¹Ø¯Ø¯ Ø£Ø²ÙØ§Ø¬ Ø§ÙØ£Ø±ÙØ§Ù Ø§ÙÙØªØªØ§ÙÙØ© Ø§ÙØµØ§ÙØ­Ø© ÙÙ Ø³ÙØ³ÙØ© ÙØµÙØ©. ÙØªÙÙÙ Ø§ÙØ²ÙØ¬ Ø§ÙØµØ§ÙØ­ ÙÙ Ø±ÙÙÙÙ ÙØªØ¬Ø§ÙØ±ÙÙ Ø­ÙØ« ÙÙÙÙ Ø§ÙØ±ÙÙ Ø§ÙØ«Ø§ÙÙ Ø£ÙØ¨Ø± ÙÙ Ø§ÙØ£ÙÙ Ø¨ÙØ§Ø­Ø¯ ØªÙØ§ÙØ§Ù.\nØ§ÙØ±ÙÙ 9 ÙØªØ¨ÙØ¹Ø§Ù Ø¨Ù 0 ÙØ§ ÙØ¹ØªØ¨Ø± Ø²ÙØ¬Ø§Ù ØµØ§ÙØ­Ø§Ù."
     },
-    {
-        "id": 9,
-        "level": 4,
-        "difficulty": "medium",
-        "name": "py_anagram",
-        "file": "py_anagram.py",
-        "description": {
-            "en": "Write a function that checks if two strings are anagrams.\nThey must contain exactly the same letters with the same quantity,\nignoring case and spaces.",
-            "de": "Write a function that checks if two strings are anagrams.\nThey must contain exactly the same letters with the same quantity,\nignoring case and spaces.",
-            "fr": "Write a function that checks if two strings are anagrams.\nThey must contain exactly the same letters with the same quantity,\nignoring case and spaces.",
-            "es": "Write a function that checks if two strings are anagrams.\nThey must contain exactly the same letters with the same quantity,\nignoring case and spaces.",
-            "it": "Write a function that checks if two strings are anagrams.\nThey must contain exactly the same letters with the same quantity,\nignoring case and spaces."
-        },
-        "signature": "def anagram(s1: str, s2: str) -> bool:",
-        "examples": [
-            {
-                "input": "anagram(\"listen\", \"silent\")",
-                "output": "True"
-            },
-            {
-                "input": "anagram(\"Triangle\", \"Integral\")",
-                "output": "True"
-            },
-            {
-                "input": "anagram(\"Dormitory\", \"Dirty Room\")",
-                "output": "True"
-            },
-            {
-                "input": "anagram(\"hello\", \"world\")",
-                "output": "False"
-            },
-            {
-                "input": "anagram(\"\", \"\")",
-                "output": "True"
-            },
-            {
-                "input": "anagram(\"abc\", \"abcc\")",
-                "output": "False"
-            }
-        ]
+    "signature": "def pattern_tracker(text: str) -> int:",
+    "examples": [
+      {
+        "input": "pattern_tracker(\"123\")",
+        "output": "2"
+      },
+      {
+        "input": "pattern_tracker(\"12a34\")",
+        "output": "2"
+      },
+      {
+        "input": "pattern_tracker(\"987654321\")",
+        "output": "0"
+      },
+      {
+        "input": "pattern_tracker(\"01234567\")",
+        "output": "7"
+      },
+      {
+        "input": "pattern_tracker(\"abc\")",
+        "output": "0"
+      },
+      {
+        "input": "pattern_tracker(\"1a2b3c4\")",
+        "output": "0"
+      },
+      {
+        "input": "pattern_tracker(\"112233\")",
+        "output": "2"
+      }
+    ]
+  },
+  {
+    "id": 9.0,
+    "level": 4.0,
+    "difficulty": "medium",
+    "name": "py_anagram",
+    "file": "py_anagram.py",
+    "description": {
+      "en": "Write a function that checks if two strings are anagrams.\nThey must contain exactly the same letters with the same quantity,\nignoring case and spaces.",
+      "de": "Schreibe eine Funktion, die prÃ¼ft, ob zwei Zeichenketten Anagramme sind. Sie mÃ¼ssen genau dieselben Buchstaben in derselben Anzahl enthalten, wobei GroÃ-/Kleinschreibung und Leerzeichen ignoriert werden.",
+      "fr": "Ãcris une fonction qui vÃ©rifie si deux chaÃ®nes sont des anagrammes. Elles doivent contenir exactement les mÃªmes lettres avec les mÃªmes quantitÃ©s, en ignorant la casse et les espaces.",
+      "es": "Escribe una funciÃ³n que verifique si dos cadenas son anagramas. Deben contener exactamente las mismas letras en las mismas cantidades, ignorando mayÃºsculas/minÃºsculas y espacios.",
+      "it": "Scrivi una funzione che verifichi se due stringhe sono anagrammi. Devono contenere esattamente le stesse lettere con le stesse quantitÃ , ignorando maiuscole/minuscole e spazi.",
+      "ru": "ÐÐ°Ð¿Ð¸ÑÐ¸ÑÐµ ÑÑÐ½ÐºÑÐ¸Ñ, ÐºÐ¾ÑÐ¾ÑÐ°Ñ Ð¿ÑÐ¾Ð²ÐµÑÑÐµÑ, ÑÐ²Ð»ÑÑÑÑÑ Ð»Ð¸ Ð´Ð²Ðµ ÑÑÑÐ¾ÐºÐ¸ Ð°Ð½Ð°Ð³ÑÐ°Ð¼Ð¼Ð°Ð¼Ð¸. ÐÐ½Ð¸ Ð´Ð¾Ð»Ð¶Ð½Ñ ÑÐ¾Ð´ÐµÑÐ¶Ð°ÑÑ ÑÐ¾ÑÐ½Ð¾ ÑÐ°ÐºÐ¸Ðµ Ð¶Ðµ Ð±ÑÐºÐ²Ñ Ð² Ð¾Ð´Ð¸Ð½Ð°ÐºÐ¾Ð²Ð¾Ð¼ ÐºÐ¾Ð»Ð¸ÑÐµÑÑÐ²Ðµ, Ð±ÐµÐ· ÑÑÐµÑÐ° ÑÐµÐ³Ð¸ÑÑÑÐ° Ð¸ Ð¿ÑÐ¾Ð±ÐµÐ»Ð¾Ð².",
+      "tr": "Ä°ki dizenin anagram olup olmadÄ±ÄÄ±nÄ± kontrol eden bir fonksiyon yazÄ±n. BÃ¼yÃ¼k/kÃ¼Ã§Ã¼k harf ve boÅluklar yok sayÄ±larak, tam olarak aynÄ± harfleri aynÄ± miktarda iÃ§ermelidirler.",
+      "zh": "ç¼åä¸ä¸ªå½æ°ï¼æ£æ¥ä¸¤ä¸ªå­ç¬¦ä¸²æ¯å¦ä¸ºåä½è¯ï¼Anagramï¼ãä¸¤ä¸ªå­ç¬¦ä¸²å¿é¡»åå«å®å¨ç¸åçå­æ¯åç¸åæ°éï¼å¿½ç¥å¤§å°ååç©ºæ ¼ã",
+      "ar": "Ø§ÙØªØ¨ Ø¯Ø§ÙØ© ØªØªØ­ÙÙ ÙÙØ§ Ø¥Ø°Ø§ ÙØ§ÙØª Ø³ÙØ³ÙØªØ§Ù ÙØµÙØªØ§Ù Ø¹Ø¨Ø§Ø±Ø© Ø¹Ù Ø¬ÙØ§Ø³ ÙØ§ÙØµ (Anagrams).\nÙØ¬Ø¨ Ø£Ù ØªØ­ØªÙÙ Ø§ÙØ³ÙØ³ÙØªØ§Ù Ø¹ÙÙ ÙÙØ³ Ø§ÙØ£Ø­Ø±Ù ØªÙØ§ÙØ§Ù ÙØ¨ÙÙØ³ Ø§ÙÙÙÙØ§ØªØ ÙØ¹ ØªØ¬Ø§ÙÙ Ø­Ø§ÙØ© Ø§ÙØ£Ø­Ø±Ù ÙØ§ÙÙØ³Ø§ÙØ§Øª."
     },
-    {
-        "id": 10,
-        "level": 4,
-        "difficulty": "medium",
-        "name": "py_shadow_merge",
-        "file": "py_shadow_merge.py",
-        "description": {
-            "en": "Write a function that merges two sorted lists into one sorted list.",
-            "de": "Schreibe eine Funktion, die zwei sortierte Listen zu einer sortierten Liste zusammenfГјhrt.",
-            "fr": "Г‰cris une fonction qui fusionne deux listes triГ©es en une seule liste triГ©e.",
-            "es": "Escribe una funciГіn que fusione dos listas ordenadas en una sola lista ordenada.",
-            "it": "Scrivi una funzione che unisca due liste ordinate in unвЂ™unica lista ordinata."
-        },
-        "signature": "def shadow_merge(list1: list[int], list2: list[int]) -> list[int]:",
-        "examples": [
-            {
-                "input": "shadow_merge([1,3,5], [2,4,6])",
-                "output": "[1,2,3,4,5,6]"
-            },
-            {
-                "input": "shadow_merge([1,2,3], [4,5,6])",
-                "output": "[1,2,3,4,5,6]"
-            },
-            {
-                "input": "shadow_merge([1], [2,3,4])",
-                "output": "[1,2,3,4]"
-            },
-            {
-                "input": "shadow_merge([], [1,2,3])",
-                "output": "[1,2,3]"
-            },
-            {
-                "input": "shadow_merge([1,1,2], [1,3,3])",
-                "output": "[1,1,1,2,3,3]"
-            }
-        ]
+    "signature": "def anagram(s1: str, s2: str) -> bool:",
+    "examples": [
+      {
+        "input": "anagram(\"listen\", \"silent\")",
+        "output": "True"
+      },
+      {
+        "input": "anagram(\"Triangle\", \"Integral\")",
+        "output": "True"
+      },
+      {
+        "input": "anagram(\"Dormitory\", \"Dirty Room\")",
+        "output": "True"
+      },
+      {
+        "input": "anagram(\"hello\", \"world\")",
+        "output": "False"
+      },
+      {
+        "input": "anagram(\"\", \"\")",
+        "output": "True"
+      },
+      {
+        "input": "anagram(\"abc\", \"abcc\")",
+        "output": "False"
+      }
+    ]
+  },
+  {
+    "id": 10.0,
+    "level": 4.0,
+    "difficulty": "medium",
+    "name": "py_shadow_merge",
+    "file": "py_shadow_merge.py",
+    "description": {
+      "en": "Write a function that merges two sorted lists into one sorted list.",
+      "de": "Schreibe eine Funktion, die zwei sortierte Listen zu einer sortierten Liste zusammenfÃ¼hrt.",
+      "fr": "Ãcris une fonction qui fusionne deux listes triÃ©es en une seule liste triÃ©e.",
+      "es": "Escribe una funciÃ³n que fusione dos listas ordenadas en una sola lista ordenada.",
+      "it": "Scrivi una funzione che unisca due liste ordinate in unâunica lista ordinata.",
+      "ru": "ÐÐ°Ð¿Ð¸ÑÐ¸ÑÐµ ÑÑÐ½ÐºÑÐ¸Ñ, ÐºÐ¾ÑÐ¾ÑÐ°Ñ Ð¾Ð±ÑÐµÐ´Ð¸Ð½ÑÐµÑ Ð´Ð²Ð° Ð¾ÑÑÐ¾ÑÑÐ¸ÑÐ¾Ð²Ð°Ð½Ð½ÑÑ ÑÐ¿Ð¸ÑÐºÐ° Ð² Ð¾Ð´Ð¸Ð½ Ð¾ÑÑÐ¾ÑÑÐ¸ÑÐ¾Ð²Ð°Ð½Ð½ÑÐ¹ ÑÐ¿Ð¸ÑÐ¾Ðº.",
+      "tr": "SÄ±ralanmÄ±Å iki listeyi tek bir sÄ±ralÄ± listede birleÅtiren bir fonksiyon yazÄ±n.",
+      "zh": "ç¼åä¸ä¸ªå½æ°ï¼å°ä¸¤ä¸ªå·²æåºçåè¡¨åå¹¶ä¸ºä¸ä¸ªæåºåè¡¨ã",
+      "ar": "Ø§ÙØªØ¨ Ø¯Ø§ÙØ© ØªÙÙÙ Ø¨Ø¯ÙØ¬ ÙØ§Ø¦ÙØªÙÙ ÙØ±ØªØ¨ÙÙ ÙØ³Ø¨ÙØ§Ù ÙÙ ÙØ§Ø¦ÙØ© ÙØ±ØªØ¨Ø© ÙØ§Ø­Ø¯Ø©."
     },
-    {
-        "id": 11,
-        "level": 4,
-        "difficulty": "medium",
-        "name": "py_string_permutation_checker",
-        "file": "py_string_permutation_checker.py",
-        "description": {
-            "en": "Write a function that determines if two strings are permutations of each other.\nCase sensitive. Whitespace and punctuation count as regular characters.\nEmpty strings are permutations of each other.",
-            "de": "Schreibe eine Funktion, die feststellt, ob zwei Strings Permutationen voneinander sind.\nZwei Strings sind Permutationen, wenn sie dieselben Zeichen mit denselben HГ¤ufigkeiten enthalten.\n\nDie Funktion soll:\n- PrГјfen, ob beide Strings genau dieselben Zeichen enthalten\n- ZeichenhГ¤ufigkeiten zГ¤hlen (groГџ-/kleinschreibungssensitiv)\n- True zurГјckgeben, wenn es Permutationen sind, sonst False\n- Leere Strings behandeln (zwei leere Strings sind Permutationen)\n- Leerzeichen und Satzzeichen wie normale Zeichen behandeln",
-            "fr": "Г‰cris une fonction qui dГ©termine si deux chaГ®nes sont des permutations lвЂ™une de lвЂ™autre.\nDeux chaГ®nes sont des permutations si elles contiennent les mГЄmes caractГЁres avec les mГЄmes frГ©quences.\n\nLa fonction doit :\n- VГ©rifier que les deux chaГ®nes contiennent exactement les mГЄmes caractГЁres\n- Compter les frГ©quences (sensible Г  la casse)\n- Retourner True si ce sont des permutations, sinon False\n- GГ©rer les chaГ®nes vides (deux chaГ®nes vides sont des permutations)\n- Traiter espaces et ponctuation comme des caractГЁres normaux",
-            "es": "Escribe una funciГіn que determine si dos cadenas son permutaciones entre sГ­.\nDos cadenas son permutaciones si contienen los mismos caracteres con las mismas frecuencias.\n\nLa funciГіn debe:\n- Comprobar que ambas cadenas tienen exactamente los mismos caracteres\n- Contar frecuencias (distingue mayГєsculas y minГєsculas)\n- Devolver True si son permutaciones, False en caso contrario\n- Manejar cadenas vacГ­as (dos vacГ­as son permutaciГіn)\n- Tratar espacios y puntuaciГіn como caracteres normales",
-            "it": "Scrivi una funzione che determini se due stringhe sono permutazioni lвЂ™una dellвЂ™altra.\nDue stringhe sono permutazioni se contengono gli stessi caratteri con le stesse frequenze.\n\nLa funzione deve:\n- Verificare che entrambe le stringhe contengano esattamente gli stessi caratteri\n- Contare le frequenze (case-sensitive)\n- Restituire True se sono permutazioni, altrimenti False\n- Gestire stringhe vuote (due vuote sono permutazioni)\n- Considerare spazi e punteggiatura come caratteri normali"
-        },
-        "signature": "def string_permutation_checker(s1: str, s2: str) -> bool:",
-        "examples": [
-            {
-                "input": "string_permutation_checker(\"abc\", \"bca\")",
-                "output": "True"
-            },
-            {
-                "input": "string_permutation_checker(\"abc\", \"def\")",
-                "output": "False"
-            },
-            {
-                "input": "string_permutation_checker(\"listen\", \"silent\")",
-                "output": "True"
-            },
-            {
-                "input": "string_permutation_checker(\"hello\", \"bello\")",
-                "output": "False"
-            },
-            {
-                "input": "string_permutation_checker(\"\", \"\")",
-                "output": "True"
-            },
-            {
-                "input": "string_permutation_checker(\"a\", \"\")",
-                "output": "False"
-            },
-            {
-                "input": "string_permutation_checker(\"Abc\", \"abc\")",
-                "output": "False"
-            },
-            {
-                "input": "string_permutation_checker(\"a gentleman\",\"elegant man\")",
-                "output": "True"
-            }
-        ]
+    "signature": "def shadow_merge(list1: list[int], list2: list[int]) -> list[int]:",
+    "examples": [
+      {
+        "input": "shadow_merge([1,3,5], [2,4,6])",
+        "output": "[1,2,3,4,5,6]"
+      },
+      {
+        "input": "shadow_merge([1,2,3], [4,5,6])",
+        "output": "[1,2,3,4,5,6]"
+      },
+      {
+        "input": "shadow_merge([1], [2,3,4])",
+        "output": "[1,2,3,4]"
+      },
+      {
+        "input": "shadow_merge([], [1,2,3])",
+        "output": "[1,2,3]"
+      },
+      {
+        "input": "shadow_merge([1,1,2], [1,3,3])",
+        "output": "[1,1,1,2,3,3]"
+      }
+    ]
+  },
+  {
+    "id": 11.0,
+    "level": 4.0,
+    "difficulty": "medium",
+    "name": "py_string_permutation_checker",
+    "file": "py_string_permutation_checker.py",
+    "description": {
+      "en": "Write a function that determines if two strings are permutations of each other.\nCase sensitive. Whitespace and punctuation count as regular characters.\nEmpty strings are permutations of each other.",
+      "de": "Schreibe eine Funktion, die feststellt, ob zwei Strings Permutationen voneinander sind.\nZwei Strings sind Permutationen, wenn sie dieselben Zeichen mit denselben HÃ¤ufigkeiten enthalten.\n\nDie Funktion soll:\n- PrÃ¼fen, ob beide Strings genau dieselben Zeichen enthalten\n- ZeichenhÃ¤ufigkeiten zÃ¤hlen (groÃ-/kleinschreibungssensitiv)\n- True zurÃ¼ckgeben, wenn es Permutationen sind, sonst False\n- Leere Strings behandeln (zwei leere Strings sind Permutationen)\n- Leerzeichen und Satzzeichen wie normale Zeichen behandeln",
+      "fr": "Ãcris une fonction qui dÃ©termine si deux chaÃ®nes sont des permutations lâune de lâautre.\nDeux chaÃ®nes sont des permutations si elles contiennent les mÃªmes caractÃ¨res avec les mÃªmes frÃ©quences.\n\nLa fonction doit :\n- VÃ©rifier que les deux chaÃ®nes contiennent exactement les mÃªmes caractÃ¨res\n- Compter les frÃ©quences (sensible Ã  la casse)\n- Retourner True si ce sont des permutations, sinon False\n- GÃ©rer les chaÃ®nes vides (deux chaÃ®nes vides sont des permutations)\n- Traiter espaces et ponctuation comme des caractÃ¨res normaux",
+      "es": "Escribe una funciÃ³n que determine si dos cadenas son permutaciones entre sÃ­.\nDos cadenas son permutaciones si contienen los mismos caracteres con las mismas frecuencias.\n\nLa funciÃ³n debe:\n- Comprobar que ambas cadenas tienen exactamente los mismos caracteres\n- Contar frecuencias (distingue mayÃºsculas y minÃºsculas)\n- Devolver True si son permutaciones, False en caso contrario\n- Manejar cadenas vacÃ­as (dos vacÃ­as son permutaciÃ³n)\n- Tratar espacios y puntuaciÃ³n como caracteres normales",
+      "it": "Scrivi una funzione che determini se due stringhe sono permutazioni lâuna dellâaltra.\nDue stringhe sono permutazioni se contengono gli stessi caratteri con le stesse frequenze.\n\nLa funzione deve:\n- Verificare che entrambe le stringhe contengano esattamente gli stessi caratteri\n- Contare le frequenze (case-sensitive)\n- Restituire True se sono permutazioni, altrimenti False\n- Gestire stringhe vuote (due vuote sono permutazioni)\n- Considerare spazi e punteggiatura come caratteri normali",
+      "ru": "ÐÐ°Ð¿Ð¸ÑÐ¸ÑÐµ ÑÑÐ½ÐºÑÐ¸Ñ, ÐºÐ¾ÑÐ¾ÑÐ°Ñ Ð¾Ð¿ÑÐµÐ´ÐµÐ»ÑÐµÑ, ÑÐ²Ð»ÑÑÑÑÑ Ð»Ð¸ Ð´Ð²Ðµ ÑÑÑÐ¾ÐºÐ¸ Ð¿ÐµÑÐµÑÑÐ°Ð½Ð¾Ð²ÐºÐ°Ð¼Ð¸ (Ð°Ð½Ð°Ð³ÑÐ°Ð¼Ð¼Ð°Ð¼Ð¸) Ð´ÑÑÐ³ Ð´ÑÑÐ³Ð°. Ð ÐµÐ³Ð¸ÑÑÑ ÑÐ¸Ð¼Ð²Ð¾Ð»Ð¾Ð² Ð¸Ð¼ÐµÐµÑ Ð·Ð½Ð°ÑÐµÐ½Ð¸Ðµ. ÐÑÐ¾Ð±ÐµÐ»Ñ Ð¸ Ð·Ð½Ð°ÐºÐ¸ Ð¿ÑÐµÐ¿Ð¸Ð½Ð°Ð½Ð¸Ñ ÑÑÐ¸ÑÐ°ÑÑÑÑ Ð¾Ð±ÑÑÐ½ÑÐ¼Ð¸ ÑÐ¸Ð¼Ð²Ð¾Ð»Ð°Ð¼Ð¸. ÐÐ²Ðµ Ð¿ÑÑÑÑÐµ ÑÑÑÐ¾ÐºÐ¸ ÑÑÐ¸ÑÐ°ÑÑÑÑ Ð¿ÐµÑÐµÑÑÐ°Ð½Ð¾Ð²ÐºÐ°Ð¼Ð¸ Ð´ÑÑÐ³ Ð´ÑÑÐ³Ð°.",
+      "tr": "Ä°ki dizenin birbirinin permÃ¼tasyonu olup olmadÄ±ÄÄ±nÄ± belirleyen bir fonksiyon yazÄ±n.\nBÃ¼yÃ¼k/kÃ¼Ã§Ã¼k harfe duyarlÄ±dÄ±r. BoÅluklar ve noktalama iÅaretleri normal karakter olarak sayÄ±lÄ±r.\nBoÅ dizeler birbirinin permÃ¼tasyonudur.",
+      "zh": "ç¼åä¸ä¸ªå½æ°ï¼å¤æ­ä¸¤ä¸ªå­ç¬¦ä¸²æ¯å¦äºä¸ºæåï¼Permutationsï¼ã\nåºåå¤§å°åãç©ºæ ¼åæ ç¹ç¬¦å·è§ä½æ®éå­ç¬¦ã\nç©ºå­ç¬¦ä¸²äºä¸ºæåã",
+      "ar": "Ø§ÙØªØ¨ Ø¯Ø§ÙØ© ØªØ­Ø¯Ø¯ ÙØ§ Ø¥Ø°Ø§ ÙØ§ÙØª Ø³ÙØ³ÙØªØ§Ù ÙØµÙØªØ§Ù ØªØ¨Ø§Ø¯ÙÙ (Permutations) ÙØ¨Ø¹Ø¶ÙÙØ§ Ø§ÙØ¨Ø¹Ø¶.\nØ§ÙØ¯Ø§ÙØ© Ø­Ø³Ø§Ø³Ø© ÙØ­Ø§ÙØ© Ø§ÙØ£Ø­Ø±Ù. ØªÙØ­ØªØ³Ø¨ Ø§ÙÙØ³Ø§ÙØ§Øª ÙØ¹ÙØ§ÙØ§Øª Ø§ÙØªØ±ÙÙÙ ÙØ£Ø­Ø±Ù Ø¹Ø§Ø¯ÙØ©.\nØ§ÙØ³ÙØ§Ø³Ù Ø§ÙÙØ§Ø±ØºØ© ØªØ¹ØªØ¨Ø± ØªØ¨Ø§Ø¯ÙÙ ÙØ¨Ø¹Ø¶ÙØ§ Ø§ÙØ¨Ø¹Ø¶."
     },
-    {
-        "id": 12,
-        "level": 5,
-        "difficulty": "hard",
-        "name": "py_string_sculptor",
-        "file": "py_string_sculptor.py",
-        "description": {
-            "en": "Write a function that transforms a string by alternating the case of\nalphabetic characters only.\nNon-alphabetic characters remain unchanged and are NOT counted in the\nalternation index.\nThe first alphabetic character should be lowercase, the second uppercase, etc.\nSpaces reset the alternation (next alpha after a space is lowercase again).",
-            "de": "Schreibe eine Funktion, die einen String transformiert, indem nur alphabetische Zeichen abwechselnd groГџ/klein geschrieben werden. Nicht-alphabetische Zeichen bleiben unverГ¤ndert und zГ¤hlen nicht fГјr die Abwechslung. Das erste alphabetische Zeichen soll klein, das zweite groГџ, das dritte klein usw. sein.",
-            "fr": "Г‰cris une fonction qui transforme une chaГ®ne en alternant la casse des seuls caractГЁres alphabГ©tiques. Les autres caractГЁres restent inchangГ©s et ne comptent pas pour lвЂ™alternance. Le premier caractГЁre alphabГ©tique doit ГЄtre en minuscule, le second en majuscule, le troisiГЁme en minuscule, etc.",
-            "es": "Escribe una funciГіn que transforme una cadena alternando mayГєsculas y minГєsculas solo en caracteres alfabГ©ticos. Los demГЎs permanecen igual y no cuentan para la alternancia. El primer carГЎcter alfabГ©tico debe ser minГєscula, el segundo mayГєscula, el tercero minГєscula, y asГ­ sucesivamente.",
-            "it": "Scrivi una funzione che trasformi una stringa alternando maiuscole e minuscole solo per i caratteri alfabetici. Gli altri restano invariati e non contano per lвЂ™alternanza. Il primo carattere alfabetico deve essere minuscolo, il secondo maiuscolo, il terzo minuscolo, e cosГ¬ via."
-        },
-        "signature": "def string_sculptor(text: str) -> str:",
-        "examples": [
-            {
-                "input": "string_sculptor(\"hello\")",
-                "output": "\"hElLo\""
-            },
-            {
-                "input": "string_sculptor(\"Hello World\")",
-                "output": "\"hElLo wOrLd\""
-            },
-            {
-                "input": "string_sculptor(\"abc123def\")",
-                "output": "\"aBc123DeF\""
-            },
-            {
-                "input": "string_sculptor(\"Python3.9!\")",
-                "output": "\"pYtHoN3.9!\""
-            },
-            {
-                "input": "string_sculptor(\"\")",
-                "output": "\"\""
-            }
-        ]
+    "signature": "def string_permutation_checker(s1: str, s2: str) -> bool:",
+    "examples": [
+      {
+        "input": "string_permutation_checker(\"abc\", \"bca\")",
+        "output": "True"
+      },
+      {
+        "input": "string_permutation_checker(\"abc\", \"def\")",
+        "output": "False"
+      },
+      {
+        "input": "string_permutation_checker(\"listen\", \"silent\")",
+        "output": "True"
+      },
+      {
+        "input": "string_permutation_checker(\"hello\", \"bello\")",
+        "output": "False"
+      },
+      {
+        "input": "string_permutation_checker(\"\", \"\")",
+        "output": "True"
+      },
+      {
+        "input": "string_permutation_checker(\"a\", \"\")",
+        "output": "False"
+      },
+      {
+        "input": "string_permutation_checker(\"Abc\", \"abc\")",
+        "output": "False"
+      },
+      {
+        "input": "string_permutation_checker(\"a gentleman\",\"elegant man\")",
+        "output": "True"
+      }
+    ]
+  },
+  {
+    "id": 12.0,
+    "level": 5.0,
+    "difficulty": "hard",
+    "name": "py_string_sculptor",
+    "file": "py_string_sculptor.py",
+    "description": {
+      "en": "Write a function that transforms a string by alternating the case of\nalphabetic characters only.\nNon-alphabetic characters remain unchanged and are NOT counted in the\nalternation index.\nThe first alphabetic character should be lowercase, the second uppercase, etc.\nSpaces reset the alternation (next alpha after a space is lowercase again).",
+      "de": "Schreibe eine Funktion, die einen String transformiert, indem nur alphabetische Zeichen abwechselnd groÃ/klein geschrieben werden. Nicht-alphabetische Zeichen bleiben unverÃ¤ndert und zÃ¤hlen nicht fÃ¼r die Abwechslung. Das erste alphabetische Zeichen soll klein, das zweite groÃ, das dritte klein usw. sein. Leerzeichen setzen die Abwechslung zurÃ¼ck (das nÃ¤chste alphabetische Zeichen nach einem Leerzeichen wird wieder kleingeschrieben).",
+      "fr": "Ãcris une fonction qui transforme une chaÃ®ne en alternant la casse des seuls caractÃ¨res alphabÃ©tiques. Les autres caractÃ¨res restent inchangÃ©s et ne comptent pas pour lâalternance. Le premier caractÃ¨re alphabÃ©tique doit Ãªtre en minuscule, le second en majuscule, le troisiÃ¨me en minuscule, etc. Les espaces rÃ©initialisent lâalternance (la lettre suivante aprÃ¨s un espace est Ã  nouveau en minuscule).",
+      "es": "Escribe una funciÃ³n que transforme una cadena alternando mayÃºsculas y minÃºsculas solo en caracteres alfabÃ©ticos. Los demÃ¡s permanecen igual y no cuentan para la corporaciÃ³n/alternancia. El primer carÃ¡cter alfabÃ©tico debe ser minÃºscula, el segundo mayÃºscula, el tercero minÃºscula, y asÃ­ sucesivamente. Los espacios reinician la alternancia (la siguiente letra despuÃ©s de un espacio vuelve a ser minÃºscula).",
+      "it": "Scrivi una funzione che trasformi una stringa alternando maiuscole e minuscole solo per i caratteri alfabetici. Gli altri restano invariati e non contano per lâalternanza. Il primo carattere alfabetico deve essere minuscolo, il secondo maiuscolo, il terzo minuscolo, e cosÃ¬ via. Gli spazi ripristinano l'alternanza (la lettera successiva dopo uno spazio Ã¨ di nuovo minuscola).",
+      "ru": "ÐÐ°Ð¿Ð¸ÑÐ¸ÑÐµ ÑÑÐ½ÐºÑÐ¸Ñ, ÐºÐ¾ÑÐ¾ÑÐ°Ñ Ð¿ÑÐµÐ¾Ð±ÑÐ°Ð·ÑÐµÑ ÑÑÑÐ¾ÐºÑ, ÑÐµÑÐµÐ´ÑÑ ÑÐµÐ³Ð¸ÑÑÑ ÑÐ¾Ð»ÑÐºÐ¾ Ð´Ð»Ñ Ð±ÑÐºÐ².\n\nÐÐµÐ±ÑÐºÐ²ÐµÐ½Ð½ÑÐµ ÑÐ¸Ð¼Ð²Ð¾Ð»Ñ Ð¾ÑÑÐ°ÑÑÑÑ Ð½ÐµÐ¸Ð·Ð¼ÐµÐ½Ð½ÑÐ¼Ð¸ Ð¸ ÐÐ ÑÑÐ¸ÑÑÐ²Ð°ÑÑÑÑ Ð¿ÑÐ¸ ÑÐµÑÐµÐ´Ð¾Ð²Ð°Ð½Ð¸Ð¸.\nÐÐµÑÐ²Ð°Ñ Ð±ÑÐºÐ²Ð° Ð´Ð¾Ð»Ð¶Ð½Ð° Ð±ÑÑÑ ÑÑÑÐ¾ÑÐ½Ð¾Ð¹ (Ð¼Ð°Ð»ÐµÐ½ÑÐºÐ¾Ð¹), Ð²ÑÐ¾ÑÐ°Ñ â Ð¿ÑÐ¾Ð¿Ð¸ÑÐ½Ð¾Ð¹ (Ð±Ð¾Ð»ÑÑÐ¾Ð¹) Ð¸ Ñ. Ð´.\nÐÑÐ¾Ð±ÐµÐ»Ñ ÑÐ±ÑÐ°ÑÑÐ²Ð°ÑÑ ÑÐµÑÐµÐ´Ð¾Ð²Ð°Ð½Ð¸Ðµ (Ð¿ÐµÑÐ²Ð°Ñ Ð±ÑÐºÐ²Ð° Ð¿Ð¾ÑÐ»Ðµ Ð¿ÑÐ¾Ð±ÐµÐ»Ð° ÑÐ½Ð¾Ð²Ð° ÑÑÐ°Ð½Ð¾Ð²Ð¸ÑÑÑ ÑÑÑÐ¾ÑÐ½Ð¾Ð¹).",
+      "tr": "YalnÄ±zca alfabetik karakterlerin bÃ¼yÃ¼k/kÃ¼Ã§Ã¼k harf durumunu deÄiÅtirerek bir dizeyi dÃ¶nÃ¼ÅtÃ¼ren bir fonksiyon yazÄ±n.\nAlfabetik olmayan karakterler deÄiÅmeden kalÄ±r ve deÄiÅim indeksinde sayÄ±lmaz.\nÄ°lk alfabetik karakter kÃ¼Ã§Ã¼k, ikincisi bÃ¼yÃ¼k olmalÄ±dÄ±r, vb.\nBoÅluklar deÄiÅimi sÄ±fÄ±rlar (bir boÅluktan sonraki ilk harf yine kÃ¼Ã§Ã¼k harfle baÅlar).",
+      "zh": "ç¼åä¸ä¸ªå½æ°ï¼ä»éè¿äº¤æ¿è½¬æ¢å­æ¯å­ç¬¦çå¤§å°åæ¥è½¬æ¢å­ç¬¦ä¸²ã\néå­æ¯å­ç¬¦ä¿æä¸åï¼ä¸ä¸è®¡å¥äº¤æ¿ç´¢å¼ã\nç¬¬ä¸ä¸ªå­æ¯åºä¸ºå°åï¼ç¬¬äºä¸ªå­æ¯ä¸ºå¤§åï¼ä¾æ­¤ç±»æ¨ã\nç©ºæ ¼ä¼éç½®äº¤æ¿ï¼ç©ºæ ¼åçç¬¬ä¸ä¸ªå­æ¯éæ°ä»å°åå¼å§ï¼ã",
+      "ar": "Ø§ÙØªØ¨ Ø¯Ø§ÙØ© ØªÙÙÙ Ø¨ØªØ­ÙÙÙ Ø³ÙØ³ÙØ© ÙØµÙØ© Ø¹Ù Ø·Ø±ÙÙ Ø§ÙØªÙØ§ÙØ¨ Ø¨ÙÙ Ø­Ø§ÙØ© Ø§ÙØ£Ø­Ø±Ù Ø§ÙÙØ¬Ø§Ø¦ÙØ© ÙÙØ·.\nØªØ¨ÙÙ Ø§ÙØ£Ø­Ø±Ù ØºÙØ± Ø§ÙÙØ¬Ø§Ø¦ÙØ© Ø¯ÙÙ ØªØºÙÙØ± ÙÙØ§ ØªÙØ­Ø³Ø¨ ÙÙ ÙÙØ±Ø³ Ø§ÙØªÙØ§ÙØ¨.\nÙØ¬Ø¨ Ø£Ù ÙÙÙÙ Ø§ÙØ­Ø±Ù Ø§ÙÙØ¬Ø§Ø¦Ù Ø§ÙØ£ÙÙ ØµØºÙØ±Ø§Ù (Lowercase)Ø ÙØ§ÙØ«Ø§ÙÙ ÙØ¨ÙØ±Ø§Ù (Uppercase)Ø ÙÙÙØ°Ø§.\nØ§ÙÙØ³Ø§ÙØ§Øª ØªØ¹ÙØ¯ Ø¶Ø¨Ø· Ø§ÙØªÙØ§ÙØ¨ (Ø£Ù Ø£Ù Ø£ÙÙ Ø­Ø±Ù ÙØ¬Ø§Ø¦Ù Ø¨Ø¹Ø¯ Ø§ÙÙØ³Ø§ÙØ© ÙØ¹ÙØ¯ ØµØºÙØ±Ø§Ù ÙØ±Ø© Ø£Ø®Ø±Ù)."
     },
-    {
-        "id": 13,
-        "level": 5,
-        "difficulty": "hard",
-        "name": "py_twist_sequence",
-        "file": "py_twist_sequence.py",
-        "description": {
-            "en": "Write a function that rotates an array to the right by k positions.\nRotating right by k means the last k elements move to the front.",
-            "de": "Write a function that rotates an array to the right by k positions, rotating right by k means the last k elements move to the front.",
-            "fr": "Write a function that rotates an array to the right by k positions, rotating right by k means the last k elements move to the front.",
-            "es": "Write a function that rotates an array to the right by k positions, rotating right by k means the last k elements move to the front.",
-            "it": "Write a function that rotates an array to the right by k positions, rotating right by k means the last k elements move to the front."
-        },
-        "signature": "def twist_sequence(arr: list[int], k: int) -> list[int]:",
-        "examples": [
-            {
-                "input": "twist_sequence([1,2,3,4,5], 2)",
-                "output": "[4,5,1,2,3]"
-            },
-            {
-                "input": "twist_sequence([1,2,3], 1)",
-                "output": "[3,1,2]"
-            },
-            {
-                "input": "twist_sequence([1,2,3,4], 0)",
-                "output": "[1,2,3,4]"
-            },
-            {
-                "input": "twist_sequence([1,2,3], 5)",
-                "output": "[2,3,1]"
-            },
-            {
-                "input": "twist_sequence([], 3)",
-                "output": "[]"
-            }
-        ]
+    "signature": "def string_sculptor(text: str) -> str:",
+    "examples": [
+      {
+        "input": "string_sculptor(\"hello\")",
+        "output": "\"hElLo\""
+      },
+      {
+        "input": "string_sculptor(\"Hello World\")",
+        "output": "\"hElLo wOrLd\""
+      },
+      {
+        "input": "string_sculptor(\"abc123def\")",
+        "output": "\"aBc123DeF\""
+      },
+      {
+        "input": "string_sculptor(\"Python3.9!\")",
+        "output": "\"pYtHoN3.9!\""
+      },
+      {
+        "input": "string_sculptor(\"\")",
+        "output": "\"\""
+      }
+    ]
+  },
+  {
+    "id": 13.0,
+    "level": 5.0,
+    "difficulty": "hard",
+    "name": "py_twist_sequence",
+    "file": "py_twist_sequence.py",
+    "description": {
+      "en": "Write a function that rotates an array to the right by k positions.\nRotating right by k means the last k elements move to the front.",
+      "de": "Schreibe eine Funktion, die ein Array um k Positionen nach rechts rotiert. Nach rechts rotieren bedeutet, dass die letzten k Elemente an den Anfang des Arrays verschoben werden.",
+      "fr": "Ãcris une fonction qui effectue une rotation Ã  droite d'un tableau de k positions. Une rotation Ã  droite de k signifie que les k derniers Ã©lÃ©ments sont dÃ©placÃ©s vers l'avant.",
+      "es": "Escribe una funciÃ³n que rote un array a la derecha k posiciones. Rotar a la derecha k posiciones significa que los Ãºltimos k elementos se mueven al principio del array.",
+      "it": "Scrivi una funzione che ruoti un array a destra di k posizioni. Ruotare a destra di k significa che gli ultimi k elementi vengono spostati all'inizio.",
+      "ru": "ÐÐ°Ð¿Ð¸ÑÐ¸ÑÐµ ÑÑÐ½ÐºÑÐ¸Ñ, ÐºÐ¾ÑÐ¾ÑÐ°Ñ ÑÐ´Ð²Ð¸Ð³Ð°ÐµÑ Ð¼Ð°ÑÑÐ¸Ð² Ð²Ð¿ÑÐ°Ð²Ð¾ Ð½Ð° k Ð¿Ð¾Ð·Ð¸ÑÐ¸Ð¹. Ð¡Ð´Ð²Ð¸Ð³ Ð²Ð¿ÑÐ°Ð²Ð¾ Ð½Ð° k Ð¿Ð¾Ð·Ð¸ÑÐ¸Ð¹ Ð¾Ð·Ð½Ð°ÑÐ°ÐµÑ, ÑÑÐ¾ Ð¿Ð¾ÑÐ»ÐµÐ´Ð½Ð¸Ðµ k ÑÐ»ÐµÐ¼ÐµÐ½ÑÐ¾Ð² Ð¿ÐµÑÐµÐ½Ð¾ÑÑÑÑÑ Ð² Ð½Ð°ÑÐ°Ð»Ð¾.",
+      "tr": "Bir diziyi k pozisyon kadar saÄa dÃ¶ndÃ¼ren bir fonksiyon yazÄ±n.\nk kadar saÄa dÃ¶ndÃ¼rmek, son k elemanÄ±n baÅa taÅÄ±nmasÄ± anlamÄ±na gelir.",
+      "zh": "ç¼åä¸ä¸ªå½æ°ï¼å°æ°ç»åå³è½®è½¬ k ä¸ªä½ç½®ã\nåå³è½®è½¬ k æå³çæåç k ä¸ªåç´ ç§»å¨å°æåé¢ã",
+      "ar": "Ø§ÙØªØ¨ Ø¯Ø§ÙØ© ØªÙÙÙ Ø¨ØªØ¯ÙÙØ± ÙØµÙÙÙØ© Ø¥ÙÙ Ø§ÙÙÙÙÙ Ø¨ÙÙØ¯Ø§Ø± k ÙÙØ¶Ø¹Ø§Ù.\nØ§ÙØªØ¯ÙÙØ± Ø¥ÙÙ Ø§ÙÙÙÙÙ Ø¨ÙÙØ¯Ø§Ø± k ÙØ¹ÙÙ Ø§ÙØªÙØ§Ù Ø¢Ø®Ø± k Ø¹ÙØµØ± Ø¥ÙÙ ÙÙØ¯ÙØ© Ø§ÙÙØµÙÙÙØ©."
     },
-    {
-        "id": 14,
-        "level": 6,
-        "difficulty": "hard",
-        "name": "py_whisper_cipher",
-        "file": "py_whisper_cipher.py",
-        "description": {
-            "en": "Write a function that creates a Caesar cipher by shifting letters in a\nstring by a given amount.\nNon-alphabetic characters should remain unchanged.\nThe shift can be negative (shift left).",
-            "de": "Schreibe eine Funktion, die eine einfache VerschlГјsselung erzeugt, indem Buchstaben in einem String um einen gegebenen Betrag verschoben werden. Nicht-alphabetische Zeichen bleiben unverГ¤ndert.",
-            "fr": "Г‰cris une fonction qui rГ©alise un chiffrement simple en dГ©calant les lettres dвЂ™une chaГ®ne dвЂ™un montant donnГ©. Les caractГЁres non alphabГ©tiques restent inchangГ©s.",
-            "es": "Escribe una funciГіn que cree un cifrado simple desplazando las letras de una cadena una cantidad dada. Los caracteres no alfabГ©ticos deben permanecer iguales.",
-            "it": "Scrivi una funzione che crei una cifratura semplice spostando le lettere di una stringa di una quantitГ  data. I caratteri non alfabetici restano invariati."
-        },
-        "signature": "def whisper_cipher(text: str, shift: int) -> str:",
-        "examples": [
-            {
-                "input": "whisper_cipher(\"hello\", 3)",
-                "output": "\"khoor\""
-            },
-            {
-                "input": "whisper_cipher(\"Hello World!\", 1)",
-                "output": "\"Ifmmp Xpsme!\""
-            },
-            {
-                "input": "whisper_cipher(\"xyz\", 3)",
-                "output": "\"abc\""
-            },
-            {
-                "input": "whisper_cipher(\"ABC123def\", 5)",
-                "output": "\"FGH123ijk\""
-            },
-            {
-                "input": "whisper_cipher(\"\", 10)",
-                "output": "\"\""
-            },
-            {
-                "input": "whisper_cipher(\"abc\", -3)",
-                "output": "\"xyz\""
-            }
-        ]
-    }
+    "signature": "def twist_sequence(arr: list[int], k: int) -> list[int]:",
+    "examples": [
+      {
+        "input": "twist_sequence([1,2,3,4,5], 2)",
+        "output": "[4,5,1,2,3]"
+      },
+      {
+        "input": "twist_sequence([1,2,3], 1)",
+        "output": "[3,1,2]"
+      },
+      {
+        "input": "twist_sequence([1,2,3,4], 0)",
+        "output": "[1,2,3,4]"
+      },
+      {
+        "input": "twist_sequence([1,2,3], 5)",
+        "output": "[2,3,1]"
+      },
+      {
+        "input": "twist_sequence([], 3)",
+        "output": "[]"
+      }
+    ]
+  },
+  {
+    "id": 14.0,
+    "level": 6.0,
+    "difficulty": "hard",
+    "name": "py_whisper_cipher",
+    "file": "py_whisper_cipher.py",
+    "description": {
+      "en": "Write a function that creates a Caesar cipher by shifting letters in a\nstring by a given amount.\nNon-alphabetic characters should remain unchanged.\nThe shift can be negative (shift left).",
+      "de": "Schreibe eine Funktion, die eine einfache VerschlÃ¼sselung erzeugt, indem Buchstaben in einem String um einen gegebenen Betrag verschoben werden. Nicht-alphabetische Zeichen bleiben unverÃ¤ndert.",
+      "fr": "Ãcris une fonction qui rÃ©alise un chiffrement simple en dÃ©calant les lettres dâune chaÃ®ne dâun montant donnÃ©. Les caractÃ¨res non alphabÃ©tiques restent inchangÃ©s.",
+      "es": "Escribe una funciÃ³n que cree un cifrado simple desplazando las letras de una cadena una cantidad dada. Los caracteres no alfabÃ©ticos deben permanecer iguales.",
+      "it": "Scrivi una funzione che crei una cifratura semplice spostando le lettere di una stringa di una quantitÃ  data. I caratteri non alfabetici restano invariati.",
+      "ru": "ÐÐ°Ð¿Ð¸ÑÐ¸ÑÐµ ÑÑÐ½ÐºÑÐ¸Ñ, ÑÐµÐ°Ð»Ð¸Ð·ÑÑÑÑÑ ÑÐ¸ÑÑ Ð¦ÐµÐ·Ð°ÑÑ Ð¿ÑÑÐµÐ¼ ÑÐ´Ð²Ð¸Ð³Ð° Ð±ÑÐºÐ² Ð² ÑÑÑÐ¾ÐºÐµ Ð½Ð° Ð·Ð°Ð´Ð°Ð½Ð½Ð¾Ðµ ÑÐ¸ÑÐ»Ð¾ Ð¿Ð¾Ð·Ð¸ÑÐ¸Ð¹. ÐÐµÐ±ÑÐºÐ²ÐµÐ½Ð½ÑÐµ ÑÐ¸Ð¼Ð²Ð¾Ð»Ñ Ð´Ð¾Ð»Ð¶Ð½Ñ Ð¾ÑÑÐ°Ð²Ð°ÑÑÑÑ Ð±ÐµÐ· Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ð¹. Ð¡Ð´Ð²Ð¸Ð³ Ð¼Ð¾Ð¶ÐµÑ Ð±ÑÑÑ Ð¾ÑÑÐ¸ÑÐ°ÑÐµÐ»ÑÐ½ÑÐ¼ (ÑÐ´Ð²Ð¸Ð³ Ð²Ð»ÐµÐ²Ð¾).",
+      "tr": "Bir dizedeki harfleri belirli bir miktarda kaydÄ±rarak Sezar Åifrelemesi oluÅturan bir fonksiyon yazÄ±n.\nAlfabetik olmayan karakterler deÄiÅmeden kalmalÄ±dÄ±r.\nKaydÄ±rma negatif olabilir (sola kaydÄ±rma).",
+      "zh": "ç¼åä¸ä¸ªå½æ°ï¼éè¿å°å­ç¬¦ä¸²ä¸­çå­æ¯ç§»å¨æå®åç§»éæ¥åå»ºå¯æå¯ç ã\néå­æ¯å­ç¬¦åºä¿æä¸åã\nåç§»éå¯ä»¥ä¸ºè´æ°ï¼åå·¦ç§»å¨ï¼ã",
+      "ar": "Ø§ÙØªØ¨ Ø¯Ø§ÙØ© ØªÙØ´Ø¦ ØªØ´ÙÙØ± ÙÙØµØ± (Caesar cipher) Ø¹Ù Ø·Ø±ÙÙ Ø¥Ø²Ø§Ø­Ø© Ø§ÙØ­Ø±ÙÙ ÙÙ Ø§ÙØ³ÙØ³ÙØ© Ø§ÙÙØµÙØ© Ø¨ÙÙØ¯Ø§Ø± ÙØ­Ø¯Ø¯.\nÙØ¬Ø¨ Ø£Ù ØªØ¸Ù Ø§ÙØ£Ø­Ø±Ù ØºÙØ± Ø§ÙÙØ¬Ø§Ø¦ÙØ© Ø¯ÙÙ Ø£Ù ØªØºÙÙØ±.\nÙÙÙÙ Ø£Ù ØªÙÙÙ Ø§ÙØ¥Ø²Ø§Ø­Ø© Ø³Ø§ÙØ¨Ø© (Ø¥Ø²Ø§Ø­Ø© ÙØ­Ù Ø§ÙÙØ³Ø§Ø±)."
+    },
+    "signature": "def whisper_cipher(text: str, shift: int) -> str:",
+    "examples": [
+      {
+        "input": "whisper_cipher(\"hello\", 3)",
+        "output": "\"khoor\""
+      },
+      {
+        "input": "whisper_cipher(\"Hello World!\", 1)",
+        "output": "\"Ifmmp Xpsme!\""
+      },
+      {
+        "input": "whisper_cipher(\"xyz\", 3)",
+        "output": "\"abc\""
+      },
+      {
+        "input": "whisper_cipher(\"ABC123def\", 5)",
+        "output": "\"FGH123ijk\""
+      },
+      {
+        "input": "whisper_cipher(\"\", 10)",
+        "output": "\"\""
+      },
+      {
+        "input": "whisper_cipher(\"abc\", -3)",
+        "output": "\"xyz\""
+      }
+    ]
+  }
 ]

@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 class Description(BaseModel):
@@ -23,3 +23,4 @@ class Task(BaseModel):
     description: Description
     signature: str
     examples: list[Example]
+    forbidden: list[str] = Field(default_factory=list)
