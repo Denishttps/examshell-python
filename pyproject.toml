@@ -4,11 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "examshell-python"
-version = "0.1.11"
+version = "0.1.12"
 description = "Interactive 42-style exam practice shell for Python exercises"
 readme = "README.md"
 requires-python = ">=3.10"
-license = { text = "MIT" }
+license = "MIT"
 authors = [
     { name = "Denis" }
 ]

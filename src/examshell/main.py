@@ -139,8 +139,7 @@ def grademe(manager: TaskManager, task: Task) -> Task:
     check = manager.check_task()
 
     if check:
-        manager.points += 16
-        manager.current_level += 1
+        manager.complete_current_level()
 
         if manager.points >= 100:
             console.print(
@@ -158,7 +157,7 @@ def grademe(manager: TaskManager, task: Task) -> Task:
 
         console.print(
             Panel(
-                f"[bold green]Task passed +16 points[/bold green] "
+                f"[bold green]Task passed[/bold green] "
                 f"({manager.points}/100)",
                 border_style="green",
             )

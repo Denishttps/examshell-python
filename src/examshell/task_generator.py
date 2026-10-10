@@ -155,6 +155,18 @@ class TaskManager:
 
         return None
 
+    @property
+    def level_count(self) -> int:
+        return len({task.level for task in self.data})
+
+    def complete_current_level(self) -> None:
+        completed_levels = sum(
+            level <= self.current_level
+            for level in {task.level for task in self.data}
+        )
+        self.points = 100 * completed_levels // self.level_count
+        self.current_level += 1
+
     def create_task_files(self):
         task = self.get_task_by_id(self.current_task)
         if not task:
@@ -259,7 +271,14 @@ class TaskManager:
 
         for idx, example in enumerate(task.examples, start=1):
             try:
-                result = eval(example.input, vars(module))
+                expression = ast.parse(example.input, mode="eval").body
+                function = getattr(module, expression.func.id)
+                arguments = [ast.literal_eval(argument) for argument in expression.args]
+                keyword_arguments = {
+                    keyword.arg: ast.literal_eval(keyword.value)
+                    for keyword in expression.keywords
+                }
+                result = function(*arguments, **keyword_arguments)
                 expected_result = ast.literal_eval(example.output)
 
                 if result != expected_result:

@@ -50,7 +50,7 @@ local task files remain available and the application continues offline.
 
 ### Real mode
 
-Simulates the actual exam. Tasks are drawn randomly per level. Each correct solution earns **+16 points**; reach 100 to pass.
+Simulates the actual exam. Tasks are drawn randomly per level. Progress is distributed across the available levels; completing the final level reaches 100.
 
 | Command    | Description                  |
 |------------|------------------------------|
